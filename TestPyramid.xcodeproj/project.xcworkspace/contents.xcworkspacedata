@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:test-pyramid.xcodeproj">
+      location = "self:/Users/bartlomiej.nowak/Development/iOS/test-pyramid/TestPyramid.xcodeproj">
    </FileRef>
 </Workspace>
