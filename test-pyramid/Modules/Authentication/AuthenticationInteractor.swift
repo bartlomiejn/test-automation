@@ -43,8 +43,6 @@ class AuthenticationInteractor: AuthenticationInteractorInterface {
         success: @escaping () -> Void,
         failure: @escaping AuthenticationErrorClosure
     ) {
-        service.signIn(username: username, password: password, success: success, failure: { error in
-            
-        })
+        service.signIn(username: username, password: password, success: success, failure: failure)
     }
 }

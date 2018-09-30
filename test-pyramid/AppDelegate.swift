@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var httpClient: HTTPNetworkClient!
+    var mainModule: MainModule!
     var authenticationModule: AuthenticationModule!
     
     var isAppRunningInTestMode: Bool {
@@ -25,9 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         httpClient = HTTPNetworkClient(timeoutInterval: 60.0)
-        authenticationModule = AuthenticationModule(window: window!, httpClient: httpClient)
-        authenticationModule.isRunningInTestMode = isAppRunningInTestMode
-        authenticationModule.presentInitialView()
+        mainModule = MainModule(window: window!, httpClient: httpClient, isRunningInTestMode: isAppRunningInTestMode)
+        mainModule.authenticationModule = AuthenticationModule(
+            mainModule: mainModule!,
+            window: window!,
+            httpClient: httpClient
+        )
+        mainModule.presentInitialView()
         return true
     }
     

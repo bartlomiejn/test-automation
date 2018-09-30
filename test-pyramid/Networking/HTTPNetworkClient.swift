@@ -41,7 +41,9 @@ class HTTPNetworkClient: HTTPNetworkClientInterface {
             let session = generateURLSession(for: path, method: method)
             let request = generateURLRequestWithHeaderFields(for: url, method: method)
             session.dataTask(with: request) { data, response, error in
-                callback(data, response as? HTTPURLResponse, error)
+                DispatchQueue.main.async {
+                    callback(data, response as? HTTPURLResponse, error)
+                }
             }.resume()
         } catch {
             callback(nil, nil, error)
@@ -55,7 +57,12 @@ class HTTPNetworkClient: HTTPNetworkClientInterface {
         ) else {
             throw HTTPURLResponseGenerationError()
         }
-        let bodyData = try? JSONSerialization.data(withJSONObject: body as Any, options: .prettyPrinted)
+        let bodyData: Data?
+        if let body = body {
+            bodyData = try? JSONSerialization.data(withJSONObject: body as Any, options: .prettyPrinted)
+        } else {
+            bodyData = nil
+        }
         let stub = HTTPResponseStub(urlResponse: urlResponse, statusCode: statusCode, body: bodyData)
         if var responsesForMethods = stubbedResponses[path] {
             responsesForMethods[method] = stub

@@ -17,12 +17,18 @@ protocol AuthenticationPresenterInterface {
 class AuthenticationPresenter: AuthenticationPresenterInterface {
     
     private weak var view: AuthenticationViewInterface?
+    private let module: AuthenticationModuleProtocol
     private let interactor: AuthenticationInteractorInterface
     private var currentUsername: String?
     private var currentPassword: String?
     
-    init(view: AuthenticationViewInterface, interactor: AuthenticationInteractorInterface) {
+    init(
+        view: AuthenticationViewInterface,
+        module: AuthenticationModuleProtocol,
+        interactor: AuthenticationInteractorInterface
+    ) {
         self.view = view
+        self.module = module
         self.interactor = interactor
     }
     
@@ -38,6 +44,9 @@ class AuthenticationPresenter: AuthenticationPresenterInterface {
         guard let username = currentUsername, let password = currentPassword else {
             return
         }
+        view?.disableSignInButton()
+        view?.hideError()
+        view?.showSpinner()
         interactor.signIn(username: username, password: password, success: { [weak self] in
             self?.signedIn()
         }, failure: { [weak self] error in
@@ -46,7 +55,9 @@ class AuthenticationPresenter: AuthenticationPresenterInterface {
     }
     
     private func signedIn() {
-        
+        view?.enableSignInButton()
+        view?.hideSpinner()
+        module.authenticationSuccessful()
     }
 
     private func handle(_ error: AuthenticationError) {
@@ -69,34 +80,3 @@ class AuthenticationPresenter: AuthenticationPresenterInterface {
         }
     }
 }
-
-//
-//    func stateChanged(to state: AppState) {
-//        let authenticationState = state.authentication
-//        guard lastState != authenticationState else {
-//            return
-//        }
-//        lastState = authenticationState
-//        updateWithLastCredentialsState()
-//        updateWithLastSignInState()
-//    }
-//
-//    private func updateWithLastCredentialsState() {
-//        view.show(password: lastState.password ?? "")
-//        view.show(username: lastState.username ?? "")
-//    }
-//
-//    private func updateWithLastSignInState() {
-//        switch lastState.signInState {
-//            case .signingIn:
-//                view.disableSignInButton()
-//                view.hideError()
-//                view.showSpinner()
-//            case .failure:
-//                view.enableSignInButton()
-//                view.showError(description: "Invalid credentials.")
-//                view.hideSpinner()
-//            case .notSignedIn, .success:
-//                break
-//        }
-//    }

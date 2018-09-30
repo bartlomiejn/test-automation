@@ -8,37 +8,40 @@
 
 import UIKit
 
-protocol AppModule {
-    func presentInitialView()
+protocol AuthenticationModuleProtocol: class, AppModule {
+    func authenticationSuccessful()
 }
 
-class AuthenticationModule: AppModule {
+class AuthenticationModule: AuthenticationModuleProtocol {
     
+    private weak var mainModule: MainModuleProtocol?
     private let httpClient: HTTPNetworkClient
-    private let window: UIWindow
-    var isRunningInTestMode = false
+    private let window: WindowProtocol
     
-    init(window: UIWindow, httpClient: HTTPNetworkClient) {
-        self.httpClient = httpClient
+    init(mainModule: MainModuleProtocol, window: WindowProtocol, httpClient: HTTPNetworkClient) {
+        self.mainModule = mainModule
         self.window = window
+        self.httpClient = httpClient
     }
     
     func presentInitialView() {
         setupWindow(with: initialViewController())
     }
     
-    private func initialViewController() -> AuthenticationViewController {
-        if isRunningInTestMode {
-            AuthenticationStubGenerator(parameter: "success")?.injectStubs(into: httpClient)
-        }
+    func authenticationSuccessful() {
+        mainModule?.presentAppView()
+    }
+    
+    private func initialViewController() -> UIViewController {
         let viewController = UIStoryboard(name: "Authentication", bundle: Bundle(for: type(of: self)))
             .instantiateInitialViewController() as! AuthenticationViewController
+        let navigationController = UINavigationController(rootViewController: viewController)
         let client = GitHubNetworkClient(client: httpClient)
         let service = AuthenticationService(client: client)
         let interactor = AuthenticationInteractor(service: service)
-        let presenter = AuthenticationPresenter(view: viewController, interactor: interactor)
+        let presenter = AuthenticationPresenter(view: viewController, module: self, interactor: interactor)
         viewController.presenter = presenter
-        return viewController
+        return navigationController
     }
     
     private func setupWindow(with viewController: UIViewController) {
