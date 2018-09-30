@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		601258F32160CEA0003A7FBE /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 601258F22160CEA0003A7FBE /* Authentication.storyboard */; };
 		601258F5216119AD003A7FBE /* AuthenticationModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601258F4216119AD003A7FBE /* AuthenticationModule.swift */; };
 		601258F721611B26003A7FBE /* AuthenticationStubGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601258F621611B26003A7FBE /* AuthenticationStubGenerator.swift */; };
 		601258F921611B3E003A7FBE /* StubGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601258F821611B3E003A7FBE /* StubGenerator.swift */; };
@@ -57,7 +56,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		601258F22160CEA0003A7FBE /* Authentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		601258F4216119AD003A7FBE /* AuthenticationModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModule.swift; sourceTree = "<group>"; };
 		601258F621611B26003A7FBE /* AuthenticationStubGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationStubGenerator.swift; sourceTree = "<group>"; };
 		601258F821611B3E003A7FBE /* StubGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubGenerator.swift; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 				6068EC1621563679004A44DF /* Networking */,
 				6068EBE9215635C9004A44DF /* Modules */,
 				6068EBAD2156325F004A44DF /* AppDelegate.swift */,
-				601258F22160CEA0003A7FBE /* Authentication.storyboard */,
 				6068EBB421563260004A44DF /* Assets.xcassets */,
 				6068EBB621563260004A44DF /* LaunchScreen.storyboard */,
 				6068EBB921563260004A44DF /* Info.plist */,
@@ -370,7 +367,6 @@
 				6068EC142156364F004A44DF /* Authentication.storyboard in Resources */,
 				6068EBB821563260004A44DF /* LaunchScreen.storyboard in Resources */,
 				6068EBB521563260004A44DF /* Assets.xcassets in Resources */,
-				601258F32160CEA0003A7FBE /* Authentication.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
