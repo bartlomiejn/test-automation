@@ -10,8 +10,13 @@ import Foundation
 
 typealias AuthenticationErrorClosure = (AuthenticationError) -> Void
 
+enum RecoverableAuthenticationError {
+    case invalidCredentials
+    case response(message: String?)
+}
+
 enum AuthenticationError {
-    case recoverable
+    case recoverable(RecoverableAuthenticationError)
     case unrecoverable
 }
 
@@ -19,8 +24,8 @@ protocol AuthenticationInteractorInterface {
     func signIn(
         username: String,
         password: String,
-        success: () -> Void,
-        failure: AuthenticationErrorClosure
+        success: @escaping () -> Void,
+        failure: @escaping AuthenticationErrorClosure
     )
 }
 
@@ -35,12 +40,10 @@ class AuthenticationInteractor: AuthenticationInteractorInterface {
     func signIn(
         username: String,
         password: String,
-        success: () -> Void,
-        failure: AuthenticationErrorClosure
+        success: @escaping () -> Void,
+        failure: @escaping AuthenticationErrorClosure
     ) {
-        service.signIn(username: username, password: password, successCallback: {
-            
-        }, failureCallback: { error in
+        service.signIn(username: username, password: password, success: success, failure: { error in
             
         })
     }

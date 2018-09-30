@@ -16,10 +16,8 @@ protocol AuthenticationPresenterInterface {
 
 class AuthenticationPresenter: AuthenticationPresenterInterface {
     
-    private let view: AuthenticationViewInterface
+    private weak var view: AuthenticationViewInterface?
     private let interactor: AuthenticationInteractorInterface
-    private var lastState: AuthenticationState
-    
     private var currentUsername: String?
     private var currentPassword: String?
     
@@ -40,9 +38,9 @@ class AuthenticationPresenter: AuthenticationPresenterInterface {
         guard let username = currentUsername, let password = currentPassword else {
             return
         }
-        interactor.signIn(username: currentUsername, password: currentPassword, success: { [weak self] in
+        interactor.signIn(username: username, password: password, success: { [weak self] in
             self?.signedIn()
-        }, failure: { [weak self] in
+        }, failure: { [weak self] error in
             self?.handle(error)
         })
     }
@@ -51,8 +49,24 @@ class AuthenticationPresenter: AuthenticationPresenterInterface {
         
     }
 
-    private func handle(_ error: Error) {
-        
+    private func handle(_ error: AuthenticationError) {
+        view?.enableSignInButton()
+        view?.hideSpinner()
+        view?.showError(description: message(for: error))
+    }
+    
+    private func message(for error: AuthenticationError) -> String {
+        switch error {
+        case .unrecoverable:
+            return "Unrecoverable error."
+        case .recoverable(let type):
+            switch type {
+            case .invalidCredentials:
+                return "Invalid credentials."
+            case .response(let message):
+                return message ?? "Recoverable error without a message."
+            }
+        }
     }
 }
 

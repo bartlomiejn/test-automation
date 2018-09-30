@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol AuthenticationViewInterface {
+protocol AuthenticationViewInterface: class {
     func enableSignInButton()
     func disableSignInButton()
     func show(username: String)
@@ -25,7 +25,7 @@ class AuthenticationViewController: UIViewController {
         static let expansionDuration: TimeInterval = 0.25
     }
     
-    var presenter: AuthenticationPresenter!
+    var presenter: AuthenticationPresenterInterface!
     @IBOutlet private (set) weak var usernameField: UITextField!
     @IBOutlet private (set) weak var passwordField: UITextField!
     @IBOutlet private (set) weak var errorLabelContainer: UIView!

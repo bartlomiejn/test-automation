@@ -8,14 +8,14 @@
 
 import Foundation
 
-typealias SignInErrorCallback = (AuthenticationError) -> Void
+typealias SignInErrorClosure = (AuthenticationError) -> Void
 
 protocol AuthenticationServiceInterface {
     func signIn(
         username: String,
         password: String,
-        successCallback: @escaping () -> Void,
-        failureCallback: @escaping SignInErrorCallback
+        success: @escaping () -> Void,
+        failure: @escaping SignInErrorClosure
     )
 }
 
@@ -34,33 +34,32 @@ class AuthenticationService: AuthenticationServiceInterface {
     func signIn(
         username: String,
         password: String,
-        successCallback: @escaping () -> Void,
-        failureCallback: @escaping SignInErrorCallback
+        success: @escaping () -> Void,
+        failure: @escaping SignInErrorClosure
     ) {
         do {
             try client.setBasicAuthToken(username: username, password: password)
-            client.request(.GET, path: Path.user, successCallback: { _ in
-                successCallback()
-            }, failureCallback: { [weak self] error in
-                self?.handle(error, with: failureCallback)
+            client.request(.GET, path: Path.user, success: { _ in
+                success()
+            }, failure: { [weak self] error in
+                self?.handle(error, with: failure)
             })
-        } catch is BasicTokenGenerationError {
-            failureCallback(.unrecoverable)
         } catch {
-            failureCallback(.recoverable)
+            // Can fail only on setBasicAuthToken, which if fails we can't really do anything.
+            failure(.unrecoverable)
         }
     }
     
-    private func handle(_ error: GitHubNetworkClientError, with callback: SignInErrorCallback) {
+    private func handle(_ error: GitHubNetworkClientError, with callback: SignInErrorClosure) {
         switch error {
         case .unauthorized:
-            break
+            callback(.recoverable(.invalidCredentials))
+        case .apiError(let model):
+            callback(.recoverable(.response(message: model?.response?.message)))
         case .invalidResponse:
-            break
-        case .apiError(let response):
-            break
+            callback(.unrecoverable)
         case .other:
-            break
+            callback(.unrecoverable)
         }
     }
 }

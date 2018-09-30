@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct GitHubAPIErrorResponse {
+struct APIErrorModel {
     struct Response: Codable {
         let message: String
     }
@@ -20,7 +20,7 @@ struct GitHubAPIErrorResponse {
 enum GitHubNetworkClientError {
     case unauthorized
     case invalidResponse
-    case apiError(GitHubAPIErrorResponse?)
+    case apiError(APIErrorModel?)
     case other
 }
 
@@ -28,8 +28,8 @@ protocol GitHubNetworkClientInterface {
     func request(
         _ method: HTTPMethod,
         path: String,
-        successCallback: @escaping (Data?) -> Void,
-        failureCallback: @escaping (GitHubNetworkClientError) -> Void
+        success: @escaping (Data?) -> Void,
+        failure: @escaping (GitHubNetworkClientError) -> Void
     )
     func setBasicAuthToken(username: String, password: String) throws
 }
@@ -42,11 +42,11 @@ final class GitHubNetworkClient: GitHubNetworkClientInterface {
         static let userAgentValue = "bartlomiejn/test-pyramid"
     }
     
-    private let client: HTTPNetworkClient
+    private let httpClient: HTTPNetworkClient
     private let tokenGenerator: BasicAuthTokenGenerator
     
     init(client: HTTPNetworkClient, tokenGenerator: BasicAuthTokenGenerator = BasicAuthTokenGenerator()) {
-        self.client = client
+        self.httpClient = client
         self.tokenGenerator = tokenGenerator
         client.headerFields[Constant.userAgent] = Constant.userAgentValue
     }
@@ -54,39 +54,44 @@ final class GitHubNetworkClient: GitHubNetworkClientInterface {
     func request(
         _ method: HTTPMethod,
         path: String,
-        successCallback: @escaping (Data?) -> Void,
-        failureCallback: @escaping (GitHubNetworkClientError) -> Void
+        success: @escaping (Data?) -> Void,
+        failure: @escaping (GitHubNetworkClientError) -> Void
     ) {
-        client.request(method, path: path) { data, response, error in
+        httpClient.request(method, path: path) { [weak self] data, response, error in
             guard let unwrappedResponse = response else {
-                failureCallback(.invalidResponse)
+                failure(.invalidResponse)
                 return
             }
             switch unwrappedResponse.statusCode {
             case 200..<300:
-                successCallback(data)
+                success(data)
             case 401:
-                failureCallback(.unauthorized)
+                failure(.unauthorized)
             case 400..., 500...:
-                if let data = data {
-                    failureCallback(.apiError(GitHubAPIErrorResponse(
-                        statusCode: unwrappedResponse.statusCode,
-                        response: ModelDecoder<GitHubAPIErrorResponse.Response>().model(from: data)
-                    )))
-                } else {
-                    failureCallback(.apiError(GitHubAPIErrorResponse(
-                        statusCode: unwrappedResponse.statusCode,
-                        response: nil
-                    )))
-                }
+                self?.handleErrorStatus(data: data, statusCode: unwrappedResponse.statusCode, failure: failure)
             default:
-                failureCallback(.other)
+                failure(.other)
             }
         }
     }
     
     func setBasicAuthToken(username: String, password: String) throws {
-        client.headerFields[Constant.authorization]
+        httpClient.headerFields[Constant.authorization]
             = "Basic \(try tokenGenerator.token(from: username, password: password))"
+    }
+    
+    private func handleErrorStatus(
+        data: Data?,
+        statusCode: Int,
+        failure: @escaping (GitHubNetworkClientError) -> Void
+    ) {
+        if let data = data {
+            failure(.apiError(APIErrorModel(
+                statusCode: statusCode,
+                response: ModelDecoder<APIErrorModel.Response>().model(from: data)
+            )))
+        } else {
+            failure(.apiError(APIErrorModel(statusCode: statusCode, response: nil)))
+        }
     }
 }
