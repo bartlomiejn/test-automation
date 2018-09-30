@@ -16,7 +16,6 @@ class AuthenticationModule: AppModule {
     
     private let httpClient: HTTPNetworkClient
     private let window: UIWindow
-    
     var isRunningInTestMode = false
     
     init(window: UIWindow, httpClient: HTTPNetworkClient) {
