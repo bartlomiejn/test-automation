@@ -8,9 +8,7 @@
 
 import Foundation
 
-struct Unauthorized: Error {}
-struct InvalidResponse: Error {}
-struct GitHubAPIError: Error {
+struct GitHubAPIErrorResponse {
     struct Response: Codable {
         let message: String
     }
@@ -19,12 +17,19 @@ struct GitHubAPIError: Error {
     let response: Response?
 }
 
+enum GitHubNetworkClientError {
+    case unauthorized
+    case invalidResponse
+    case apiError(GitHubAPIErrorResponse?)
+    case other
+}
+
 protocol GitHubNetworkClientInterface {
     func request(
         _ method: HTTPMethod,
         path: String,
         successCallback: @escaping (Data?) -> Void,
-        failureCallback: ((Error?) -> Void)?
+        failureCallback: @escaping (GitHubNetworkClientError) -> Void
     )
     func setBasicAuthToken(username: String, password: String) throws
 }
@@ -50,29 +55,32 @@ final class GitHubNetworkClient: GitHubNetworkClientInterface {
         _ method: HTTPMethod,
         path: String,
         successCallback: @escaping (Data?) -> Void,
-        failureCallback: ((Error?) -> Void)?
+        failureCallback: @escaping (GitHubNetworkClientError) -> Void
     ) {
         client.request(method, path: path) { data, response, error in
             guard let unwrappedResponse = response else {
-                failureCallback?(InvalidResponse())
+                failureCallback(.invalidResponse)
                 return
             }
             switch unwrappedResponse.statusCode {
             case 200..<300:
                 successCallback(data)
             case 401:
-                failureCallback?(Unauthorized())
+                failureCallback(.unauthorized)
             case 400..., 500...:
                 if let data = data {
-                    failureCallback?(GitHubAPIError(
+                    failureCallback(.apiError(GitHubAPIErrorResponse(
                         statusCode: unwrappedResponse.statusCode,
-                        response: ModelDecoder<GitHubAPIError.Response>().model(from: data)
-                    ))
+                        response: ModelDecoder<GitHubAPIErrorResponse.Response>().model(from: data)
+                    )))
                 } else {
-                    failureCallback?(GitHubAPIError(statusCode: unwrappedResponse.statusCode, response: nil))
+                    failureCallback(.apiError(GitHubAPIErrorResponse(
+                        statusCode: unwrappedResponse.statusCode,
+                        response: nil
+                    )))
                 }
             default:
-                failureCallback?(error)
+                failureCallback(.other)
             }
         }
     }

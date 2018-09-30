@@ -17,68 +17,72 @@ protocol AuthenticationPresenterInterface {
 class AuthenticationPresenter: AuthenticationPresenterInterface {
     
     private let view: AuthenticationViewInterface
-    private let store: StateStoreListeningInterface
     private let interactor: AuthenticationInteractorInterface
     private var lastState: AuthenticationState
     
-    init(
-        view: AuthenticationViewInterface,
-        store: StateStoreListeningInterface,
-        interactor: AuthenticationInteractorInterface
-    ) {
-        self.view = view
-        self.store = store
-        self.interactor = interactor
-        lastState = store.state.authentication
-        store.subscribe(self)
-    }
+    private var currentUsername: String?
+    private var currentPassword: String?
     
-    deinit {
-        store.unsubscribe(self)
+    init(view: AuthenticationViewInterface, interactor: AuthenticationInteractorInterface) {
+        self.view = view
+        self.interactor = interactor
     }
     
     func usernameChanged(to username: String) {
-        interactor.usernameChanged(to: username)
+         currentUsername = username
     }
     
     func passwordChanged(to password: String) {
-        interactor.passwordChanged(to: password)
+        currentPassword = password
     }
     
     func tappedSignIn() {
-        interactor.signIn()
+        guard let username = currentUsername, let password = currentPassword else {
+            return
+        }
+        interactor.signIn(username: currentUsername, password: currentPassword, success: { [weak self] in
+            self?.signedIn()
+        }, failure: { [weak self] in
+            self?.handle(error)
+        })
+    }
+    
+    private func signedIn() {
+        
+    }
+
+    private func handle(_ error: Error) {
+        
     }
 }
 
-extension AuthenticationPresenter: StateStoreListener {
-    
-    func stateChanged(to state: AppState) {
-        let authenticationState = state.authentication
-        guard lastState != authenticationState else {
-            return
-        }
-        lastState = authenticationState
-        updateWithLastCredentialsState()
-        updateWithLastSignInState()
-    }
-    
-    private func updateWithLastCredentialsState() {
-        view.show(password: lastState.password ?? "")
-        view.show(username: lastState.username ?? "")
-    }
-    
-    private func updateWithLastSignInState() {
-        switch lastState.signInState {
-            case .signingIn:
-                view.disableSignInButton()
-                view.hideError()
-                view.showSpinner()
-            case .failure:
-                view.enableSignInButton()
-                view.showError(description: "Invalid credentials.")
-                view.hideSpinner()
-            case .notSignedIn, .success:
-                break
-        }
-    }
-}
+//
+//    func stateChanged(to state: AppState) {
+//        let authenticationState = state.authentication
+//        guard lastState != authenticationState else {
+//            return
+//        }
+//        lastState = authenticationState
+//        updateWithLastCredentialsState()
+//        updateWithLastSignInState()
+//    }
+//
+//    private func updateWithLastCredentialsState() {
+//        view.show(password: lastState.password ?? "")
+//        view.show(username: lastState.username ?? "")
+//    }
+//
+//    private func updateWithLastSignInState() {
+//        switch lastState.signInState {
+//            case .signingIn:
+//                view.disableSignInButton()
+//                view.hideError()
+//                view.showSpinner()
+//            case .failure:
+//                view.enableSignInButton()
+//                view.showError(description: "Invalid credentials.")
+//                view.hideSpinner()
+//            case .notSignedIn, .success:
+//                break
+//        }
+//    }

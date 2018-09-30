@@ -8,54 +8,40 @@
 
 import Foundation
 
-struct UpdateSignInUsername: Action {
-    let username: String?
+typealias AuthenticationErrorClosure = (AuthenticationError) -> Void
+
+enum AuthenticationError {
+    case recoverable
+    case unrecoverable
 }
-
-struct UpdateSignInPassword: Action {
-    let password: String?
-}
-
-struct SigningIn: Action {}
-
-struct SignedIn: Action {}
-
-struct FailedSigningIn: Action {}
 
 protocol AuthenticationInteractorInterface {
-    func usernameChanged(to username: String)
-    func passwordChanged(to password: String)
-    func signIn()
+    func signIn(
+        username: String,
+        password: String,
+        success: () -> Void,
+        failure: AuthenticationErrorClosure
+    )
 }
 
 class AuthenticationInteractor: AuthenticationInteractorInterface {
     
-    private let store: StateStoreDispatchInterface
     private let service: AuthenticationServiceInterface
     
-    init(store: StateStoreDispatchInterface, service: AuthenticationServiceInterface) {
-        self.store = store
+    init(service: AuthenticationServiceInterface) {
         self.service = service
     }
     
-    func usernameChanged(to username: String) {
-        store.dispatch(UpdateSignInUsername(username: username))
-    }
-    
-    func passwordChanged(to password: String) {
-        store.dispatch(UpdateSignInPassword(password: password))
-    }
-    
-    func signIn() {
-        let state = store.state.authentication
-        guard let username = state.username, let password = state.password else {
-            return
-        }
-        store.dispatch(SigningIn())
-        service.signIn(username: username, password: password, successCallback: { [weak store] in
-            store?.dispatch(SignedIn())
-        }, failureCallback: { [weak store] _ in
-            store?.dispatch(FailedSigningIn())
+    func signIn(
+        username: String,
+        password: String,
+        success: () -> Void,
+        failure: AuthenticationErrorClosure
+    ) {
+        service.signIn(username: username, password: password, successCallback: {
+            
+        }, failureCallback: { error in
+            
         })
     }
 }

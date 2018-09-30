@@ -1,6 +1,6 @@
 //
-//  test_pyramidUITests.swift
-//  test-pyramidUITests
+//  TestPyramidEndToEndTests.swift
+//  TestPyramidEndToEndTests
 //
 //  Created by Bartłomiej Nowak on 22.09.2018.
 //  Copyright © 2018 Bartłomiej Nowak. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class test_pyramidUITests: XCTestCase {
+class TestPyramidEndToEndTests: XCTestCase {
         
     override func setUp() {
         super.setUp()

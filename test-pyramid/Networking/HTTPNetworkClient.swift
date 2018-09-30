@@ -19,7 +19,7 @@ enum HTTPMethod: String {
 protocol HTTPNetworkClientInterface {
     typealias Path = String
     func request(_ method: HTTPMethod, path: String, callback: @escaping (Data?, HTTPURLResponse?, Error?) -> Void)
-    func stub(_ path: Path, _ method: HTTPMethod, statusCode: Int, body: Any?, headers: [String : String]?) throws
+    func stub(_ path: Path, _ method: HTTPMethod, statusCode: Int, body: Any?, headers: [String: String]?) throws
 }
 
 class HTTPNetworkClient: HTTPNetworkClientInterface {
@@ -34,9 +34,7 @@ class HTTPNetworkClient: HTTPNetworkClientInterface {
         self.generator = generator
     }
     
-    /**
-     Performs a request for provided path and method.
-     */
+    /// Performs a request for provided path and method.
     func request(_ method: HTTPMethod, path: Path, callback: @escaping (Data?, HTTPURLResponse?, Error?) -> Void) {
         do {
             let url = try generator.url(path: path)
@@ -50,10 +48,8 @@ class HTTPNetworkClient: HTTPNetworkClientInterface {
         }
     }
     
-    /**
-     Stubs the response for a request directed at provided path and method.
-     */
-    func stub(_ path: Path, _ method: HTTPMethod, statusCode: Int, body: Any?, headers: [String : String]?) throws {
+    /// Stubs the response for a request directed at provided path and method.
+    func stub(_ path: Path, _ method: HTTPMethod, statusCode: Int, body: Any?, headers: [String: String]?) throws {
         guard let urlResponse = HTTPURLResponse(
             url: try generator.url(path: path), statusCode: statusCode, httpVersion: nil, headerFields: headers
         ) else {
@@ -65,7 +61,7 @@ class HTTPNetworkClient: HTTPNetworkClientInterface {
             responsesForMethods[method] = stub
             stubbedResponses[path] = responsesForMethods
         } else {
-            stubbedResponses[path] = [method : stub]
+            stubbedResponses[path] = [method: stub]
         }
     }
 

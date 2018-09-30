@@ -1,6 +1,6 @@
 //
-//  test_pyramidTests.swift
-//  test-pyramidTests
+//  TestPyramidUnitTests.swift
+//  TestPyramidUnitTests
 //
 //  Created by Bartłomiej Nowak on 22.09.2018.
 //  Copyright © 2018 Bartłomiej Nowak. All rights reserved.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import test_pyramid
 
-class test_pyramidTests: XCTestCase {
+class TestPyramidUnitTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
