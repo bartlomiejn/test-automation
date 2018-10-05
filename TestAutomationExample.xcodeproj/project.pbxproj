@@ -63,18 +63,18 @@
 		601258F4216119AD003A7FBE /* AuthenticationModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModule.swift; sourceTree = "<group>"; };
 		601258F621611B26003A7FBE /* AuthenticationStubGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationStubGenerator.swift; sourceTree = "<group>"; };
 		601258F821611B3E003A7FBE /* StubGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubGenerator.swift; sourceTree = "<group>"; };
-		6068EBAA2156325F004A44DF /* TestPyramid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestPyramid.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6068EBAA2156325F004A44DF /* TestAutomationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestAutomationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6068EBAD2156325F004A44DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6068EBB421563260004A44DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6068EBB721563260004A44DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6068EBB921563260004A44DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6068EBBE21563260004A44DF /* TestPyramidTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestPyramidTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6068EBBE21563260004A44DF /* TestAutomationExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAutomationExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6068EBC221563260004A44DF /* TestPyramidUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPyramidUnitTests.swift; sourceTree = "<group>"; };
 		6068EBC421563260004A44DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6068EBC921563260004A44DF /* TestPyramidUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestPyramidUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6068EBC921563260004A44DF /* TestAutomationExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAutomationExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6068EBCD21563260004A44DF /* TestPyramidEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPyramidEndToEndTests.swift; sourceTree = "<group>"; };
 		6068EBCF21563260004A44DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6068EBDF215632E4004A44DF /* TestPyramidIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestPyramidIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6068EBDF215632E4004A44DF /* TestAutomationExampleIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAutomationExampleIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6068EBE1215632E4004A44DF /* TestPyramidIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPyramidIntegrationTests.swift; sourceTree = "<group>"; };
 		6068EBE3215632E4004A44DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6068EC0A2156364E004A44DF /* AuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
@@ -131,10 +131,10 @@
 		6068EBA12156325F004A44DF = {
 			isa = PBXGroup;
 			children = (
-				6068EBAC2156325F004A44DF /* test-pyramid */,
-				6068EBC121563260004A44DF /* TestPyramidUnitTests */,
-				6068EBE0215632E4004A44DF /* TestPyramidIntegrationTests */,
-				6068EBCC21563260004A44DF /* TestPyramidEndToEndTests */,
+				6068EBAC2156325F004A44DF /* TestAutomationExample */,
+				6068EBC121563260004A44DF /* TestAutomationExampleUnitTests */,
+				6068EBE0215632E4004A44DF /* TestAutomationExampleIntegrationTests */,
+				6068EBCC21563260004A44DF /* TestAutomationExampleEndToEndTests */,
 				6068EBAB2156325F004A44DF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -142,15 +142,15 @@
 		6068EBAB2156325F004A44DF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6068EBAA2156325F004A44DF /* TestPyramid.app */,
-				6068EBBE21563260004A44DF /* TestPyramidTests.xctest */,
-				6068EBC921563260004A44DF /* TestPyramidUITests.xctest */,
-				6068EBDF215632E4004A44DF /* TestPyramidIntegrationTests.xctest */,
+				6068EBAA2156325F004A44DF /* TestAutomationExample.app */,
+				6068EBBE21563260004A44DF /* TestAutomationExampleTests.xctest */,
+				6068EBC921563260004A44DF /* TestAutomationExampleUITests.xctest */,
+				6068EBDF215632E4004A44DF /* TestAutomationExampleIntegrationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6068EBAC2156325F004A44DF /* test-pyramid */ = {
+		6068EBAC2156325F004A44DF /* TestAutomationExample */ = {
 			isa = PBXGroup;
 			children = (
 				6094B219216124FE007AD2A9 /* Auxiliary */,
@@ -161,35 +161,34 @@
 				6068EBB621563260004A44DF /* LaunchScreen.storyboard */,
 				6068EBB921563260004A44DF /* Info.plist */,
 			);
-			path = "test-pyramid";
+			path = TestAutomationExample;
 			sourceTree = "<group>";
 		};
-		6068EBC121563260004A44DF /* TestPyramidUnitTests */ = {
+		6068EBC121563260004A44DF /* TestAutomationExampleUnitTests */ = {
 			isa = PBXGroup;
 			children = (
 				6068EBC221563260004A44DF /* TestPyramidUnitTests.swift */,
 				6068EBC421563260004A44DF /* Info.plist */,
 			);
-			name = TestPyramidUnitTests;
-			path = "test-pyramidTests";
+			path = TestAutomationExampleUnitTests;
 			sourceTree = "<group>";
 		};
-		6068EBCC21563260004A44DF /* TestPyramidEndToEndTests */ = {
+		6068EBCC21563260004A44DF /* TestAutomationExampleEndToEndTests */ = {
 			isa = PBXGroup;
 			children = (
 				6068EBCD21563260004A44DF /* TestPyramidEndToEndTests.swift */,
 				6068EBCF21563260004A44DF /* Info.plist */,
 			);
-			path = TestPyramidEndToEndTests;
+			path = TestAutomationExampleEndToEndTests;
 			sourceTree = "<group>";
 		};
-		6068EBE0215632E4004A44DF /* TestPyramidIntegrationTests */ = {
+		6068EBE0215632E4004A44DF /* TestAutomationExampleIntegrationTests */ = {
 			isa = PBXGroup;
 			children = (
 				6068EBE1215632E4004A44DF /* TestPyramidIntegrationTests.swift */,
 				6068EBE3215632E4004A44DF /* Info.plist */,
 			);
-			path = TestPyramidIntegrationTests;
+			path = TestAutomationExampleIntegrationTests;
 			sourceTree = "<group>";
 		};
 		6068EBE9215635C9004A44DF /* Modules */ = {
@@ -276,9 +275,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6068EBA92156325F004A44DF /* TestPyramid */ = {
+		6068EBA92156325F004A44DF /* TestAutomationExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6068EBD221563260004A44DF /* Build configuration list for PBXNativeTarget "TestPyramid" */;
+			buildConfigurationList = 6068EBD221563260004A44DF /* Build configuration list for PBXNativeTarget "TestAutomationExample" */;
 			buildPhases = (
 				6068EBA62156325F004A44DF /* Sources */,
 				6068EBA72156325F004A44DF /* Frameworks */,
@@ -288,14 +287,14 @@
 			);
 			dependencies = (
 			);
-			name = TestPyramid;
+			name = TestAutomationExample;
 			productName = "test-pyramid";
-			productReference = 6068EBAA2156325F004A44DF /* TestPyramid.app */;
+			productReference = 6068EBAA2156325F004A44DF /* TestAutomationExample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6068EBBD21563260004A44DF /* TestPyramidTests */ = {
+		6068EBBD21563260004A44DF /* TestAutomationExampleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6068EBD521563260004A44DF /* Build configuration list for PBXNativeTarget "TestPyramidTests" */;
+			buildConfigurationList = 6068EBD521563260004A44DF /* Build configuration list for PBXNativeTarget "TestAutomationExampleTests" */;
 			buildPhases = (
 				6068EBBA21563260004A44DF /* Sources */,
 				6068EBBB21563260004A44DF /* Frameworks */,
@@ -306,14 +305,14 @@
 			dependencies = (
 				6068EBC021563260004A44DF /* PBXTargetDependency */,
 			);
-			name = TestPyramidTests;
+			name = TestAutomationExampleTests;
 			productName = "test-pyramidTests";
-			productReference = 6068EBBE21563260004A44DF /* TestPyramidTests.xctest */;
+			productReference = 6068EBBE21563260004A44DF /* TestAutomationExampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		6068EBC821563260004A44DF /* TestPyramidUITests */ = {
+		6068EBC821563260004A44DF /* TestAutomationExampleUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6068EBD821563260004A44DF /* Build configuration list for PBXNativeTarget "TestPyramidUITests" */;
+			buildConfigurationList = 6068EBD821563260004A44DF /* Build configuration list for PBXNativeTarget "TestAutomationExampleUITests" */;
 			buildPhases = (
 				6068EBC521563260004A44DF /* Sources */,
 				6068EBC621563260004A44DF /* Frameworks */,
@@ -324,14 +323,14 @@
 			dependencies = (
 				6068EBCB21563260004A44DF /* PBXTargetDependency */,
 			);
-			name = TestPyramidUITests;
+			name = TestAutomationExampleUITests;
 			productName = "test-pyramidUITests";
-			productReference = 6068EBC921563260004A44DF /* TestPyramidUITests.xctest */;
+			productReference = 6068EBC921563260004A44DF /* TestAutomationExampleUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		6068EBDE215632E4004A44DF /* TestPyramidIntegrationTests */ = {
+		6068EBDE215632E4004A44DF /* TestAutomationExampleIntegrationTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6068EBE6215632E4004A44DF /* Build configuration list for PBXNativeTarget "TestPyramidIntegrationTests" */;
+			buildConfigurationList = 6068EBE6215632E4004A44DF /* Build configuration list for PBXNativeTarget "TestAutomationExampleIntegrationTests" */;
 			buildPhases = (
 				6068EBDB215632E4004A44DF /* Sources */,
 				6068EBDC215632E4004A44DF /* Frameworks */,
@@ -342,9 +341,9 @@
 			dependencies = (
 				6068EBE5215632E4004A44DF /* PBXTargetDependency */,
 			);
-			name = TestPyramidIntegrationTests;
+			name = TestAutomationExampleIntegrationTests;
 			productName = TestPyramidIntegrationTests;
-			productReference = 6068EBDF215632E4004A44DF /* TestPyramidIntegrationTests.xctest */;
+			productReference = 6068EBDF215632E4004A44DF /* TestAutomationExampleIntegrationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -374,7 +373,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6068EBA52156325F004A44DF /* Build configuration list for PBXProject "TestPyramid" */;
+			buildConfigurationList = 6068EBA52156325F004A44DF /* Build configuration list for PBXProject "TestAutomationExample" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -387,10 +386,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6068EBA92156325F004A44DF /* TestPyramid */,
-				6068EBBD21563260004A44DF /* TestPyramidTests */,
-				6068EBC821563260004A44DF /* TestPyramidUITests */,
-				6068EBDE215632E4004A44DF /* TestPyramidIntegrationTests */,
+				6068EBA92156325F004A44DF /* TestAutomationExample */,
+				6068EBBD21563260004A44DF /* TestAutomationExampleTests */,
+				6068EBC821563260004A44DF /* TestAutomationExampleUITests */,
+				6068EBDE215632E4004A44DF /* TestAutomationExampleIntegrationTests */,
 			);
 		};
 /* End PBXProject section */
@@ -486,17 +485,17 @@
 /* Begin PBXTargetDependency section */
 		6068EBC021563260004A44DF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6068EBA92156325F004A44DF /* TestPyramid */;
+			target = 6068EBA92156325F004A44DF /* TestAutomationExample */;
 			targetProxy = 6068EBBF21563260004A44DF /* PBXContainerItemProxy */;
 		};
 		6068EBCB21563260004A44DF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6068EBA92156325F004A44DF /* TestPyramid */;
+			target = 6068EBA92156325F004A44DF /* TestAutomationExample */;
 			targetProxy = 6068EBCA21563260004A44DF /* PBXContainerItemProxy */;
 		};
 		6068EBE5215632E4004A44DF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6068EBA92156325F004A44DF /* TestPyramid */;
+			target = 6068EBA92156325F004A44DF /* TestAutomationExample */;
 			targetProxy = 6068EBE4215632E4004A44DF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -633,15 +632,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9FTKHT3TNN;
-				INFOPLIST_FILE = "test-pyramid/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/TestAutomationExampleEndToEndTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.bartlomiejnowak.test-pyramid";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.bartlomiejn.test-automation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -651,15 +650,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9FTKHT3TNN;
-				INFOPLIST_FILE = "test-pyramid/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/TestAutomationExampleEndToEndTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.bartlomiejnowak.test-pyramid";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.bartlomiejn.test-automation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -680,7 +679,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestPyramid.app/TestPyramid";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestAutomationExample.app/TestAutomationExample";
 			};
 			name = Debug;
 		};
@@ -701,7 +700,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestPyramid.app/TestPyramid";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestAutomationExample.app/TestAutomationExample";
 			};
 			name = Release;
 		};
@@ -761,7 +760,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestPyramid.app/TestPyramid";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestAutomationExample.app/TestAutomationExample";
 			};
 			name = Debug;
 		};
@@ -781,14 +780,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestPyramid.app/TestPyramid";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestAutomationExample.app/TestAutomationExample";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6068EBA52156325F004A44DF /* Build configuration list for PBXProject "TestPyramid" */ = {
+		6068EBA52156325F004A44DF /* Build configuration list for PBXProject "TestAutomationExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6068EBD021563260004A44DF /* Debug */,
@@ -797,7 +796,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6068EBD221563260004A44DF /* Build configuration list for PBXNativeTarget "TestPyramid" */ = {
+		6068EBD221563260004A44DF /* Build configuration list for PBXNativeTarget "TestAutomationExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6068EBD321563260004A44DF /* Debug */,
@@ -806,7 +805,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6068EBD521563260004A44DF /* Build configuration list for PBXNativeTarget "TestPyramidTests" */ = {
+		6068EBD521563260004A44DF /* Build configuration list for PBXNativeTarget "TestAutomationExampleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6068EBD621563260004A44DF /* Debug */,
@@ -815,7 +814,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6068EBD821563260004A44DF /* Build configuration list for PBXNativeTarget "TestPyramidUITests" */ = {
+		6068EBD821563260004A44DF /* Build configuration list for PBXNativeTarget "TestAutomationExampleUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6068EBD921563260004A44DF /* Debug */,
@@ -824,7 +823,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6068EBE6215632E4004A44DF /* Build configuration list for PBXNativeTarget "TestPyramidIntegrationTests" */ = {
+		6068EBE6215632E4004A44DF /* Build configuration list for PBXNativeTarget "TestAutomationExampleIntegrationTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6068EBE7215632E4004A44DF /* Debug */,
