@@ -13,7 +13,6 @@
 		6068EBAE2156325F004A44DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6068EBAD2156325F004A44DF /* AppDelegate.swift */; };
 		6068EBB521563260004A44DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6068EBB421563260004A44DF /* Assets.xcassets */; };
 		6068EBB821563260004A44DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6068EBB621563260004A44DF /* LaunchScreen.storyboard */; };
-		6068EBC321563260004A44DF /* TestPyramidUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6068EBC221563260004A44DF /* TestPyramidUnitTests.swift */; };
 		6068EBCE21563260004A44DF /* TestPyramidEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6068EBCD21563260004A44DF /* TestPyramidEndToEndTests.swift */; };
 		6068EBE2215632E4004A44DF /* TestPyramidIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6068EBE1215632E4004A44DF /* TestPyramidIntegrationTests.swift */; };
 		6068EC102156364F004A44DF /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6068EC0A2156364E004A44DF /* AuthenticationViewController.swift */; };
@@ -33,6 +32,7 @@
 		6094B2162161239E007AD2A9 /* MainModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6094B2152161239E007AD2A9 /* MainModule.swift */; };
 		6094B2182161241D007AD2A9 /* ModuleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6094B2172161241D007AD2A9 /* ModuleProtocol.swift */; };
 		6094B21B21612513007AD2A9 /* UIWindow+WindowProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6094B21A21612513007AD2A9 /* UIWindow+WindowProtocol.swift */; };
+		60A9FEDD21679999007966A7 /* AuthenticationPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9FEDC21679999007966A7 /* AuthenticationPresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,10 +68,9 @@
 		6068EBB421563260004A44DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6068EBB721563260004A44DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6068EBB921563260004A44DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6068EBBE21563260004A44DF /* TestAutomationExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAutomationExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6068EBC221563260004A44DF /* TestPyramidUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPyramidUnitTests.swift; sourceTree = "<group>"; };
+		6068EBBE21563260004A44DF /* TestAutomationExampleUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAutomationExampleUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6068EBC421563260004A44DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6068EBC921563260004A44DF /* TestAutomationExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAutomationExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6068EBC921563260004A44DF /* TestAutomationExampleE2ETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAutomationExampleE2ETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6068EBCD21563260004A44DF /* TestPyramidEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPyramidEndToEndTests.swift; sourceTree = "<group>"; };
 		6068EBCF21563260004A44DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6068EBDF215632E4004A44DF /* TestAutomationExampleIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAutomationExampleIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +93,7 @@
 		6094B2152161239E007AD2A9 /* MainModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModule.swift; sourceTree = "<group>"; };
 		6094B2172161241D007AD2A9 /* ModuleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleProtocol.swift; sourceTree = "<group>"; };
 		6094B21A21612513007AD2A9 /* UIWindow+WindowProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+WindowProtocol.swift"; sourceTree = "<group>"; };
+		60A9FEDC21679999007966A7 /* AuthenticationPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationPresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +134,7 @@
 				6068EBAC2156325F004A44DF /* TestAutomationExample */,
 				6068EBC121563260004A44DF /* TestAutomationExampleUnitTests */,
 				6068EBE0215632E4004A44DF /* TestAutomationExampleIntegrationTests */,
-				6068EBCC21563260004A44DF /* TestAutomationExampleEndToEndTests */,
+				6068EBCC21563260004A44DF /* TestAutomationExampleE2ETests */,
 				6068EBAB2156325F004A44DF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -143,8 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				6068EBAA2156325F004A44DF /* TestAutomationExample.app */,
-				6068EBBE21563260004A44DF /* TestAutomationExampleTests.xctest */,
-				6068EBC921563260004A44DF /* TestAutomationExampleUITests.xctest */,
+				6068EBBE21563260004A44DF /* TestAutomationExampleUnitTests.xctest */,
+				6068EBC921563260004A44DF /* TestAutomationExampleE2ETests.xctest */,
 				6068EBDF215632E4004A44DF /* TestAutomationExampleIntegrationTests.xctest */,
 			);
 			name = Products;
@@ -167,19 +167,19 @@
 		6068EBC121563260004A44DF /* TestAutomationExampleUnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				6068EBC221563260004A44DF /* TestPyramidUnitTests.swift */,
+				60A9FEDB2167997F007966A7 /* Modules */,
 				6068EBC421563260004A44DF /* Info.plist */,
 			);
 			path = TestAutomationExampleUnitTests;
 			sourceTree = "<group>";
 		};
-		6068EBCC21563260004A44DF /* TestAutomationExampleEndToEndTests */ = {
+		6068EBCC21563260004A44DF /* TestAutomationExampleE2ETests */ = {
 			isa = PBXGroup;
 			children = (
 				6068EBCD21563260004A44DF /* TestPyramidEndToEndTests.swift */,
 				6068EBCF21563260004A44DF /* Info.plist */,
 			);
-			path = TestAutomationExampleEndToEndTests;
+			path = TestAutomationExampleE2ETests;
 			sourceTree = "<group>";
 		};
 		6068EBE0215632E4004A44DF /* TestAutomationExampleIntegrationTests */ = {
@@ -272,6 +272,14 @@
 			path = Stubs;
 			sourceTree = "<group>";
 		};
+		60A9FEDB2167997F007966A7 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				60A9FEDC21679999007966A7 /* AuthenticationPresenterTests.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -292,9 +300,9 @@
 			productReference = 6068EBAA2156325F004A44DF /* TestAutomationExample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6068EBBD21563260004A44DF /* TestAutomationExampleTests */ = {
+		6068EBBD21563260004A44DF /* TestAutomationExampleUnitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6068EBD521563260004A44DF /* Build configuration list for PBXNativeTarget "TestAutomationExampleTests" */;
+			buildConfigurationList = 6068EBD521563260004A44DF /* Build configuration list for PBXNativeTarget "TestAutomationExampleUnitTests" */;
 			buildPhases = (
 				6068EBBA21563260004A44DF /* Sources */,
 				6068EBBB21563260004A44DF /* Frameworks */,
@@ -305,14 +313,14 @@
 			dependencies = (
 				6068EBC021563260004A44DF /* PBXTargetDependency */,
 			);
-			name = TestAutomationExampleTests;
+			name = TestAutomationExampleUnitTests;
 			productName = "test-pyramidTests";
-			productReference = 6068EBBE21563260004A44DF /* TestAutomationExampleTests.xctest */;
+			productReference = 6068EBBE21563260004A44DF /* TestAutomationExampleUnitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		6068EBC821563260004A44DF /* TestAutomationExampleUITests */ = {
+		6068EBC821563260004A44DF /* TestAutomationExampleE2ETests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6068EBD821563260004A44DF /* Build configuration list for PBXNativeTarget "TestAutomationExampleUITests" */;
+			buildConfigurationList = 6068EBD821563260004A44DF /* Build configuration list for PBXNativeTarget "TestAutomationExampleE2ETests" */;
 			buildPhases = (
 				6068EBC521563260004A44DF /* Sources */,
 				6068EBC621563260004A44DF /* Frameworks */,
@@ -323,9 +331,9 @@
 			dependencies = (
 				6068EBCB21563260004A44DF /* PBXTargetDependency */,
 			);
-			name = TestAutomationExampleUITests;
+			name = TestAutomationExampleE2ETests;
 			productName = "test-pyramidUITests";
-			productReference = 6068EBC921563260004A44DF /* TestAutomationExampleUITests.xctest */;
+			productReference = 6068EBC921563260004A44DF /* TestAutomationExampleE2ETests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		6068EBDE215632E4004A44DF /* TestAutomationExampleIntegrationTests */ = {
@@ -387,9 +395,9 @@
 			projectRoot = "";
 			targets = (
 				6068EBA92156325F004A44DF /* TestAutomationExample */,
-				6068EBBD21563260004A44DF /* TestAutomationExampleTests */,
-				6068EBC821563260004A44DF /* TestAutomationExampleUITests */,
+				6068EBBD21563260004A44DF /* TestAutomationExampleUnitTests */,
 				6068EBDE215632E4004A44DF /* TestAutomationExampleIntegrationTests */,
+				6068EBC821563260004A44DF /* TestAutomationExampleE2ETests */,
 			);
 		};
 /* End PBXProject section */
@@ -460,7 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6068EBC321563260004A44DF /* TestPyramidUnitTests.swift in Sources */,
+				60A9FEDD21679999007966A7 /* AuthenticationPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,7 +640,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9FTKHT3TNN;
-				INFOPLIST_FILE = "$(SRCROOT)/TestAutomationExampleEndToEndTests/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/TestAutomationExample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -650,7 +658,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9FTKHT3TNN;
-				INFOPLIST_FILE = "$(SRCROOT)/TestAutomationExampleEndToEndTests/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/TestAutomationExample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -669,13 +677,13 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B6NDM93MJT;
-				INFOPLIST_FILE = "test-pyramidTests/Info.plist";
+				INFOPLIST_FILE = TestAutomationExampleUnitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.bartlomiejnowak.test-pyramidTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.bartlomiejn.unit-tests.test-automation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -690,13 +698,13 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B6NDM93MJT;
-				INFOPLIST_FILE = "test-pyramidTests/Info.plist";
+				INFOPLIST_FILE = TestAutomationExampleUnitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.bartlomiejnowak.test-pyramidTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.bartlomiejn.unit-tests.test-automation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -710,13 +718,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B6NDM93MJT;
-				INFOPLIST_FILE = "test-pyramidUITests/Info.plist";
+				INFOPLIST_FILE = TestAutomationExampleE2ETests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.bartlomiejnowak.test-pyramidUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.bartlomiejn.e2e-tests.test-automation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -730,13 +738,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B6NDM93MJT;
-				INFOPLIST_FILE = "test-pyramidUITests/Info.plist";
+				INFOPLIST_FILE = TestAutomationExampleE2ETests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.bartlomiejnowak.test-pyramidUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.bartlomiejn.e2e-tests.test-automation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -750,13 +758,13 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B6NDM93MJT;
-				INFOPLIST_FILE = TestPyramidIntegrationTests/Info.plist;
+				INFOPLIST_FILE = TestAutomationExampleIntegrationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.bartlomiejnowak.TestPyramidIntegrationTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.bartlomiejn.integration-tests.test-automation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -770,13 +778,13 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B6NDM93MJT;
-				INFOPLIST_FILE = TestPyramidIntegrationTests/Info.plist;
+				INFOPLIST_FILE = TestAutomationExampleIntegrationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.bartlomiejnowak.TestPyramidIntegrationTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.bartlomiejn.integration-tests.test-automation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -805,7 +813,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6068EBD521563260004A44DF /* Build configuration list for PBXNativeTarget "TestAutomationExampleTests" */ = {
+		6068EBD521563260004A44DF /* Build configuration list for PBXNativeTarget "TestAutomationExampleUnitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6068EBD621563260004A44DF /* Debug */,
@@ -814,7 +822,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6068EBD821563260004A44DF /* Build configuration list for PBXNativeTarget "TestAutomationExampleUITests" */ = {
+		6068EBD821563260004A44DF /* Build configuration list for PBXNativeTarget "TestAutomationExampleE2ETests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6068EBD921563260004A44DF /* Debug */,
