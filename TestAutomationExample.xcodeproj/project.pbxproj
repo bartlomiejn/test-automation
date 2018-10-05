@@ -332,9 +332,9 @@
 		60A9FF00216B8E66007966A7 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				60A9FEEA216B88C2007966A7 /* XCUIApplication+AuthenticationStub.swift */,
 				60A9FF02216B8E7D007966A7 /* AuthenticationPage.swift */,
 				60A9FF04216B8E80007966A7 /* AuthenticationTests.swift */,
-				60A9FEEA216B88C2007966A7 /* XCUIApplication+AuthenticationStub.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
