@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gSD-h9-1Rq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -17,7 +17,18 @@
                     <view key="view" contentMode="scaleToFill" id="kT7-4j-L2L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VeryNiceGreatSuccess" translatesAutoresizingMaskIntoConstraints="NO" id="eOr-Vs-LXl">
+                                <rect key="frame" x="0.0" y="165.5" width="375" height="356"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eOr-Vs-LXl" firstAttribute="centerX" secondItem="B7H-53-ICA" secondAttribute="centerX" id="3QB-pm-ThC"/>
+                            <constraint firstItem="eOr-Vs-LXl" firstAttribute="centerY" secondItem="B7H-53-ICA" secondAttribute="centerY" id="8Vj-NG-bXM"/>
+                            <constraint firstItem="eOr-Vs-LXl" firstAttribute="leading" secondItem="B7H-53-ICA" secondAttribute="leading" id="SHE-XY-1PO"/>
+                            <constraint firstItem="B7H-53-ICA" firstAttribute="trailing" secondItem="eOr-Vs-LXl" secondAttribute="trailing" id="ZxF-kD-Z67"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="B7H-53-ICA"/>
                     </view>
                 </viewController>
@@ -26,4 +37,7 @@
             <point key="canvasLocation" x="-102" y="86"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="VeryNiceGreatSuccess" width="462" height="356"/>
+    </resources>
 </document>

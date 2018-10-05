@@ -36,6 +36,7 @@ class AuthenticationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Login"
         errorLabelContainer.isHidden = true
         spinner.stopAnimating()
     }

@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         httpClient = HTTPNetworkClient(timeoutInterval: 60.0)
-        mainModule = MainModule(window: window!, httpClient: httpClient, isRunningInTestMode: isAppRunningInTestMode)
+        mainModule = MainModule(window: window!, httpClient: httpClient, isRunningInTestMode: true)
         mainModule.authenticationModule = AuthenticationModule(
             mainModule: mainModule!,
             window: window!,

@@ -1,5 +1,5 @@
 //
-//  AppModule.swift
+//  ModuleProtocol.swift
 //  TestPyramid
 //
 //  Created by Bartłomiej Nowak on 30/09/2018.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol AppModule {
+protocol ModuleProtocol {
     func presentInitialView()
 }

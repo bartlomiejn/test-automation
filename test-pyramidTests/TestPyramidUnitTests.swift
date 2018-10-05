@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import test_pyramid
+@testable import TestPyramid
 
 class TestPyramidUnitTests: XCTestCase {
     

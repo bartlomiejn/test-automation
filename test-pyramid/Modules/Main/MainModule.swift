@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol MainModuleProtocol: class, AppModule {
+protocol MainModuleProtocol: class, ModuleProtocol {
     func presentAppView()
 }
 
@@ -32,7 +32,8 @@ class MainModule: MainModuleProtocol {
     }
     
     func presentAppView() {
-        window.rootViewController = UIStoryboard(name: "Main", bundle: Bundle(for: type(of: self)))
-            .instantiateInitialViewController()
+        let viewController = UIStoryboard(name: "Main", bundle: Bundle(for: type(of: self)))
+            .instantiateInitialViewController()!
+        (window.rootViewController as? UINavigationController)?.pushViewController(viewController, animated: true)
     }
 }
