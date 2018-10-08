@@ -30,7 +30,6 @@
 		6094B2162161239E007AD2A9 /* MainModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6094B2152161239E007AD2A9 /* MainModule.swift */; };
 		6094B2182161241D007AD2A9 /* ModuleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6094B2172161241D007AD2A9 /* ModuleProtocol.swift */; };
 		6094B21B21612513007AD2A9 /* UIWindow+WindowProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6094B21A21612513007AD2A9 /* UIWindow+WindowProtocol.swift */; };
-		60A9FEDD21679999007966A7 /* AuthenticationPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9FEDC21679999007966A7 /* AuthenticationPresenterTests.swift */; };
 		60A9FEE0216B7121007966A7 /* AuthenticationStubGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9FEDF216B7121007966A7 /* AuthenticationStubGenerator.swift */; };
 		60A9FEE3216B7198007966A7 /* PageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9FEE2216B7198007966A7 /* PageObject.swift */; };
 		60A9FF08216B8E98007966A7 /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9FEEC216B89AF007966A7 /* MainPage.swift */; };
@@ -181,6 +180,7 @@
 		6068EBC121563260004A44DF /* TestAutomationExampleUnitTests */ = {
 			isa = PBXGroup;
 			children = (
+				60A9FF13216B9C0C007966A7 /* Disabled */,
 				60A9FEDB2167997F007966A7 /* Authentication */,
 				6068EBC421563260004A44DF /* Info.plist */,
 			);
@@ -274,7 +274,6 @@
 		60A9FEDB2167997F007966A7 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				60A9FEDC21679999007966A7 /* AuthenticationPresenterTests.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -347,6 +346,14 @@
 			children = (
 				60A9FEE5216B747D007966A7 /* AuthenticationPage.swift */,
 				6068EBCD21563260004A44DF /* AuthenticationTests.swift */,
+			);
+			path = Disabled;
+			sourceTree = "<group>";
+		};
+		60A9FF13216B9C0C007966A7 /* Disabled */ = {
+			isa = PBXGroup;
+			children = (
+				60A9FEDC21679999007966A7 /* AuthenticationPresenterTests.swift */,
 			);
 			path = Disabled;
 			sourceTree = "<group>";
@@ -540,7 +547,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60A9FEDD21679999007966A7 /* AuthenticationPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
