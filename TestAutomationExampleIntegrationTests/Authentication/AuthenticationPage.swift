@@ -1,6 +1,6 @@
 //
 //  AuthenticationPage.swift
-//  TestAutomationExampleE2ETests
+//  TestAutomationExampleIntegrationTests
 //
 //  Created by Bartłomiej Nowak on 08/10/2018.
 //  Copyright © 2018 Bartłomiej Nowak. All rights reserved.
@@ -13,7 +13,6 @@ class AuthenticationPage: PageObject {
     override var identyfingElement: XCUIElement {
         return signInButton
     }
-    
     var usernameField: XCUIElement {
         return app.textFields["username_field"]
     }

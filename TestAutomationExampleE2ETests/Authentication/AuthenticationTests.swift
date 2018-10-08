@@ -1,6 +1,6 @@
 //
 //  AuthenticationTests.swift
-//  TestAutomationExampleIntegrationTests
+//  TestAutomationExampleE2ETests
 //
 //  Created by Bartłomiej Nowak on 22.09.2018.
 //  Copyright © 2018 Bartłomiej Nowak. All rights reserved.
