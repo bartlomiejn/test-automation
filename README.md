@@ -9,7 +9,8 @@ An iOS App authenticating with the GitHub API and displays success or failure de
 
 ### Integration tests (XCUITest)
 - Tests integration of the whole application
-- Isolates the application mocking all of its dependencies (API) using built-in mocking infrastructure (`HTTPNetworkClient` \ `StubbedURLSession`)
+- Isolates the application mocking all of its dependencies (API)
+- Uses built-in mocking infrastructure (`HTTPNetworkClient` \ `StubbedURLSession`)
 - Single module example (`AuthenticationTests`) - success and failure cases
 
 ### End to end tests (XCUITest)
@@ -24,3 +25,4 @@ UI test suites use the `PageObject` pattern encapsulating app pages in a class.
   - Extracting a shared framework for UI test suites
   - Moving the shared files to a separate place and referencing them in each test target
 - Built-in infrastructure doesn't allow for mocking of complex behaviour - a mock server would probably be more appropriate for such cases
+- Replace environment vars check in `AppDelegate` with preprocessor directives cutting out all stubbing behaviour from the production version
