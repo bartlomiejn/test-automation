@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var environmentVariables: [String: String] {
         return ProcessInfo.processInfo.environment
     }
-    var isAppRunningInTestMode: Bool {
-        return environmentVariables["XCInjectBundleInto"] != nil
+    var isAppRunningInIntegrationTestMode: Bool {
+        return environmentVariables["IntegrationTests"] == "true"
     }
 
     func application(
@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         httpClient = HTTPNetworkClient(timeoutInterval: 60.0)
-        if isAppRunningInTestMode {
+        if isAppRunningInIntegrationTestMode {
             AppStubGenerator(from: environmentVariables).injectStubs(into: httpClient)
         }
         mainModule = MainModule(window: window!, httpClient: httpClient)

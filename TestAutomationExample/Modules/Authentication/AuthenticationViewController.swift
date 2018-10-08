@@ -21,10 +21,15 @@ protocol AuthenticationViewInterface: class {
 
 class AuthenticationViewController: UIViewController {
 
-    private struct Constant {
+    private enum Constant {
         static let expansionDuration: TimeInterval = 0.25
     }
-    
+    private enum Accessibility {
+        static let usernameField = "username_field"
+        static let passwordField = "pass_field"
+        static let errorLabel = "error_label"
+        static let signInButton = "signin_button"
+    }
     var presenter: AuthenticationPresenterInterface!
     @IBOutlet private (set) weak var usernameField: UITextField!
     @IBOutlet private (set) weak var passwordField: UITextField!
@@ -39,7 +44,14 @@ class AuthenticationViewController: UIViewController {
         navigationItem.title = "Login"
         errorLabelContainer.isHidden = true
         spinner.stopAnimating()
-        signInButton.accessibilityIdentifier = "signin_button"
+        setupAccessibility()
+    }
+    
+    private func setupAccessibility() {
+        usernameField.accessibilityIdentifier = Accessibility.usernameField
+        passwordField.accessibilityIdentifier = Accessibility.passwordField
+        errorLabel.accessibilityIdentifier = Accessibility.errorLabel
+        signInButton.accessibilityIdentifier = Accessibility.signInButton
     }
     
     @IBAction private func textChanged(_ sender: UITextField) {

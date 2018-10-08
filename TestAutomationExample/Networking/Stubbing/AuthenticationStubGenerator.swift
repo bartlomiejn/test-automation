@@ -9,7 +9,8 @@
 import Foundation
 
 enum AuthenticationStub: String {
-    case success
+    case ok
+    case unauthorized
     case none
 }
 
@@ -32,8 +33,10 @@ class AuthenticationStubGenerator: StubGenerator {
     
     func injectStubs(into client: HTTPNetworkClient) {
         switch stub {
-        case .success:
+        case .ok:
             try! client.stub(AuthenticationService.Path.user, .GET, statusCode: 200, body: nil, headers: nil)
+        case .unauthorized:
+            try! client.stub(AuthenticationService.Path.user, .GET, statusCode: 401, body: nil, headers: nil)
         case .none:
             break
         }

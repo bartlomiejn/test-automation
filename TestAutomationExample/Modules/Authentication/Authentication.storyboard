@@ -13,7 +13,7 @@
         <!--Authentication View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="AuthenticationViewController" customModule="TestPyramid" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AuthenticationViewController" customModule="TestAutomationExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,18 +76,21 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jh9-uz-ww0">
                                         <rect key="frame" x="0.0" y="108" width="375" height="54"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="12" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="v6r-ca-oLx">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="12" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="d5w-YR-vnn">
                                                 <rect key="frame" x="144.33333333333334" y="12" width="180.00000000000003" height="30"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="pass_field">
+                                                    <accessibilityTraits key="traits" none="YES"/>
+                                                </accessibility>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="v6r-ca-oLx" secondAttribute="height" multiplier="6" priority="750" id="dyu-la-7VI"/>
-                                                    <constraint firstAttribute="height" constant="30" id="nff-nJ-DAr"/>
+                                                    <constraint firstAttribute="height" constant="30" id="lyb-Rl-duO"/>
+                                                    <constraint firstAttribute="width" secondItem="d5w-YR-vnn" secondAttribute="height" multiplier="6" priority="750" id="oZI-bh-0Al"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="continue" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="continue" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="username"/>
                                                 <connections>
-                                                    <action selector="textChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="Mgb-TI-kv7"/>
-                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Ypy-vH-4KU"/>
+                                                    <action selector="textChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="AQq-9S-0wA"/>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="1Q3-7c-Ss3"/>
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsx-a2-bSe">
@@ -99,13 +102,10 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="d5w-YR-vnn" firstAttribute="top" secondItem="jh9-uz-ww0" secondAttribute="top" constant="12" id="5Ra-lI-0DD"/>
                                             <constraint firstItem="Tsx-a2-bSe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jh9-uz-ww0" secondAttribute="leading" constant="8" id="GL6-by-II4"/>
-                                            <constraint firstAttribute="bottom" secondItem="v6r-ca-oLx" secondAttribute="bottom" constant="12" id="W0v-Dc-VmT"/>
-                                            <constraint firstItem="v6r-ca-oLx" firstAttribute="centerX" secondItem="jh9-uz-ww0" secondAttribute="centerX" multiplier="1.25" id="XEh-AP-FdG"/>
-                                            <constraint firstItem="v6r-ca-oLx" firstAttribute="top" secondItem="jh9-uz-ww0" secondAttribute="top" constant="12" id="feG-uf-9Uy"/>
-                                            <constraint firstItem="Tsx-a2-bSe" firstAttribute="centerY" secondItem="v6r-ca-oLx" secondAttribute="centerY" id="myv-tq-WEG"/>
-                                            <constraint firstItem="v6r-ca-oLx" firstAttribute="leading" secondItem="Tsx-a2-bSe" secondAttribute="trailing" constant="12" id="wCo-XE-Z5V"/>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="v6r-ca-oLx" secondAttribute="trailing" constant="8" id="yc2-OR-qgJ"/>
+                                            <constraint firstItem="Tsx-a2-bSe" firstAttribute="centerY" secondItem="d5w-YR-vnn" secondAttribute="centerY" id="S1Y-DT-Ips"/>
+                                            <constraint firstAttribute="bottom" secondItem="d5w-YR-vnn" secondAttribute="bottom" constant="12" id="g5G-63-ReB"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhZ-Up-QSj">
@@ -151,6 +151,12 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="d5w-YR-vnn" firstAttribute="width" secondItem="gou-HH-v8r" secondAttribute="width" id="9ea-j9-2eL"/>
+                                    <constraint firstItem="Tsx-a2-bSe" firstAttribute="trailing" secondItem="gI6-fk-lKi" secondAttribute="trailing" constant="2.8421709430404007e-14" id="BaB-0K-V2h"/>
+                                    <constraint firstItem="d5w-YR-vnn" firstAttribute="leading" secondItem="gou-HH-v8r" secondAttribute="leading" id="fVJ-Vs-5xs"/>
+                                    <constraint firstItem="d5w-YR-vnn" firstAttribute="trailing" secondItem="gou-HH-v8r" secondAttribute="trailing" id="n7u-4j-2vn"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -165,7 +171,7 @@
                     <connections>
                         <outlet property="errorLabel" destination="tCO-De-lvz" id="i0X-Mm-p91"/>
                         <outlet property="errorLabelContainer" destination="fhZ-Up-QSj" id="Msv-jX-Des"/>
-                        <outlet property="passwordField" destination="v6r-ca-oLx" id="yeY-LK-N7i"/>
+                        <outlet property="passwordField" destination="d5w-YR-vnn" id="0z0-jn-5CN"/>
                         <outlet property="signInButton" destination="rmO-za-g5E" id="cD3-k8-Qwz"/>
                         <outlet property="spinner" destination="Oaq-uv-YSl" id="8wo-iZ-sA9"/>
                         <outlet property="usernameField" destination="gou-HH-v8r" id="66x-vO-9Ai"/>
