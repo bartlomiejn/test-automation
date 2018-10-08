@@ -69,7 +69,7 @@ class AuthenticationPresenter: AuthenticationPresenterInterface {
     private func message(for error: AuthenticationError) -> String {
         switch error {
         case .unrecoverable:
-            return "Unrecoverable error."
+            return "Unrecoverable error."
         case .recoverable(let type):
             switch type {
             case .invalidCredentials:
