@@ -39,6 +39,7 @@ class AuthenticationViewController: UIViewController {
         navigationItem.title = "Login"
         errorLabelContainer.isHidden = true
         spinner.stopAnimating()
+        signInButton.accessibilityIdentifier = "signin_button"
     }
     
     @IBAction private func textChanged(_ sender: UITextField) {

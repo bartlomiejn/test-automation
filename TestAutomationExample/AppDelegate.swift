@@ -16,17 +16,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var mainModule: MainModule!
     var authenticationModule: AuthenticationModule!
     
-    var isAppRunningInTestMode: Bool {
-        return ProcessInfo.processInfo.environment["XCInjectBundleInto"] != nil
+    var environmentVariables: [String: String] {
+        return ProcessInfo.processInfo.environment
     }
-    
+    var isAppRunningInTestMode: Bool {
+        return environmentVariables["XCInjectBundleInto"] != nil
+    }
+
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?
     ) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         httpClient = HTTPNetworkClient(timeoutInterval: 60.0)
-        mainModule = MainModule(window: window!, httpClient: httpClient, isRunningInTestMode: true)
+        if isAppRunningInTestMode {
+            AppStubGenerator(from: environmentVariables).injectStubs(into: httpClient)
+        }
+        mainModule = MainModule(window: window!, httpClient: httpClient)
         mainModule.authenticationModule = AuthenticationModule(
             mainModule: mainModule!,
             window: window!,

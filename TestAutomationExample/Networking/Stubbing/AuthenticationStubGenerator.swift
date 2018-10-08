@@ -1,8 +1,8 @@
 //
 //  AuthenticationStubGenerator.swift
-//  TestPyramid
+//  TestAutomationExample
 //
-//  Created by Bartłomiej Nowak on 30/09/2018.
+//  Created by Bartłomiej Nowak on 08/10/2018.
 //  Copyright © 2018 Bartłomiej Nowak. All rights reserved.
 //
 
@@ -10,23 +10,32 @@ import Foundation
 
 enum AuthenticationStub: String {
     case success
+    case none
 }
 
 class AuthenticationStubGenerator: StubGenerator {
     
+    enum Parameter {
+        static let auth = "auth"
+    }
+    
     let stub: AuthenticationStub
     
-    init?(parameter: String) {
-        guard let stub = AuthenticationStub(rawValue: parameter) else {
-            return nil
+    init(from launchParameters: [String: String]) {
+        if let parameter = launchParameters[Parameter.auth],
+        let stub = AuthenticationStub(rawValue: parameter) {
+            self.stub = stub
+        } else {
+            self.stub = .none
         }
-        self.stub = stub
     }
     
     func injectStubs(into client: HTTPNetworkClient) {
         switch stub {
         case .success:
             try! client.stub(AuthenticationService.Path.user, .GET, statusCode: 200, body: nil, headers: nil)
+        case .none:
+            break
         }
     }
 }

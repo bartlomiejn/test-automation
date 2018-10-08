@@ -12,19 +12,20 @@ protocol MainModuleProtocol: class, ModuleProtocol {
     func presentAppView()
 }
 
+struct AppConfiguration {
+    let isRunningInTestMode: Bool
+    let launchParameters: [String: String]
+}
+
 class MainModule: MainModuleProtocol {
     
     var authenticationModule: AuthenticationModuleProtocol!
-    var isRunningInTestMode = false
     private let window: WindowProtocol
     private let httpClient: HTTPNetworkClient
     
-    init(window: WindowProtocol, httpClient: HTTPNetworkClient, isRunningInTestMode: Bool) {
+    init(window: WindowProtocol, httpClient: HTTPNetworkClient) {
         self.window = window
         self.httpClient = httpClient
-        if isRunningInTestMode {
-            AuthenticationStubGenerator(parameter: "success")?.injectStubs(into: httpClient)
-        }
     }
     
     func presentInitialView() {
