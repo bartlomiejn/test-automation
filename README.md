@@ -18,8 +18,6 @@ An iOS App authenticating with the GitHub API and displays success or failure de
 - Involves both application and the GitHub API
 - Single module example - same as above
 
-UI test suites use the `PageObject` pattern encapsulating app pages in a class.
-
 ### Potential optimizations
 - UI test suites duplicate the same code. Can be solved by:
   - Extracting a shared framework for UI test suites
