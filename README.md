@@ -1,6 +1,6 @@
 # test-automation-ios
 
-An iOS App authenticating with the GitHub API and displays success or failure depending on the result. Used as an example for the `Test Automation in iOS` lecture for the `meet.mobile` meetup in Wroclaw, Poland 10.10.2018.
+An iOS App which attempts to authenticate with the GitHub API and displays success or failure depending on the result. Used as an example for the `Test Automation in iOS` lecture for the `meet.mobile` meetup in Wroclaw, Poland 10.10.2018.
 
 ### Unit test (XCTest)
 - Treating a single class as a unit
