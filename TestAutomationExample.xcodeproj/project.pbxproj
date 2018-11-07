@@ -10,6 +10,8 @@
 		601258F5216119AD003A7FBE /* AuthenticationModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601258F4216119AD003A7FBE /* AuthenticationModule.swift */; };
 		601258F721611B26003A7FBE /* AppStubGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601258F621611B26003A7FBE /* AppStubGenerator.swift */; };
 		601258F921611B3E003A7FBE /* StubGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601258F821611B3E003A7FBE /* StubGenerator.swift */; };
+		6034FFC02192E52100C0BA7D /* URL+ComponentInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034FFBF2192E52100C0BA7D /* URL+ComponentInit.swift */; };
+		6034FFC22192EC6500C0BA7D /* URLComponents+queryItemsDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034FFC12192EC6500C0BA7D /* URLComponents+queryItemsDictionary.swift */; };
 		6068EBAE2156325F004A44DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6068EBAD2156325F004A44DF /* AppDelegate.swift */; };
 		6068EBB521563260004A44DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6068EBB421563260004A44DF /* Assets.xcassets */; };
 		6068EBB821563260004A44DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6068EBB621563260004A44DF /* LaunchScreen.storyboard */; };
@@ -26,6 +28,13 @@
 		6068EC2321563679004A44DF /* URLGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6068EC1C21563679004A44DF /* URLGenerator.swift */; };
 		6068EC2421563679004A44DF /* StubbedURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6068EC1D21563679004A44DF /* StubbedURLSession.swift */; };
 		6068EC2521563679004A44DF /* ModelDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6068EC1E21563679004A44DF /* ModelDecoder.swift */; };
+		607AB6362191CFF00027F93B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607AB6352191CFF00027F93B /* Router.swift */; };
+		607AB63A2191D0AE0027F93B /* StringDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607AB6392191D0AE0027F93B /* StringDictionary.swift */; };
+		607AB63D2191D1DA0027F93B /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607AB63C2191D1DA0027F93B /* Navigator.swift */; };
+		607AB63F2191D23D0027F93B /* UIApplication+ApplicationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607AB63E2191D23D0027F93B /* UIApplication+ApplicationProtocol.swift */; };
+		607AB6412191D4670027F93B /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607AB6402191D4670027F93B /* Route.swift */; };
+		607AB6452192D93F0027F93B /* URL+isHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607AB6442192D93F0027F93B /* URL+isHttp.swift */; };
+		607AB6472192DFB40027F93B /* ModuleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607AB6462192DFB40027F93B /* ModuleManager.swift */; };
 		6094B21121612347007AD2A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6094B21021612347007AD2A9 /* Main.storyboard */; };
 		6094B21321612351007AD2A9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6094B21221612351007AD2A9 /* MainViewController.swift */; };
 		6094B2162161239E007AD2A9 /* MainModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6094B2152161239E007AD2A9 /* MainModule.swift */; };
@@ -72,6 +81,8 @@
 		601258F4216119AD003A7FBE /* AuthenticationModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModule.swift; sourceTree = "<group>"; };
 		601258F621611B26003A7FBE /* AppStubGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStubGenerator.swift; sourceTree = "<group>"; };
 		601258F821611B3E003A7FBE /* StubGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubGenerator.swift; sourceTree = "<group>"; };
+		6034FFBF2192E52100C0BA7D /* URL+ComponentInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+ComponentInit.swift"; sourceTree = "<group>"; };
+		6034FFC12192EC6500C0BA7D /* URLComponents+queryItemsDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+queryItemsDictionary.swift"; sourceTree = "<group>"; };
 		6068EBAA2156325F004A44DF /* TestAutomationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestAutomationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6068EBAD2156325F004A44DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6068EBB421563260004A44DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,6 +105,13 @@
 		6068EC1C21563679004A44DF /* URLGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLGenerator.swift; sourceTree = "<group>"; };
 		6068EC1D21563679004A44DF /* StubbedURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubbedURLSession.swift; sourceTree = "<group>"; };
 		6068EC1E21563679004A44DF /* ModelDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelDecoder.swift; sourceTree = "<group>"; };
+		607AB6352191CFF00027F93B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		607AB6392191D0AE0027F93B /* StringDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringDictionary.swift; sourceTree = "<group>"; };
+		607AB63C2191D1DA0027F93B /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		607AB63E2191D23D0027F93B /* UIApplication+ApplicationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+ApplicationProtocol.swift"; sourceTree = "<group>"; };
+		607AB6402191D4670027F93B /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		607AB6442192D93F0027F93B /* URL+isHttp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+isHttp.swift"; sourceTree = "<group>"; };
+		607AB6462192DFB40027F93B /* ModuleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleManager.swift; sourceTree = "<group>"; };
 		6094B21021612347007AD2A9 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		6094B21221612351007AD2A9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		6094B2152161239E007AD2A9 /* MainModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModule.swift; sourceTree = "<group>"; };
@@ -172,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				6094B219216124FE007AD2A9 /* Auxiliary */,
+				607AB6342191CFE10027F93B /* Core */,
 				6068EC1621563679004A44DF /* Networking */,
 				6068EBE9215635C9004A44DF /* Modules */,
 				6068EBAD2156325F004A44DF /* AppDelegate.swift */,
@@ -205,7 +224,6 @@
 		6068EBE9215635C9004A44DF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				6094B2172161241D007AD2A9 /* ModuleProtocol.swift */,
 				6094B20F21612336007AD2A9 /* Main */,
 				6068EBEA215635D0004A44DF /* Authentication */,
 			);
@@ -256,6 +274,38 @@
 			path = Stubbing;
 			sourceTree = "<group>";
 		};
+		607AB6342191CFE10027F93B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				607AB6462192DFB40027F93B /* ModuleManager.swift */,
+				607AB6352191CFF00027F93B /* Router.swift */,
+				607AB63C2191D1DA0027F93B /* Navigator.swift */,
+				6094B2172161241D007AD2A9 /* ModuleProtocol.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		607AB6422191D4840027F93B /* Typealiases */ = {
+			isa = PBXGroup;
+			children = (
+				607AB6392191D0AE0027F93B /* StringDictionary.swift */,
+				607AB6402191D4670027F93B /* Route.swift */,
+			);
+			path = Typealiases;
+			sourceTree = "<group>";
+		};
+		607AB6432191D48D0027F93B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6094B21A21612513007AD2A9 /* UIWindow+WindowProtocol.swift */,
+				607AB63E2191D23D0027F93B /* UIApplication+ApplicationProtocol.swift */,
+				607AB6442192D93F0027F93B /* URL+isHttp.swift */,
+				6034FFBF2192E52100C0BA7D /* URL+ComponentInit.swift */,
+				6034FFC12192EC6500C0BA7D /* URLComponents+queryItemsDictionary.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		6094B20F21612336007AD2A9 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,7 +319,8 @@
 		6094B219216124FE007AD2A9 /* Auxiliary */ = {
 			isa = PBXGroup;
 			children = (
-				6094B21A21612513007AD2A9 /* UIWindow+WindowProtocol.swift */,
+				607AB6432191D48D0027F93B /* Extensions */,
+				607AB6422191D4840027F93B /* Typealiases */,
 			);
 			path = Auxiliary;
 			sourceTree = "<group>";
@@ -503,23 +554,32 @@
 			files = (
 				6068EC2121563679004A44DF /* HTTPResponseStub.swift in Sources */,
 				6068EC112156364F004A44DF /* AuthenticationInteractor.swift in Sources */,
+				607AB63A2191D0AE0027F93B /* StringDictionary.swift in Sources */,
 				6068EC2221563679004A44DF /* BasicAuthTokenGenerator.swift in Sources */,
+				607AB63D2191D1DA0027F93B /* Navigator.swift in Sources */,
 				601258F921611B3E003A7FBE /* StubGenerator.swift in Sources */,
 				6068EC122156364F004A44DF /* AuthenticationPresenter.swift in Sources */,
 				6068EC2021563679004A44DF /* GitHubNetworkClient.swift in Sources */,
 				601258F5216119AD003A7FBE /* AuthenticationModule.swift in Sources */,
 				6068EC2421563679004A44DF /* StubbedURLSession.swift in Sources */,
 				6068EC1F21563679004A44DF /* HTTPNetworkClient.swift in Sources */,
+				6034FFC22192EC6500C0BA7D /* URLComponents+queryItemsDictionary.swift in Sources */,
 				6068EC2521563679004A44DF /* ModelDecoder.swift in Sources */,
+				607AB6362191CFF00027F93B /* Router.swift in Sources */,
+				607AB63F2191D23D0027F93B /* UIApplication+ApplicationProtocol.swift in Sources */,
+				607AB6472192DFB40027F93B /* ModuleManager.swift in Sources */,
 				6094B2182161241D007AD2A9 /* ModuleProtocol.swift in Sources */,
+				607AB6452192D93F0027F93B /* URL+isHttp.swift in Sources */,
 				6094B21321612351007AD2A9 /* MainViewController.swift in Sources */,
 				6068EC2321563679004A44DF /* URLGenerator.swift in Sources */,
+				6034FFC02192E52100C0BA7D /* URL+ComponentInit.swift in Sources */,
 				6068EC102156364F004A44DF /* AuthenticationViewController.swift in Sources */,
 				6068EBAE2156325F004A44DF /* AppDelegate.swift in Sources */,
 				6068EC152156364F004A44DF /* AuthenticationService.swift in Sources */,
 				601258F721611B26003A7FBE /* AppStubGenerator.swift in Sources */,
 				6094B2162161239E007AD2A9 /* MainModule.swift in Sources */,
 				6094B21B21612513007AD2A9 /* UIWindow+WindowProtocol.swift in Sources */,
+				607AB6412191D4670027F93B /* Route.swift in Sources */,
 				60A9FEE0216B7121007966A7 /* AuthenticationStubGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -707,13 +767,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9FTKHT3TNN;
+				DEVELOPMENT_TEAM = B6NDM93MJT;
 				INFOPLIST_FILE = "$(SRCROOT)/TestAutomationExample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.bartlomiejn.test-automation";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.bartlomiejn.test-automation.modules-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -725,13 +785,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9FTKHT3TNN;
+				DEVELOPMENT_TEAM = B6NDM93MJT;
 				INFOPLIST_FILE = "$(SRCROOT)/TestAutomationExample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.bartlomiejn.test-automation";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.bartlomiejn.test-automation.modules-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

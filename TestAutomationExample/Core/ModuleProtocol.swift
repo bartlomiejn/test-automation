@@ -9,5 +9,7 @@
 import Foundation
 
 protocol ModuleProtocol {
-    func presentInitialView()
+    static var route: Route { get }
+    init(router: RouterProtocol, navigator: NavigatorProtocol)
+    func open(path: String?, parameters: StringDictionary?, callback: ((StringDictionary?) -> Void)?)
 }
