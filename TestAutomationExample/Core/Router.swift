@@ -29,7 +29,7 @@ class Router: RouterProtocol {
             let moduleUrl = URL(
                 schema: applicationScheme,
                 host: module.route,
-                path: parameters?["path"] as? String,
+                path: parameters?[Parameter.path],
                 parameters: parameters
             )
         else {

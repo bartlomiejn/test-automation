@@ -12,33 +12,20 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var httpClient: HTTPNetworkClient!
-    var mainModule: MainModule!
-    var authenticationModule: AuthenticationModule!
+    var mainContainer: MainDependencyContainer!
+    var router: RouterProtocol!
     
-    var environmentVariables: [String: String] {
-        return ProcessInfo.processInfo.environment
-    }
-    var isAppRunningInIntegrationTestMode: Bool {
-        return environmentVariables["IntegrationTests"] == "true"
-    }
-
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?
     ) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        httpClient = HTTPNetworkClient(timeoutInterval: 60.0)
-        if isAppRunningInIntegrationTestMode {
-            AppStubGenerator(from: environmentVariables).injectStubs(into: httpClient)
-        }
-        mainModule = MainModule(window: window!, httpClient: httpClient)
-        mainModule.authenticationModule = AuthenticationModule(
-            mainModule: mainModule!,
-            window: window!,
-            httpClient: httpClient
+        mainContainer = MainDependencyContainer(
+            application: application,
+            environmentVariables: ProcessInfo.processInfo.environment
         )
-        mainModule.presentInitialView()
+        router = mainContainer.router
+        router.open(MainModule.self, parameters: [Parameter.path: MainModule.Path.initial], callback: nil)
         return true
     }
     

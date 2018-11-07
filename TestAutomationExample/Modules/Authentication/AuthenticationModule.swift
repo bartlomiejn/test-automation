@@ -8,44 +8,32 @@
 
 import UIKit
 
-protocol AuthenticationModuleProtocol: class, ModuleProtocol {
+protocol AuthenticationModuleProtocol: AnyObject, ModuleProtocol {
     func authenticationSuccessful()
 }
 
 class AuthenticationModule: AuthenticationModuleProtocol {
     
-    private weak var mainModule: MainModuleProtocol?
-    private let httpClient: HTTPNetworkClient
-    private let window: WindowProtocol
+    static let route = "auth"
+    private let router: RouterProtocol
+    private let navigator: NavigatorProtocol
+    var viewFactory: AuthenticationViewFactory!
     
-    init(mainModule: MainModuleProtocol, window: WindowProtocol, httpClient: HTTPNetworkClient) {
-        self.mainModule = mainModule
-        self.window = window
-        self.httpClient = httpClient
+    // MARK: - ModuleProtocol
+    
+    required init(router: RouterProtocol, navigator: NavigatorProtocol) {
+        self.router = router
+        self.navigator = navigator
     }
     
-    func presentInitialView() {
-        setupWindow(with: initialViewController())
+    func open(path: String?, parameters: StringDictionary?, callback: ((StringDictionary?) -> Void)?) {
+        navigator.present(as: .root, controller: viewFactory.authentication())
+        callback?(nil)
     }
+    
+    // MARK: - AuthenticationModuleProtocol
     
     func authenticationSuccessful() {
-        mainModule?.presentAppView()
-    }
-    
-    private func initialViewController() -> UIViewController {
-        let viewController = UIStoryboard(name: "Authentication", bundle: Bundle(for: type(of: self)))
-            .instantiateInitialViewController() as! AuthenticationViewController
-        let navigationController = UINavigationController(rootViewController: viewController)
-        let client = GitHubNetworkClient(client: httpClient)
-        let service = AuthenticationService(client: client)
-        let interactor = AuthenticationInteractor(service: service)
-        let presenter = AuthenticationPresenter(view: viewController, module: self, interactor: interactor)
-        viewController.presenter = presenter
-        return navigationController
-    }
-    
-    private func setupWindow(with viewController: UIViewController) {
-        window.rootViewController = viewController
-        window.makeKeyAndVisible()
+        router.open(MainModule.self, parameters: [Parameter.path: MainModule.Path.app], callback: nil)
     }
 }

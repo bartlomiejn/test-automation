@@ -17,18 +17,18 @@ protocol AuthenticationPresenterInterface {
 class AuthenticationPresenter: AuthenticationPresenterInterface {
     
     private weak var view: AuthenticationViewInterface?
-    private let module: AuthenticationModuleProtocol
+    private let router: RouterProtocol
     private let interactor: AuthenticationInteractorInterface
     private var currentUsername: String?
     private var currentPassword: String?
     
     init(
+        router: RouterProtocol,
         view: AuthenticationViewInterface,
-        module: AuthenticationModuleProtocol,
         interactor: AuthenticationInteractorInterface
     ) {
+        self.router = router
         self.view = view
-        self.module = module
         self.interactor = interactor
     }
     
@@ -57,7 +57,7 @@ class AuthenticationPresenter: AuthenticationPresenterInterface {
     private func signedIn() {
         view?.enableSignInButton()
         view?.hideSpinner()
-        module.authenticationSuccessful()
+        router.open(AuthenticationModule.self, parameters: [Parameter.path: "success"], callback: nil)
     }
 
     private func handle(_ error: AuthenticationError) {

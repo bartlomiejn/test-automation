@@ -12,33 +12,33 @@ protocol DependencyContainerProtocol {
     func injectDependencies<T>(into object: T)
 }
 
-protocol ModuleManagerProtocol {
-    func add(_ dependencyContainer: DependencyContainerProtocol, for moduleType: ModuleProtocol.Type)
+protocol ModuleManagerProtocol: AnyObject {
     func register(_ moduleType: ModuleProtocol.Type)
+    func register(_ moduleType: ModuleProtocol.Type, with dependencyContainer: DependencyContainerProtocol)
     func getModule(for route: Route) -> ModuleProtocol?
     func get(_ moduleType: ModuleProtocol.Type) -> ModuleProtocol
 }
 
 class ModuleManager: ModuleManagerProtocol {
     
-    private weak var router: RouterProtocol?
+    var router: RouterProtocol!
     private let navigator: NavigatorProtocol
     private var moduleTypes = [ModuleProtocol.Type]()
     private var modules = [Route: ModuleProtocol]()
     private var dependencyContainers = [Route: DependencyContainerProtocol]()
     private let queue = DispatchQueue(label: "Private Router DispatchQueue")
     
-    init(router: RouterProtocol, navigator: NavigatorProtocol) {
-        self.router = router
+    init(navigator: NavigatorProtocol) {
         self.navigator = navigator
-    }
-    
-    func add(_ dependencyContainer: DependencyContainerProtocol, for moduleType: ModuleProtocol.Type) {
-        dependencyContainers[moduleType.route] = dependencyContainer
     }
     
     func register(_ moduleType: ModuleProtocol.Type) {
         moduleTypes.append(moduleType)
+    }
+    
+    func register(_ moduleType: ModuleProtocol.Type, with dependencyContainer: DependencyContainerProtocol) {
+        register(moduleType)
+        dependencyContainers[moduleType.route] = dependencyContainer
     }
     
     func getModule(for route: Route) -> ModuleProtocol? {
@@ -50,9 +50,6 @@ class ModuleManager: ModuleManagerProtocol {
     }
     
     func get(_ moduleType: ModuleProtocol.Type) -> ModuleProtocol {
-        guard let router = router else {
-            fatalError("Router is unavailable.")
-        }
         if let module = getModule(for: moduleType.route) {
             return module
         } else {

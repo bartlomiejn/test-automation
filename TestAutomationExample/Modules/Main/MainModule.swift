@@ -8,33 +8,36 @@
 
 import UIKit
 
-protocol MainModuleProtocol: class, ModuleProtocol {
-    func presentAppView()
-}
+class MainModule: ModuleProtocol {
 
-struct AppConfiguration {
-    let isRunningInTestMode: Bool
-    let launchParameters: [String: String]
-}
-
-class MainModule: MainModuleProtocol {
+    enum Path {
+        static let initial = "/initial_view"
+        static let app = "/app_view"
+    }
+    static let route = "main"
+    private let router: RouterProtocol
+    private let navigator: NavigatorProtocol
     
-    var authenticationModule: AuthenticationModuleProtocol!
-    private let window: WindowProtocol
-    private let httpClient: HTTPNetworkClient
-    
-    init(window: WindowProtocol, httpClient: HTTPNetworkClient) {
-        self.window = window
-        self.httpClient = httpClient
+    required init(router: RouterProtocol, navigator: NavigatorProtocol) {
+        self.router = router
+        self.navigator = navigator
     }
     
-    func presentInitialView() {
-        authenticationModule.presentInitialView()
+    func open(path: String?, parameters: StringDictionary?, callback: ((StringDictionary?) -> Void)?) {
+        switch path {
+        case Path.initial:
+            router.open(AuthenticationModule.self, parameters: nil, callback: callback)
+        case Path.app:
+            presentAppView(callback: callback)
+        default:
+            callback?(nil)
+        }
     }
     
-    func presentAppView() {
+    func presentAppView(callback: ((StringDictionary?) -> Void)?) {
         let viewController = UIStoryboard(name: "Main", bundle: Bundle(for: type(of: self)))
             .instantiateInitialViewController()!
-        (window.rootViewController as? UINavigationController)?.pushViewController(viewController, animated: true)
+        navigator.present(as: .navigationStack, controller: viewController)
+        callback?(nil)
     }
 }
