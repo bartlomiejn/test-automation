@@ -13,7 +13,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var mainContainer: MainDependencyContainer!
+    var mainContainer: AppDependencyContainer!
     var router: RouterProtocol!
     
     func application(
@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UIViewController()
         window?.makeKeyAndVisible()
-        mainContainer = MainDependencyContainer(
+        mainContainer = AppDependencyContainer(
             application: application,
             environmentVariables: ProcessInfo.processInfo.environment
         )

@@ -10,7 +10,7 @@ import Core
 import Networking
 import Authentication
 
-class MainDependencyContainer {
+class AppDependencyContainer {
     
     lazy var authenticationContainer = AuthenticationDependencyContainer(router: router, networkClient: networkClient)
     lazy var router: RouterProtocol = Router(navigator: navigator, moduleManager: moduleManager)
