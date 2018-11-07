@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:TestingDummyApp/TestingDummyApp.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Testing/Testing.xcodeproj">
    </FileRef>
    <FileRef

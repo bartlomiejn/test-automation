@@ -10,21 +10,21 @@ import Core
 import Networking
 import UIKit
 
-protocol AuthenticationViewFactoryProtocol {
+public protocol AuthenticationViewFactoryProtocol {
     func authentication() -> UIViewController
 }
 
-class AuthenticationViewFactory: AuthenticationViewFactoryProtocol {
+public class AuthenticationViewFactory: AuthenticationViewFactoryProtocol {
     
     private let router: RouterProtocol
     private let networkClient: GitHubNetworkClient
     
-    init(router: RouterProtocol, networkClient: GitHubNetworkClient) {
+    public init(router: RouterProtocol, networkClient: GitHubNetworkClient) {
         self.router = router
         self.networkClient = networkClient
     }
     
-    func authentication() -> UIViewController {
+    public func authentication() -> UIViewController {
         let viewController = UIStoryboard(name: "Authentication", bundle: Bundle(for: type(of: self)))
             .instantiateInitialViewController() as! AuthenticationViewController
         let service = AuthenticationService(client: networkClient)

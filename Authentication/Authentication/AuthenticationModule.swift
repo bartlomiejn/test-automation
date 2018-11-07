@@ -11,13 +11,13 @@ import UIKit
 
 public class AuthenticationModule: ModuleProtocol {
     
-    enum Path {
-        static let success = "/success"
+    public enum Path {
+        public static let success = "/success"
     }
     public static let route = "auth"
     private let router: RouterProtocol
     private let navigator: NavigatorProtocol
-    var viewFactory: AuthenticationViewFactory!
+    public var viewFactory: AuthenticationViewFactory!
     
     public required init(router: RouterProtocol, navigator: NavigatorProtocol) {
         self.router = router

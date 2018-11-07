@@ -11,6 +11,12 @@
 		603400A321930A5000C0BA7D /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6034FFF12193021F00C0BA7D /* Authentication.storyboard */; };
 		603400A621930A5B00C0BA7D /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603400A521930A5B00C0BA7D /* Core.framework */; };
 		603400A821930A5B00C0BA7D /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603400A721930A5B00C0BA7D /* Networking.framework */; };
+		6034013221931C2600C0BA7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034013121931C2600C0BA7D /* AppDelegate.swift */; };
+		6034013921931C2800C0BA7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6034013821931C2800C0BA7D /* Assets.xcassets */; };
+		6034013C21931C2800C0BA7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6034013A21931C2800C0BA7D /* LaunchScreen.storyboard */; };
+		6034014121931C5800C0BA7D /* Authentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6034FFD6219301DB00C0BA7D /* Authentication.framework */; };
+		6034014321931D7A00C0BA7D /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6034014221931D7A00C0BA7D /* Core.framework */; };
+		603401452193222200C0BA7D /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603401442193222200C0BA7D /* Networking.framework */; };
 		6034FFE0219301DB00C0BA7D /* Authentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6034FFD6219301DB00C0BA7D /* Authentication.framework */; };
 		6034FFE7219301DB00C0BA7D /* Authentication.h in Headers */ = {isa = PBXBuildFile; fileRef = 6034FFD9219301DB00C0BA7D /* Authentication.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6034FFF82193022100C0BA7D /* AuthenticationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034FFF02193021F00C0BA7D /* AuthenticationPresenter.swift */; };
@@ -36,6 +42,13 @@
 		6034007F2193062F00C0BA7D /* AuthenticationStubGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationStubGenerator.swift; sourceTree = "<group>"; };
 		603400A521930A5B00C0BA7D /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		603400A721930A5B00C0BA7D /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6034012F21931C2600C0BA7D /* AuthenticationDummyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuthenticationDummyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6034013121931C2600C0BA7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6034013821931C2800C0BA7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6034013B21931C2800C0BA7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6034013D21931C2800C0BA7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6034014221931D7A00C0BA7D /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		603401442193222200C0BA7D /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6034FFD6219301DB00C0BA7D /* Authentication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Authentication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6034FFD9219301DB00C0BA7D /* Authentication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Authentication.h; sourceTree = "<group>"; };
 		6034FFDA219301DB00C0BA7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,6 +65,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6034012C21931C2600C0BA7D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6034014321931D7A00C0BA7D /* Core.framework in Frameworks */,
+				603401452193222200C0BA7D /* Networking.framework in Frameworks */,
+				6034014121931C5800C0BA7D /* Authentication.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6034FFD3219301DB00C0BA7D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -75,10 +98,23 @@
 		603400A421930A5B00C0BA7D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				603401442193222200C0BA7D /* Networking.framework */,
+				6034014221931D7A00C0BA7D /* Core.framework */,
 				603400A521930A5B00C0BA7D /* Core.framework */,
 				603400A721930A5B00C0BA7D /* Networking.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6034013021931C2600C0BA7D /* AuthenticationDummyApp */ = {
+			isa = PBXGroup;
+			children = (
+				6034013121931C2600C0BA7D /* AppDelegate.swift */,
+				6034013821931C2800C0BA7D /* Assets.xcassets */,
+				6034013A21931C2800C0BA7D /* LaunchScreen.storyboard */,
+				6034013D21931C2800C0BA7D /* Info.plist */,
+			);
+			path = AuthenticationDummyApp;
 			sourceTree = "<group>";
 		};
 		6034FFCC219301DB00C0BA7D = {
@@ -86,6 +122,7 @@
 			children = (
 				6034FFD8219301DB00C0BA7D /* Authentication */,
 				6034FFE3219301DB00C0BA7D /* AuthenticationTests */,
+				6034013021931C2600C0BA7D /* AuthenticationDummyApp */,
 				6034FFD7219301DB00C0BA7D /* Products */,
 				603400A421930A5B00C0BA7D /* Frameworks */,
 			);
@@ -96,6 +133,7 @@
 			children = (
 				6034FFD6219301DB00C0BA7D /* Authentication.framework */,
 				6034FFDF219301DB00C0BA7D /* AuthenticationTests.xctest */,
+				6034012F21931C2600C0BA7D /* AuthenticationDummyApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,6 +178,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		6034012E21931C2600C0BA7D /* AuthenticationDummyApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6034013E21931C2800C0BA7D /* Build configuration list for PBXNativeTarget "AuthenticationDummyApp" */;
+			buildPhases = (
+				6034012B21931C2600C0BA7D /* Sources */,
+				6034012C21931C2600C0BA7D /* Frameworks */,
+				6034012D21931C2600C0BA7D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AuthenticationDummyApp;
+			productName = AuthenticationDummyApp;
+			productReference = 6034012F21931C2600C0BA7D /* AuthenticationDummyApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 		6034FFD5219301DB00C0BA7D /* Authentication */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6034FFEA219301DB00C0BA7D /* Build configuration list for PBXNativeTarget "Authentication" */;
@@ -186,6 +241,9 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Bartlomiej Nowak";
 				TargetAttributes = {
+					6034012E21931C2600C0BA7D = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					6034FFD5219301DB00C0BA7D = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -200,6 +258,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 6034FFCC219301DB00C0BA7D;
 			productRefGroup = 6034FFD7219301DB00C0BA7D /* Products */;
@@ -208,11 +267,21 @@
 			targets = (
 				6034FFD5219301DB00C0BA7D /* Authentication */,
 				6034FFDE219301DB00C0BA7D /* AuthenticationTests */,
+				6034012E21931C2600C0BA7D /* AuthenticationDummyApp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6034012D21931C2600C0BA7D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6034013C21931C2800C0BA7D /* LaunchScreen.storyboard in Resources */,
+				6034013921931C2800C0BA7D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6034FFD4219301DB00C0BA7D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -231,6 +300,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6034012B21931C2600C0BA7D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6034013221931C2600C0BA7D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6034FFD2219301DB00C0BA7D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -263,7 +340,54 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		6034013A21931C2800C0BA7D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6034013B21931C2800C0BA7D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		6034013F21931C2800C0BA7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B6NDM93MJT;
+				INFOPLIST_FILE = AuthenticationDummyApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.bartlomiejnowak.modules-ui-tests.AuthenticationDummyApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6034014021931C2800C0BA7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B6NDM93MJT;
+				INFOPLIST_FILE = AuthenticationDummyApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.bartlomiejnowak.modules-ui-tests.AuthenticationDummyApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		6034FFE8219301DB00C0BA7D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -479,6 +603,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6034013E21931C2800C0BA7D /* Build configuration list for PBXNativeTarget "AuthenticationDummyApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6034013F21931C2800C0BA7D /* Debug */,
+				6034014021931C2800C0BA7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6034FFD0219301DB00C0BA7D /* Build configuration list for PBXProject "Authentication" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
