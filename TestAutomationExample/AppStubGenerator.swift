@@ -12,7 +12,7 @@ import Authentication
 
 public class AppStubGenerator: StubGenerator {
 
-    public let authStubGenerator: AuthenticationStubGenerator
+    public let stubGenerators = [StubGenerator]()
     
     public init(from launchParameters: [String: String]) {
         self.authStubGenerator = AuthenticationStubGenerator(from: launchParameters)

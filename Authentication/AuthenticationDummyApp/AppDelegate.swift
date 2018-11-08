@@ -27,8 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         setupWindow()
-        let networkClient = HTTPNetworkClient(timeoutInterval: 60.0)
-        module = authenticationModule(application: application, networkClient: networkClient)
+        module = authenticationModule(
+            application: application,
+            networkClient: networkClient(with: ProcessInfo.processInfo.environment)
+        )
         module.open(path: nil, parameters: nil, callback: nil)
         return true
     }
@@ -43,12 +45,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
     }
     
+    private func networkClient(with environmentVariables: [String: String]) -> HTTPNetworkClient {
+        let networkClient = HTTPNetworkClient(timeoutInterval: 60.0)
+        if environmentVariables["IntegrationTests"] == "true" {
+            AuthenticationStubGenerator(from: environmentVariables).injectStubs(into: networkClient)
+        }
+        return networkClient
+    }
+    
     private func authenticationModule(
         application: UIApplication,
         networkClient: HTTPNetworkClient
     ) -> AuthenticationModule {
         let router = DummyRouter()
-        let networkClient = HTTPNetworkClient(timeoutInterval: 60.0)
         let gitHubClient = GitHubNetworkClient(client: networkClient)
         let viewFactory = AuthenticationViewFactory(router: router, networkClient: gitHubClient)
         let module = AuthenticationModule(router: router, navigator: Navigator(application: application))
