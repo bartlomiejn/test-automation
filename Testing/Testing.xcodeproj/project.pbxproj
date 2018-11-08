@@ -8,20 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		603400D02193141200C0BA7D /* Testing.h in Headers */ = {isa = PBXBuildFile; fileRef = 603400C22193141200C0BA7D /* Testing.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		603400E0219314C800C0BA7D /* XCUIApplication+LaunchForIntegrationTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603400DE219314C800C0BA7D /* XCUIApplication+LaunchForIntegrationTesting.swift */; };
-		603400E1219314C800C0BA7D /* PageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603400DF219314C800C0BA7D /* PageObject.swift */; };
-		603400E4219314D000C0BA7D /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603400E2219314CF00C0BA7D /* MainPage.swift */; };
-		603400E5219314D000C0BA7D /* AuthenticationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603400E3219314CF00C0BA7D /* AuthenticationPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		603400BF2193141200C0BA7D /* Testing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Testing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		603400C22193141200C0BA7D /* Testing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Testing.h; sourceTree = "<group>"; };
 		603400C32193141200C0BA7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		603400DE219314C800C0BA7D /* XCUIApplication+LaunchForIntegrationTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+LaunchForIntegrationTesting.swift"; sourceTree = "<group>"; };
-		603400DF219314C800C0BA7D /* PageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageObject.swift; sourceTree = "<group>"; };
-		603400E2219314CF00C0BA7D /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
-		603400E3219314CF00C0BA7D /* AuthenticationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationPage.swift; sourceTree = "<group>"; };
+		60D37C22219445C80044A2D1 /* PageObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageObject.swift; sourceTree = "<group>"; };
+		60D37C23219445C80044A2D1 /* UITestsApplicationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestsApplicationProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,22 +48,12 @@
 		603400C12193141200C0BA7D /* Testing */ = {
 			isa = PBXGroup;
 			children = (
-				603400D92193149F00C0BA7D /* PageObjects */,
-				603400DF219314C800C0BA7D /* PageObject.swift */,
-				603400DE219314C800C0BA7D /* XCUIApplication+LaunchForIntegrationTesting.swift */,
+				60D37C22219445C80044A2D1 /* PageObject.swift */,
+				60D37C23219445C80044A2D1 /* UITestsApplicationProtocol.swift */,
 				603400C22193141200C0BA7D /* Testing.h */,
 				603400C32193141200C0BA7D /* Info.plist */,
 			);
 			path = Testing;
-			sourceTree = "<group>";
-		};
-		603400D92193149F00C0BA7D /* PageObjects */ = {
-			isa = PBXGroup;
-			children = (
-				603400E2219314CF00C0BA7D /* MainPage.swift */,
-				603400E3219314CF00C0BA7D /* AuthenticationPage.swift */,
-			);
-			path = PageObjects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -116,6 +100,7 @@
 				TargetAttributes = {
 					603400BE2193141200C0BA7D = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -151,10 +136,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				603400E5219314D000C0BA7D /* AuthenticationPage.swift in Sources */,
-				603400E0219314C800C0BA7D /* XCUIApplication+LaunchForIntegrationTesting.swift in Sources */,
-				603400E1219314C800C0BA7D /* PageObject.swift in Sources */,
-				603400E4219314D000C0BA7D /* MainPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +267,7 @@
 		603400D42193141200C0BA7D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -304,6 +286,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.bartlomiejnowak.modules-ui-tests.testing";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -312,6 +295,7 @@
 		603400D52193141200C0BA7D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;

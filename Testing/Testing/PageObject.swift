@@ -1,12 +1,16 @@
 //
 //  PageObject.swift
-//  TestAutomationExampleIntegrationTests
+//  Testing
 //
 //  Created by Bartłomiej Nowak on 08/10/2018.
 //  Copyright © 2018 Bartłomiej Nowak. All rights reserved.
 //
 
 import XCTest
+
+protocol UIElementProtocol {
+    func waitForExistence(timeout: TimeInterval) -> Bool
+}
 
 class PageObject {
     

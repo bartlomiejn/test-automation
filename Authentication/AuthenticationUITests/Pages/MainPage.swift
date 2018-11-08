@@ -8,9 +8,9 @@
 
 import XCTest
 
-public class MainPage: PageObject {
+class MainPage: PageObject {
     
-    public override var identyfingElement: XCUIElement {
+    override var identyfingElement: XCUIElement {
         return app.images.firstMatch
     }
 }

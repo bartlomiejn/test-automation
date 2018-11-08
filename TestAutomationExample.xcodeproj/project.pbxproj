@@ -32,12 +32,6 @@
 		6094B21321612351007AD2A9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6094B21221612351007AD2A9 /* MainViewController.swift */; };
 		6094B2162161239E007AD2A9 /* MainModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6094B2152161239E007AD2A9 /* MainModule.swift */; };
 		60A9FEDD21679999007966A7 /* AuthenticationPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9FEDC21679999007966A7 /* AuthenticationPresenterTests.swift */; };
-		60A9FEE3216B7198007966A7 /* PageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9FEE2216B7198007966A7 /* PageObject.swift */; };
-		60A9FEE6216B747D007966A7 /* AuthenticationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9FEE5216B747D007966A7 /* AuthenticationPage.swift */; };
-		60A9FF0B216B8E9E007966A7 /* AuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9FF04216B8E80007966A7 /* AuthenticationTests.swift */; };
-		60A9FF0C216B8E9E007966A7 /* XCUIApplication+AuthenticationStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9FEEA216B88C2007966A7 /* XCUIApplication+AuthenticationStub.swift */; };
-		60A9FF0D216B8E9E007966A7 /* PageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9FF06216B8E84007966A7 /* PageObject.swift */; };
-		60A9FF0E216B8E9E007966A7 /* XCUIApplication+LaunchForIntegrationTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9FEEF216B8A32007966A7 /* XCUIApplication+LaunchForIntegrationTesting.swift */; };
 		60A9FF10216B8F0C007966A7 /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9FF01216B8E70007966A7 /* MainPage.swift */; };
 /* End PBXBuildFile section */
 
@@ -101,15 +95,9 @@
 		6094B21221612351007AD2A9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		6094B2152161239E007AD2A9 /* MainModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModule.swift; sourceTree = "<group>"; };
 		60A9FEDC21679999007966A7 /* AuthenticationPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationPresenterTests.swift; sourceTree = "<group>"; };
-		60A9FEE2216B7198007966A7 /* PageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageObject.swift; sourceTree = "<group>"; };
-		60A9FEE5216B747D007966A7 /* AuthenticationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationPage.swift; sourceTree = "<group>"; };
-		60A9FEEA216B88C2007966A7 /* XCUIApplication+AuthenticationStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+AuthenticationStub.swift"; sourceTree = "<group>"; };
-		60A9FEEF216B8A32007966A7 /* XCUIApplication+LaunchForIntegrationTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "XCUIApplication+LaunchForIntegrationTesting.swift"; path = "Testing/Testing/XCUIApplication+LaunchForIntegrationTesting.swift"; sourceTree = SOURCE_ROOT; };
 		60A9FEF5216B8E3E007966A7 /* TestAutomationExampleIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAutomationExampleIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60A9FEF9216B8E3E007966A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60A9FF01216B8E70007966A7 /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
-		60A9FF04216B8E80007966A7 /* AuthenticationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTests.swift; sourceTree = "<group>"; };
-		60A9FF06216B8E84007966A7 /* PageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PageObject.swift; path = ../Testing/Testing/PageObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,9 +203,8 @@
 		6068EBCC21563260004A44DF /* TestAutomationExampleE2ETests */ = {
 			isa = PBXGroup;
 			children = (
-				60A9FEEE216B89CC007966A7 /* Main */,
-				60A9FEE8216B749A007966A7 /* Authentication */,
-				60A9FEE2216B7198007966A7 /* PageObject.swift */,
+				60A9FF01216B8E70007966A7 /* MainPage.swift */,
+				6068EBCD21563260004A44DF /* AuthenticationTests.swift */,
 				6068EBCF21563260004A44DF /* Info.plist */,
 			);
 			path = TestAutomationExampleE2ETests;
@@ -241,41 +228,12 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
-		60A9FEE8216B749A007966A7 /* Authentication */ = {
-			isa = PBXGroup;
-			children = (
-				60A9FEE5216B747D007966A7 /* AuthenticationPage.swift */,
-				6068EBCD21563260004A44DF /* AuthenticationTests.swift */,
-			);
-			path = Authentication;
-			sourceTree = "<group>";
-		};
-		60A9FEEE216B89CC007966A7 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				60A9FF01216B8E70007966A7 /* MainPage.swift */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
 		60A9FEF6216B8E3E007966A7 /* TestAutomationExampleIntegrationTests */ = {
 			isa = PBXGroup;
 			children = (
-				60A9FF00216B8E66007966A7 /* Authentication */,
-				60A9FF06216B8E84007966A7 /* PageObject.swift */,
-				60A9FEEF216B8A32007966A7 /* XCUIApplication+LaunchForIntegrationTesting.swift */,
 				60A9FEF9216B8E3E007966A7 /* Info.plist */,
 			);
 			path = TestAutomationExampleIntegrationTests;
-			sourceTree = "<group>";
-		};
-		60A9FF00216B8E66007966A7 /* Authentication */ = {
-			isa = PBXGroup;
-			children = (
-				60A9FEEA216B88C2007966A7 /* XCUIApplication+AuthenticationStub.swift */,
-				60A9FF04216B8E80007966A7 /* AuthenticationTests.swift */,
-			);
-			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -461,8 +419,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6068EBCE21563260004A44DF /* AuthenticationTests.swift in Sources */,
-				60A9FEE3216B7198007966A7 /* PageObject.swift in Sources */,
-				60A9FEE6216B747D007966A7 /* AuthenticationPage.swift in Sources */,
 				60A9FF10216B8F0C007966A7 /* MainPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,10 +427,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60A9FF0D216B8E9E007966A7 /* PageObject.swift in Sources */,
-				60A9FF0E216B8E9E007966A7 /* XCUIApplication+LaunchForIntegrationTesting.swift in Sources */,
-				60A9FF0C216B8E9E007966A7 /* XCUIApplication+AuthenticationStub.swift in Sources */,
-				60A9FF0B216B8E9E007966A7 /* AuthenticationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

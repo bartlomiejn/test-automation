@@ -48,6 +48,20 @@
                ReferencedContainer = "container:Authentication.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "60D37BE62194295A0044A2D1"
+               BuildableName = "AuthenticationUITests.xctest"
+               BlueprintName = "AuthenticationUITests"
+               ReferencedContainer = "container:Authentication.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -60,9 +74,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6034FFDE219301DB00C0BA7D"
-               BuildableName = "AuthenticationTests.xctest"
-               BlueprintName = "AuthenticationTests"
+               BlueprintIdentifier = "60D37BE62194295A0044A2D1"
+               BuildableName = "AuthenticationUITests.xctest"
+               BlueprintName = "AuthenticationUITests"
                ReferencedContainer = "container:Authentication.xcodeproj">
             </BuildableReference>
          </TestableReference>
