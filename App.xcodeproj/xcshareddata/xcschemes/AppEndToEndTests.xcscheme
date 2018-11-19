@@ -17,9 +17,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6068EBC821563260004A44DF"
-               BuildableName = "TestAutomationExampleEndToEndTests.xctest"
-               BlueprintName = "TestAutomationExampleEndToEndTests"
-               ReferencedContainer = "container:TestAutomationExample.xcodeproj">
+               BuildableName = "AppEndToEndTests.xctest"
+               BlueprintName = "AppEndToEndTests"
+               ReferencedContainer = "container:App.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

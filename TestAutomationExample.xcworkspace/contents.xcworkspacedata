@@ -14,6 +14,6 @@
       location = "group:Main/Main.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:TestAutomationExample.xcodeproj">
+      location = "group:/Users/bartlomiej.nowak/Development/iOS/test-pyramid/App.xcodeproj">
    </FileRef>
 </Workspace>

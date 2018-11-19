@@ -71,9 +71,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6068EBA92156325F004A44DF"
-               BuildableName = "TestAutomationExample.app"
-               BlueprintName = "TestAutomationExample"
-               ReferencedContainer = "container:TestAutomationExample.xcodeproj">
+               BuildableName = "App.app"
+               BlueprintName = "App"
+               ReferencedContainer = "container:App.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -117,9 +117,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6068EBC821563260004A44DF"
-               BuildableName = "TestAutomationExampleEndToEndTests.xctest"
-               BlueprintName = "TestAutomationExampleEndToEndTests"
-               ReferencedContainer = "container:TestAutomationExample.xcodeproj">
+               BuildableName = "AppEndToEndTests.xctest"
+               BlueprintName = "AppEndToEndTests"
+               ReferencedContainer = "container:App.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -147,9 +147,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6068EBA92156325F004A44DF"
-            BuildableName = "TestAutomationExample.app"
-            BlueprintName = "TestAutomationExample"
-            ReferencedContainer = "container:TestAutomationExample.xcodeproj">
+            BuildableName = "App.app"
+            BlueprintName = "App"
+            ReferencedContainer = "container:App.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -170,9 +170,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6068EBA92156325F004A44DF"
-            BuildableName = "TestAutomationExample.app"
-            BlueprintName = "TestAutomationExample"
-            ReferencedContainer = "container:TestAutomationExample.xcodeproj">
+            BuildableName = "App.app"
+            BlueprintName = "App"
+            ReferencedContainer = "container:App.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -189,9 +189,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6068EBA92156325F004A44DF"
-            BuildableName = "TestAutomationExample.app"
-            BlueprintName = "TestAutomationExample"
-            ReferencedContainer = "container:TestAutomationExample.xcodeproj">
+            BuildableName = "App.app"
+            BlueprintName = "App"
+            ReferencedContainer = "container:App.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
