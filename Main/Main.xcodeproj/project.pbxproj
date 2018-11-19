@@ -13,6 +13,7 @@
 		6041138321A321CF00C3307C /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6041138221A321CF00C3307C /* Core.framework */; };
 		6041138521A3227400C3307C /* Authentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6041138421A3227400C3307C /* Authentication.framework */; };
 		6041139D21A329DA00C3307C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6041137D21A3212400C3307C /* Main.storyboard */; };
+		6041139F21A32A2100C3307C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6041139E21A32A2100C3307C /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		6041137E21A3212400C3307C /* MainModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModule.swift; sourceTree = "<group>"; };
 		6041138221A321CF00C3307C /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6041138421A3227400C3307C /* Authentication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Authentication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6041139E21A32A2100C3307C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				6041137E21A3212400C3307C /* MainModule.swift */,
 				6041137D21A3212400C3307C /* Main.storyboard */,
 				6041137421A3210F00C3307C /* Main.h */,
+				6041139E21A32A2100C3307C /* Assets.xcassets */,
 				6041137521A3210F00C3307C /* Info.plist */,
 			);
 			path = Main;
@@ -145,6 +148,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6041139F21A32A2100C3307C /* Assets.xcassets in Resources */,
 				6041139D21A329DA00C3307C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
