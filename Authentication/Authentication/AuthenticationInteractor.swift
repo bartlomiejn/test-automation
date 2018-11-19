@@ -1,6 +1,6 @@
 //
 //  AuthenticationActions.swift
-//  redux-swift
+//  Authentication
 //
 //  Created by Bartłomiej Nowak on 04.05.2018.
 //  Copyright © 2018 Bartłomiej Nowak. All rights reserved.

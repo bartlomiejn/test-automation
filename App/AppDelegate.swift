@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  test-pyramid
+//  App
 //
 //  Created by Bartłomiej Nowak on 22.09.2018.
 //  Copyright © 2018 Bartłomiej Nowak. All rights reserved.
@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     
     func application(
         _ application: UIApplication,
-        didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UIViewController()
