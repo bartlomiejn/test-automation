@@ -35,7 +35,7 @@
 		607F1FC421A33A7700DAFD86 /* PageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607F1FC021A33A7700DAFD86 /* PageObject.swift */; };
 		607F1FC521A33A7700DAFD86 /* AuthenticationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607F1FC221A33A7700DAFD86 /* AuthenticationPage.swift */; };
 		607F1FC621A33A7700DAFD86 /* UITestsApplicationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607F1FC321A33A7700DAFD86 /* UITestsApplicationProtocol.swift */; };
-		60D37C21219445A50044A2D1 /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D37C1F219445A40044A2D1 /* MainPage.swift */; };
+		607F1FD021A3413F00DAFD86 /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607F1FCF21A3413F00DAFD86 /* MainPage.swift */; };
 		60D37C32219447A40044A2D1 /* Authentication.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6034FFD6219301DB00C0BA7D /* Authentication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -108,10 +108,9 @@
 		607F1FC021A33A7700DAFD86 /* PageObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageObject.swift; path = ../../Shared/PageObject.swift; sourceTree = "<group>"; };
 		607F1FC221A33A7700DAFD86 /* AuthenticationPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationPage.swift; sourceTree = "<group>"; };
 		607F1FC321A33A7700DAFD86 /* UITestsApplicationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITestsApplicationProtocol.swift; path = ../../Shared/UITestsApplicationProtocol.swift; sourceTree = "<group>"; };
+		607F1FCF21A3413F00DAFD86 /* MainPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
 		60D37BE72194295A0044A2D1 /* AuthenticationIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuthenticationIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60D37BEB2194295A0044A2D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		60D37C1E219445A40044A2D1 /* AuthenticationPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationPage.swift; sourceTree = "<group>"; };
-		60D37C1F219445A40044A2D1 /* MainPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				607F1FC221A33A7700DAFD86 /* AuthenticationPage.swift */,
+				607F1FCF21A3413F00DAFD86 /* MainPage.swift */,
 			);
 			name = PageObjects;
 			path = ../../Shared/PageObjects;
@@ -252,7 +252,6 @@
 			isa = PBXGroup;
 			children = (
 				60D37C1D219444100044A2D1 /* Shared */,
-				60D37C2A219447310044A2D1 /* Pages */,
 				604113AD21A3361400C3307C /* AuthenticationTests.swift */,
 				604113AE21A3361400C3307C /* XCUIApplication+AuthenticationStub.swift */,
 				60D37BEB2194295A0044A2D1 /* Info.plist */,
@@ -269,15 +268,6 @@
 			);
 			name = Shared;
 			path = ../../Testing/Testing;
-			sourceTree = "<group>";
-		};
-		60D37C2A219447310044A2D1 /* Pages */ = {
-			isa = PBXGroup;
-			children = (
-				60D37C1E219445A40044A2D1 /* AuthenticationPage.swift */,
-				60D37C1F219445A40044A2D1 /* MainPage.swift */,
-			);
-			path = Pages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,8 +478,8 @@
 				607F1FC521A33A7700DAFD86 /* AuthenticationPage.swift in Sources */,
 				604113B021A3361400C3307C /* XCUIApplication+AuthenticationStub.swift in Sources */,
 				604113AF21A3361400C3307C /* AuthenticationTests.swift in Sources */,
-				60D37C21219445A50044A2D1 /* MainPage.swift in Sources */,
 				607F1FC621A33A7700DAFD86 /* UITestsApplicationProtocol.swift in Sources */,
+				607F1FD021A3413F00DAFD86 /* MainPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

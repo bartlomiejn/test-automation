@@ -28,7 +28,7 @@
 		607F1FCB21A33A8100DAFD86 /* PageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607F1FC721A33A8100DAFD86 /* PageObject.swift */; };
 		607F1FCC21A33A8100DAFD86 /* AuthenticationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607F1FC921A33A8100DAFD86 /* AuthenticationPage.swift */; };
 		607F1FCD21A33A8100DAFD86 /* UITestsApplicationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607F1FCA21A33A8100DAFD86 /* UITestsApplicationProtocol.swift */; };
-		60A9FF10216B8F0C007966A7 /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9FF01216B8E70007966A7 /* MainPage.swift */; };
+		607F1FD221A3414900DAFD86 /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607F1FD121A3414900DAFD86 /* MainPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +76,7 @@
 		607F1FC721A33A8100DAFD86 /* PageObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageObject.swift; path = ../../../Shared/PageObject.swift; sourceTree = "<group>"; };
 		607F1FC921A33A8100DAFD86 /* AuthenticationPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationPage.swift; sourceTree = "<group>"; };
 		607F1FCA21A33A8100DAFD86 /* UITestsApplicationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITestsApplicationProtocol.swift; path = ../../../Shared/UITestsApplicationProtocol.swift; sourceTree = "<group>"; };
-		60A9FF01216B8E70007966A7 /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
+		607F1FD121A3414900DAFD86 /* MainPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				604113A021A32D7700C3307C /* Shared */,
-				60A9FF01216B8E70007966A7 /* MainPage.swift */,
 				6068EBCD21563260004A44DF /* AppTests.swift */,
 				6068EBCF21563260004A44DF /* Info.plist */,
 			);
@@ -173,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				607F1FC921A33A8100DAFD86 /* AuthenticationPage.swift */,
+				607F1FD121A3414900DAFD86 /* MainPage.swift */,
 			);
 			name = PageObjects;
 			path = ../../../Shared/PageObjects;
@@ -291,10 +291,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				607F1FD221A3414900DAFD86 /* MainPage.swift in Sources */,
 				607F1FCC21A33A8100DAFD86 /* AuthenticationPage.swift in Sources */,
 				6068EBCE21563260004A44DF /* AppTests.swift in Sources */,
 				607F1FCB21A33A8100DAFD86 /* PageObject.swift in Sources */,
-				60A9FF10216B8F0C007966A7 /* MainPage.swift in Sources */,
 				607F1FCD21A33A8100DAFD86 /* UITestsApplicationProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
