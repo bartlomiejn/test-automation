@@ -42,14 +42,14 @@ class AuthenticationTests: XCTestCase
     
     func test_GivenSuccess_WhenSignIn_ThenShowSuccessPage()
     {
-//        AuthenticationPage(assertingExistenceWithApp: app)?
-//            .mainPageAfterSignIn(username: Credentials.validUsername, password: Credentials.validPassword)
+        AuthenticationPage(assertingExistenceWithApp: app)?
+            .mainPageAfterSignIn(username: Credentials.validUsername, password: Credentials.validPassword)
     }
     
     func test_GivenUnauthorized_WhenSignIn_ThenStayOnAuthenticationPageAndShowError()
     {
-//        AuthenticationPage(assertingExistenceWithApp: app)?
-//            .signInWithCredentials(username: Credentials.invalidUsername, password: Credentials.invalidPassword)
-//            .waitForErrorLabelAssertingExistence(timeout: 5.0)
+        AuthenticationPage(assertingExistenceWithApp: app)?
+            .signInWithCredentials(username: Credentials.invalidUsername, password: Credentials.invalidPassword)
+            .waitForErrorLabelAssertingExistence(timeout: 5.0)
     }
 }

@@ -208,10 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				6041139221A326ED00C3307C /* Auxiliary */,
-				6034FFF22193021F00C0BA7D /* AuthenticationService.swift */,
-				6034FFF42193022000C0BA7D /* AuthenticationInteractor.swift */,
-				6034FFF02193021F00C0BA7D /* AuthenticationPresenter.swift */,
-				6034FFF52193022000C0BA7D /* AuthenticationViewController.swift */,
+				607F1FCE21A33C9900DAFD86 /* View */,
 				6034FFF62193022000C0BA7D /* AuthenticationViewFactory.swift */,
 				6034FFF32193021F00C0BA7D /* AuthenticationModule.swift */,
 				6034FFF12193021F00C0BA7D /* Authentication.storyboard */,
@@ -238,6 +235,17 @@
 			);
 			name = PageObjects;
 			path = ../../Shared/PageObjects;
+			sourceTree = "<group>";
+		};
+		607F1FCE21A33C9900DAFD86 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6034FFF22193021F00C0BA7D /* AuthenticationService.swift */,
+				6034FFF42193022000C0BA7D /* AuthenticationInteractor.swift */,
+				6034FFF02193021F00C0BA7D /* AuthenticationPresenter.swift */,
+				6034FFF52193022000C0BA7D /* AuthenticationViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		60D37BE82194295A0044A2D1 /* AuthenticationIntegrationTests */ = {

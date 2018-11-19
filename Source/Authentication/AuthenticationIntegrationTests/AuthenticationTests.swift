@@ -44,4 +44,17 @@ class AuthenticationTests: XCTestCase
             .signInWithCredentials(username: Credentials.password, password: Credentials.password)
             .waitForErrorLabelAssertingExistence(timeout: 5.0)
     }
+    
+    func test_GivenAuthorized_WhenSignIn_ThenLeaveAuthenticationPage()
+    {
+        app.launchForIntegrationTesting(withAuthenticationStub: "ok")
+        AuthenticationPage(assertingExistenceWithApp: app)?
+            .signInWithCredentials(username: Credentials.password, password: Credentials.password)
+        assertPushedFakeViewExists()
+    }
+    
+    private func assertPushedFakeViewExists()
+    {
+        _ = app.staticTexts["pushed_fake_view"].waitForExistence(timeout: 1.0)
+    }
 }
