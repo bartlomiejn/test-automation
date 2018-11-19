@@ -17,7 +17,7 @@
                BlueprintIdentifier = "6034000C219302A900C0BA7D"
                BuildableName = "Core.framework"
                BlueprintName = "Core"
-               ReferencedContainer = "container:Core/Core.xcodeproj">
+               ReferencedContainer = "container:../Core/Core.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -31,7 +31,7 @@
                BlueprintIdentifier = "60340030219302D100C0BA7D"
                BuildableName = "Networking.framework"
                BlueprintName = "Networking"
-               ReferencedContainer = "container:Networking/Networking.xcodeproj">
+               ReferencedContainer = "container:../Networking/Networking.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -45,7 +45,7 @@
                BlueprintIdentifier = "6034FFD5219301DB00C0BA7D"
                BuildableName = "Authentication.framework"
                BlueprintName = "Authentication"
-               ReferencedContainer = "container:Authentication/Authentication.xcodeproj">
+               ReferencedContainer = "container:../Authentication/Authentication.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -59,7 +59,7 @@
                BlueprintIdentifier = "6041137021A3210F00C3307C"
                BuildableName = "Main.framework"
                BlueprintName = "Main"
-               ReferencedContainer = "container:Main/Main.xcodeproj">
+               ReferencedContainer = "container:../Main/Main.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -78,30 +78,30 @@
          </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "60D37BE62194295A0044A2D1"
                BuildableName = "AuthenticationIntegrationTests.xctest"
                BlueprintName = "AuthenticationIntegrationTests"
-               ReferencedContainer = "container:Authentication/Authentication.xcodeproj">
+               ReferencedContainer = "container:../Authentication/Authentication.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6019DED421A31F170071203A"
                BuildableName = "AuthenticationUnitTests.xctest"
                BlueprintName = "AuthenticationUnitTests"
-               ReferencedContainer = "container:Authentication/Authentication.xcodeproj">
+               ReferencedContainer = "container:../Authentication/Authentication.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -129,7 +129,7 @@
                BlueprintIdentifier = "60D37BE62194295A0044A2D1"
                BuildableName = "AuthenticationIntegrationTests.xctest"
                BlueprintName = "AuthenticationIntegrationTests"
-               ReferencedContainer = "container:Authentication/Authentication.xcodeproj">
+               ReferencedContainer = "container:../Authentication/Authentication.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -139,7 +139,7 @@
                BlueprintIdentifier = "6019DED421A31F170071203A"
                BuildableName = "AuthenticationUnitTests.xctest"
                BlueprintName = "AuthenticationUnitTests"
-               ReferencedContainer = "container:Authentication/Authentication.xcodeproj">
+               ReferencedContainer = "container:../Authentication/Authentication.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

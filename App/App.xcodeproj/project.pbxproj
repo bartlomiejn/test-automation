@@ -64,8 +64,8 @@
 		6034009A2193084000C0BA7D /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6034FFCA2192F45D00C0BA7D /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		6041138C21A322F400C3307C /* Main.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Main.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		604113A121A32D8E00C3307C /* UITestsApplicationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITestsApplicationProtocol.swift; path = Testing/Testing/UITestsApplicationProtocol.swift; sourceTree = SOURCE_ROOT; };
-		604113A221A32D8E00C3307C /* PageObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageObject.swift; path = Testing/Testing/PageObject.swift; sourceTree = SOURCE_ROOT; };
+		604113A121A32D8E00C3307C /* UITestsApplicationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITestsApplicationProtocol.swift; path = ../Testing/Testing/UITestsApplicationProtocol.swift; sourceTree = SOURCE_ROOT; };
+		604113A221A32D8E00C3307C /* PageObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageObject.swift; path = ../Testing/Testing/PageObject.swift; sourceTree = SOURCE_ROOT; };
 		6068EBAA2156325F004A44DF /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6068EBAD2156325F004A44DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6068EBB421563260004A44DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
