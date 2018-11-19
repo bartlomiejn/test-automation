@@ -15,7 +15,7 @@ Used as an example for the `Test Automation in iOS` lecture for the `meet.mobile
 - Isolates the module mocking all of its dependencies - API and `MainModule`
 - Example case - Authentication success and failure paths in `AuthenticationTests`
 
-### End To End tests - `TestAutomationExampleEndToEndTests` / `XCUITest`
+### End To End tests - `AppEndToEndTests` / `XCUITest`
 - Tests the integration of the whole application stack
 - Covers both `MainModule` and `AuthenticationModule` on a real app target
 - Involves both application and the GitHub API
