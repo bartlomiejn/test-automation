@@ -32,10 +32,10 @@
 		604113AC21A3312900C3307C /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 603400A721930A5B00C0BA7D /* Networking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		604113AF21A3361400C3307C /* AuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604113AD21A3361400C3307C /* AuthenticationTests.swift */; };
 		604113B021A3361400C3307C /* XCUIApplication+AuthenticationStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604113AE21A3361400C3307C /* XCUIApplication+AuthenticationStub.swift */; };
-		60D37C20219445A50044A2D1 /* AuthenticationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D37C1E219445A40044A2D1 /* AuthenticationPage.swift */; };
+		607F1FC421A33A7700DAFD86 /* PageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607F1FC021A33A7700DAFD86 /* PageObject.swift */; };
+		607F1FC521A33A7700DAFD86 /* AuthenticationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607F1FC221A33A7700DAFD86 /* AuthenticationPage.swift */; };
+		607F1FC621A33A7700DAFD86 /* UITestsApplicationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607F1FC321A33A7700DAFD86 /* UITestsApplicationProtocol.swift */; };
 		60D37C21219445A50044A2D1 /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D37C1F219445A40044A2D1 /* MainPage.swift */; };
-		60D37C28219447120044A2D1 /* PageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D37C26219447120044A2D1 /* PageObject.swift */; };
-		60D37C29219447120044A2D1 /* UITestsApplicationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D37C27219447120044A2D1 /* UITestsApplicationProtocol.swift */; };
 		60D37C32219447A40044A2D1 /* Authentication.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6034FFD6219301DB00C0BA7D /* Authentication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -105,12 +105,13 @@
 		6041139521A3271600C3307C /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
 		604113AD21A3361400C3307C /* AuthenticationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationTests.swift; sourceTree = "<group>"; };
 		604113AE21A3361400C3307C /* XCUIApplication+AuthenticationStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+AuthenticationStub.swift"; sourceTree = "<group>"; };
+		607F1FC021A33A7700DAFD86 /* PageObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageObject.swift; path = ../../Shared/PageObject.swift; sourceTree = "<group>"; };
+		607F1FC221A33A7700DAFD86 /* AuthenticationPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationPage.swift; sourceTree = "<group>"; };
+		607F1FC321A33A7700DAFD86 /* UITestsApplicationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITestsApplicationProtocol.swift; path = ../../Shared/UITestsApplicationProtocol.swift; sourceTree = "<group>"; };
 		60D37BE72194295A0044A2D1 /* AuthenticationIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuthenticationIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60D37BEB2194295A0044A2D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60D37C1E219445A40044A2D1 /* AuthenticationPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationPage.swift; sourceTree = "<group>"; };
 		60D37C1F219445A40044A2D1 /* MainPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
-		60D37C26219447120044A2D1 /* PageObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageObject.swift; sourceTree = "<group>"; };
-		60D37C27219447120044A2D1 /* UITestsApplicationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestsApplicationProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +231,15 @@
 			path = Auxiliary;
 			sourceTree = "<group>";
 		};
+		607F1FC121A33A7700DAFD86 /* PageObjects */ = {
+			isa = PBXGroup;
+			children = (
+				607F1FC221A33A7700DAFD86 /* AuthenticationPage.swift */,
+			);
+			name = PageObjects;
+			path = ../../Shared/PageObjects;
+			sourceTree = "<group>";
+		};
 		60D37BE82194295A0044A2D1 /* AuthenticationIntegrationTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,8 +255,9 @@
 		60D37C1D219444100044A2D1 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				60D37C26219447120044A2D1 /* PageObject.swift */,
-				60D37C27219447120044A2D1 /* UITestsApplicationProtocol.swift */,
+				607F1FC121A33A7700DAFD86 /* PageObjects */,
+				607F1FC021A33A7700DAFD86 /* PageObject.swift */,
+				607F1FC321A33A7700DAFD86 /* UITestsApplicationProtocol.swift */,
 			);
 			name = Shared;
 			path = ../../Testing/Testing;
@@ -465,12 +476,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60D37C29219447120044A2D1 /* UITestsApplicationProtocol.swift in Sources */,
-				60D37C20219445A50044A2D1 /* AuthenticationPage.swift in Sources */,
-				60D37C28219447120044A2D1 /* PageObject.swift in Sources */,
+				607F1FC421A33A7700DAFD86 /* PageObject.swift in Sources */,
+				607F1FC521A33A7700DAFD86 /* AuthenticationPage.swift in Sources */,
 				604113B021A3361400C3307C /* XCUIApplication+AuthenticationStub.swift in Sources */,
 				604113AF21A3361400C3307C /* AuthenticationTests.swift in Sources */,
 				60D37C21219445A50044A2D1 /* MainPage.swift in Sources */,
+				607F1FC621A33A7700DAFD86 /* UITestsApplicationProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

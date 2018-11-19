@@ -8,32 +8,32 @@
 
 import XCTest
 
-public class AuthenticationPage: PageObject {
+class AuthenticationPage: PageObject {
 
-    public override var identyfingElement: XCUIElement {
+    override var identyfingElement: XCUIElement {
         return signInButton
     }
-    public var usernameField: XCUIElement {
+    var usernameField: XCUIElement {
         return app.textFields["username_field"]
     }
-    public var passwordField: XCUIElement {
+    var passwordField: XCUIElement {
         return app.secureTextFields["pass_field"]
     }
-    public var errorLabel: XCUIElement {
+    var errorLabel: XCUIElement {
         return app.staticTexts["error_label"]
     }
-    public var signInButton: XCUIElement {
+    var signInButton: XCUIElement {
         return app.buttons["signin_button"]
     }
     
     @discardableResult
-    public func mainPageAfterSignIn(username: String, password: String) -> MainPage? {
+    func mainPageAfterSignIn(username: String, password: String) -> MainPage? {
         signInWithCredentials(username: username, password: password)
         return MainPage(assertingExistenceWithApp: app)
     }
     
     @discardableResult
-    public func signInWithCredentials(username: String, password: String) -> AuthenticationPage {
+    func signInWithCredentials(username: String, password: String) -> AuthenticationPage {
         usernameField.tap()
         usernameField.typeText(username)
         passwordField.tap()
@@ -42,7 +42,7 @@ public class AuthenticationPage: PageObject {
         return self
     }
     
-    public func waitForErrorLabelAssertingExistence(timeout: TimeInterval) {
+    func waitForErrorLabelAssertingExistence(timeout: TimeInterval) {
         if !errorLabel.waitForExistence(timeout: 5.0) {
             XCTFail("Expected error label to be available.")
         }
