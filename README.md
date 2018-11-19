@@ -1,22 +1,22 @@
 # test-automation
 
-iOS App which authenticates with the GitHub API and displays success or failure depending on the result. 
+iOS App which authenticates with the GitHub API and displays success or failure depending on the result.
 
 Used as an example for the `Test Automation in iOS` lecture for the `meet.mobile` meetup in Wroclaw, Poland 10.10.2018. Later extended to support a multi-project app architecture with integration tests per module.
 
 ### Unit tests - `AuthenticationUnitTests` / `XCTest`
 - Tests each unit of code
 - Isolates each unit mocking all of its dependencies
-- Single class example - `AuthenticationPresenter` in `AuthenticationPresenterTests`
+- Example class - `AuthenticationPresenter` in `AuthenticationPresenterTests`
 
 ### Integration tests - `AuthenticationIntegrationTests` / `XCUITest`
 - Tests integration of `AuthenticationModule` on a dummy app target
 - Uses built-in mocking infrastructure - `HTTPNetworkClient` / `StubbedURLSession`
 - Isolates the module mocking all of its dependencies - API and `MainModule`
-- Single case example - Authentication failure in `AuthenticationTests`
+- Example case - Authentication success and failure paths in `AuthenticationTests`
 
 ### End To End tests - `TestAutomationExampleEndToEndTests` / `XCUITest`
 - Tests the integration of the whole application stack
 - Covers both `MainModule` and `AuthenticationModule` on a real app target
 - Involves both application and the GitHub API
-- Single case example - Success path for authentication in `AppTests`
+- Example case - Authentication success and failure paths in `AppTests`
