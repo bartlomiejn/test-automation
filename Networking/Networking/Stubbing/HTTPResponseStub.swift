@@ -8,7 +8,8 @@
 
 import Foundation
 
-public struct HTTPResponseStub {
+public struct HTTPResponseStub
+{
     let urlResponse: HTTPURLResponse
     let statusCode: Int
     let body: Data?

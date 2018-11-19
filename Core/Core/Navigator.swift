@@ -8,27 +8,27 @@
 
 import UIKit
 
-public enum PresentationMode: String {
-    case root
-    case navigationStack
-    case modal
-}
-
-public protocol NavigatorProtocol: AnyObject {
+public protocol NavigatorProtocol: AnyObject
+{
     func present(as mode: PresentationMode, controller: UIViewController)
     func dismiss(animated: Bool, completion: (() -> Void)?)
 }
 
-public class Navigator: NavigatorProtocol {
-    
+public class Navigator
+{
     private let application: ApplicationProtocol
     private var presentingController: UIViewController?
     
-    public init(application: ApplicationProtocol) {
+    public init(application: ApplicationProtocol)
+    {
         self.application = application
     }
-    
-    public func present(as mode: PresentationMode, controller: UIViewController) {
+}
+
+extension Navigator: NavigatorProtocol
+{
+    public func present(as mode: PresentationMode, controller: UIViewController)
+    {
         switch mode {
         case .root:
             presentAsRoot(controller)
@@ -39,31 +39,36 @@ public class Navigator: NavigatorProtocol {
         }
     }
     
-    public func dismiss(animated: Bool, completion: (() -> Void)?) {
+    public func dismiss(animated: Bool, completion: (() -> Void)?)
+    {
         presentingController?.dismiss(animated: animated, completion: completion)
     }
     
-    private func presentAsRoot(_ controller: UIViewController) {
+    private func presentAsRoot(_ controller: UIViewController)
+    {
         if let keyWindow = application.keyWindow {
             keyWindow.rootViewController = controller
             keyWindow.makeKeyAndVisible()
         }
     }
     
-    private func presentAsModal(_ controller: UIViewController) {
+    private func presentAsModal(_ controller: UIViewController)
+    {
         let navigationController = UINavigationController(rootViewController: controller)
         navigationController.modalTransitionStyle = .coverVertical
         topPresentedViewController()?.present(navigationController, animated: true, completion: nil)
     }
     
-    private func presentOnNavigationStack(_ controller: UIViewController) {
+    private func presentOnNavigationStack(_ controller: UIViewController)
+    {
         guard let topNavigationController = topNavigationController() else {
             return
         }
         topNavigationController.pushViewController(controller, animated: true)
     }
     
-    private func topNavigationController() -> UINavigationController? {
+    private func topNavigationController() -> UINavigationController?
+    {
         guard let topViewController = topPresentedViewController() else {
             return nil
         }
@@ -77,7 +82,8 @@ public class Navigator: NavigatorProtocol {
         }
     }
     
-    private func topPresentedViewController() -> UIViewController? {
+    private func topPresentedViewController() -> UIViewController?
+    {
         guard let rootViewController = application.keyWindow?.rootViewController else {
             return nil
         }

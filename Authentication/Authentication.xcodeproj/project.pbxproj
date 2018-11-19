@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6019DEDA21A31F170071203A /* Authentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6034FFD6219301DB00C0BA7D /* Authentication.framework */; };
+		6019DEE121A31F440071203A /* AuthenticationPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6019DEE021A31F440071203A /* AuthenticationPresenterTests.swift */; };
 		603400802193062F00C0BA7D /* AuthenticationStubGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034007F2193062F00C0BA7D /* AuthenticationStubGenerator.swift */; };
 		603400A321930A5000C0BA7D /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6034FFF12193021F00C0BA7D /* Authentication.storyboard */; };
 		603400A621930A5B00C0BA7D /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603400A521930A5B00C0BA7D /* Core.framework */; };
@@ -22,7 +24,8 @@
 		6034FFFB2193022100C0BA7D /* AuthenticationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034FFF42193022000C0BA7D /* AuthenticationInteractor.swift */; };
 		6034FFFC2193022100C0BA7D /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034FFF52193022000C0BA7D /* AuthenticationViewController.swift */; };
 		6034FFFD2193022100C0BA7D /* AuthenticationViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034FFF62193022000C0BA7D /* AuthenticationViewFactory.swift */; };
-		6034FFFE2193022100C0BA7D /* AuthenticationDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034FFF72193022100C0BA7D /* AuthenticationDependencyContainer.swift */; };
+		6041139421A3270500C3307C /* RecoverableAuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041139321A3270500C3307C /* RecoverableAuthenticationError.swift */; };
+		6041139621A3271600C3307C /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041139521A3271600C3307C /* AuthenticationError.swift */; };
 		60D37BF3219429D90044A2D1 /* AuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D37BF1219429D90044A2D1 /* AuthenticationTests.swift */; };
 		60D37BF4219429D90044A2D1 /* XCUIApplication+AuthenticationStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D37BF2219429D90044A2D1 /* XCUIApplication+AuthenticationStub.swift */; };
 		60D37C20219445A50044A2D1 /* AuthenticationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D37C1E219445A40044A2D1 /* AuthenticationPage.swift */; };
@@ -37,6 +40,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6019DEDB21A31F180071203A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6034FFCD219301DB00C0BA7D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6034FFD5219301DB00C0BA7D;
+			remoteInfo = Authentication;
+		};
 		60D37BEC2194295A0044A2D1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6034FFCD219301DB00C0BA7D /* Project object */;
@@ -70,6 +80,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6019DED521A31F170071203A /* AuthenticationUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuthenticationUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6019DED921A31F170071203A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6019DEE021A31F440071203A /* AuthenticationPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationPresenterTests.swift; sourceTree = "<group>"; };
 		6034007F2193062F00C0BA7D /* AuthenticationStubGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationStubGenerator.swift; sourceTree = "<group>"; };
 		603400A521930A5B00C0BA7D /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		603400A721930A5B00C0BA7D /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,20 +103,29 @@
 		6034FFF42193022000C0BA7D /* AuthenticationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationInteractor.swift; sourceTree = "<group>"; };
 		6034FFF52193022000C0BA7D /* AuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		6034FFF62193022000C0BA7D /* AuthenticationViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewFactory.swift; sourceTree = "<group>"; };
-		6034FFF72193022100C0BA7D /* AuthenticationDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationDependencyContainer.swift; sourceTree = "<group>"; };
-		60D37BE72194295A0044A2D1 /* AuthenticationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuthenticationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6041139321A3270500C3307C /* RecoverableAuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverableAuthenticationError.swift; sourceTree = "<group>"; };
+		6041139521A3271600C3307C /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
+		60D37BE72194295A0044A2D1 /* AuthenticationIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuthenticationIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60D37BEB2194295A0044A2D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60D37BF1219429D90044A2D1 /* AuthenticationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationTests.swift; path = ../../TestAutomationExampleIntegrationTests/Authentication/AuthenticationTests.swift; sourceTree = "<group>"; };
 		60D37BF2219429D90044A2D1 /* XCUIApplication+AuthenticationStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "XCUIApplication+AuthenticationStub.swift"; path = "../../TestAutomationExampleIntegrationTests/Authentication/XCUIApplication+AuthenticationStub.swift"; sourceTree = "<group>"; };
 		60D37C1E219445A40044A2D1 /* AuthenticationPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationPage.swift; sourceTree = "<group>"; };
 		60D37C1F219445A40044A2D1 /* MainPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
-		60D37C26219447120044A2D1 /* PageObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageObject.swift; path = ../../../Testing/Testing/PageObject.swift; sourceTree = "<group>"; };
-		60D37C27219447120044A2D1 /* UITestsApplicationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITestsApplicationProtocol.swift; path = ../../../Testing/Testing/UITestsApplicationProtocol.swift; sourceTree = "<group>"; };
+		60D37C26219447120044A2D1 /* PageObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageObject.swift; sourceTree = "<group>"; };
+		60D37C27219447120044A2D1 /* UITestsApplicationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestsApplicationProtocol.swift; sourceTree = "<group>"; };
 		60D37C3C219475F70044A2D1 /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60D37C3F219475F70044A2D1 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6019DED221A31F170071203A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6019DEDA21A31F170071203A /* Authentication.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6034012C21931C2600C0BA7D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -133,6 +155,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6019DED621A31F170071203A /* AuthenticationUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				6019DEE021A31F440071203A /* AuthenticationPresenterTests.swift */,
+				6019DED921A31F170071203A /* Info.plist */,
+			);
+			path = AuthenticationUnitTests;
+			sourceTree = "<group>";
+		};
 		603400A421930A5B00C0BA7D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,7 +193,8 @@
 				60D37C3C219475F70044A2D1 /* Networking.framework */,
 				6034FFD8219301DB00C0BA7D /* Authentication */,
 				6034013021931C2600C0BA7D /* AuthenticationDummyApp */,
-				60D37BE82194295A0044A2D1 /* AuthenticationUITests */,
+				60D37BE82194295A0044A2D1 /* AuthenticationIntegrationTests */,
+				6019DED621A31F170071203A /* AuthenticationUnitTests */,
 				6034FFD7219301DB00C0BA7D /* Products */,
 				603400A421930A5B00C0BA7D /* Frameworks */,
 			);
@@ -173,7 +205,8 @@
 			children = (
 				6034FFD6219301DB00C0BA7D /* Authentication.framework */,
 				6034012F21931C2600C0BA7D /* AuthenticationDummyApp.app */,
-				60D37BE72194295A0044A2D1 /* AuthenticationUITests.xctest */,
+				60D37BE72194295A0044A2D1 /* AuthenticationIntegrationTests.xctest */,
+				6019DED521A31F170071203A /* AuthenticationUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,12 +214,11 @@
 		6034FFD8219301DB00C0BA7D /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				6034007F2193062F00C0BA7D /* AuthenticationStubGenerator.swift */,
+				6041139221A326ED00C3307C /* Auxiliary */,
 				6034FFF22193021F00C0BA7D /* AuthenticationService.swift */,
 				6034FFF42193022000C0BA7D /* AuthenticationInteractor.swift */,
 				6034FFF02193021F00C0BA7D /* AuthenticationPresenter.swift */,
 				6034FFF52193022000C0BA7D /* AuthenticationViewController.swift */,
-				6034FFF72193022100C0BA7D /* AuthenticationDependencyContainer.swift */,
 				6034FFF62193022000C0BA7D /* AuthenticationViewFactory.swift */,
 				6034FFF32193021F00C0BA7D /* AuthenticationModule.swift */,
 				6034FFF12193021F00C0BA7D /* Authentication.storyboard */,
@@ -196,7 +228,17 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
-		60D37BE82194295A0044A2D1 /* AuthenticationUITests */ = {
+		6041139221A326ED00C3307C /* Auxiliary */ = {
+			isa = PBXGroup;
+			children = (
+				6034007F2193062F00C0BA7D /* AuthenticationStubGenerator.swift */,
+				6041139321A3270500C3307C /* RecoverableAuthenticationError.swift */,
+				6041139521A3271600C3307C /* AuthenticationError.swift */,
+			);
+			path = Auxiliary;
+			sourceTree = "<group>";
+		};
+		60D37BE82194295A0044A2D1 /* AuthenticationIntegrationTests */ = {
 			isa = PBXGroup;
 			children = (
 				60D37C1D219444100044A2D1 /* Shared */,
@@ -205,7 +247,7 @@
 				60D37BF1219429D90044A2D1 /* AuthenticationTests.swift */,
 				60D37BEB2194295A0044A2D1 /* Info.plist */,
 			);
-			path = AuthenticationUITests;
+			path = AuthenticationIntegrationTests;
 			sourceTree = "<group>";
 		};
 		60D37C1D219444100044A2D1 /* Shared */ = {
@@ -214,7 +256,8 @@
 				60D37C26219447120044A2D1 /* PageObject.swift */,
 				60D37C27219447120044A2D1 /* UITestsApplicationProtocol.swift */,
 			);
-			path = Shared;
+			name = Shared;
+			path = ../../Testing/Testing;
 			sourceTree = "<group>";
 		};
 		60D37C2A219447310044A2D1 /* Pages */ = {
@@ -240,6 +283,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		6019DED421A31F170071203A /* AuthenticationUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6019DEDF21A31F180071203A /* Build configuration list for PBXNativeTarget "AuthenticationUnitTests" */;
+			buildPhases = (
+				6019DED121A31F170071203A /* Sources */,
+				6019DED221A31F170071203A /* Frameworks */,
+				6019DED321A31F170071203A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6019DEDC21A31F180071203A /* PBXTargetDependency */,
+			);
+			name = AuthenticationUnitTests;
+			productName = AuthenticationTests;
+			productReference = 6019DED521A31F170071203A /* AuthenticationUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		6034012E21931C2600C0BA7D /* AuthenticationDummyApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6034013E21931C2800C0BA7D /* Build configuration list for PBXNativeTarget "AuthenticationDummyApp" */;
@@ -277,9 +338,9 @@
 			productReference = 6034FFD6219301DB00C0BA7D /* Authentication.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		60D37BE62194295A0044A2D1 /* AuthenticationUITests */ = {
+		60D37BE62194295A0044A2D1 /* AuthenticationIntegrationTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 60D37BEE2194295A0044A2D1 /* Build configuration list for PBXNativeTarget "AuthenticationUITests" */;
+			buildConfigurationList = 60D37BEE2194295A0044A2D1 /* Build configuration list for PBXNativeTarget "AuthenticationIntegrationTests" */;
 			buildPhases = (
 				60D37BE32194295A0044A2D1 /* Sources */,
 				60D37BE42194295A0044A2D1 /* Frameworks */,
@@ -290,9 +351,9 @@
 			dependencies = (
 				60D37BED2194295A0044A2D1 /* PBXTargetDependency */,
 			);
-			name = AuthenticationUITests;
+			name = AuthenticationIntegrationTests;
 			productName = AuthenticationUITests;
-			productReference = 60D37BE72194295A0044A2D1 /* AuthenticationUITests.xctest */;
+			productReference = 60D37BE72194295A0044A2D1 /* AuthenticationIntegrationTests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -305,6 +366,9 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Bartlomiej Nowak";
 				TargetAttributes = {
+					6019DED421A31F170071203A = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					6034012E21931C2600C0BA7D = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -332,12 +396,20 @@
 			targets = (
 				6034FFD5219301DB00C0BA7D /* Authentication */,
 				6034012E21931C2600C0BA7D /* AuthenticationDummyApp */,
-				60D37BE62194295A0044A2D1 /* AuthenticationUITests */,
+				60D37BE62194295A0044A2D1 /* AuthenticationIntegrationTests */,
+				6019DED421A31F170071203A /* AuthenticationUnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6019DED321A31F170071203A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6034012D21931C2600C0BA7D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -365,6 +437,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6019DED121A31F170071203A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6019DEE121A31F440071203A /* AuthenticationPresenterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6034012B21931C2600C0BA7D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -380,8 +460,9 @@
 				6034FFFB2193022100C0BA7D /* AuthenticationInteractor.swift in Sources */,
 				6034FFFD2193022100C0BA7D /* AuthenticationViewFactory.swift in Sources */,
 				6034FFFA2193022100C0BA7D /* AuthenticationModule.swift in Sources */,
+				6041139421A3270500C3307C /* RecoverableAuthenticationError.swift in Sources */,
+				6041139621A3271600C3307C /* AuthenticationError.swift in Sources */,
 				603400802193062F00C0BA7D /* AuthenticationStubGenerator.swift in Sources */,
-				6034FFFE2193022100C0BA7D /* AuthenticationDependencyContainer.swift in Sources */,
 				6034FFFC2193022100C0BA7D /* AuthenticationViewController.swift in Sources */,
 				6034FFF82193022100C0BA7D /* AuthenticationPresenter.swift in Sources */,
 				6034FFF92193022100C0BA7D /* AuthenticationService.swift in Sources */,
@@ -404,6 +485,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6019DEDC21A31F180071203A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6034FFD5219301DB00C0BA7D /* Authentication */;
+			targetProxy = 6019DEDB21A31F180071203A /* PBXContainerItemProxy */;
+		};
 		60D37BED2194295A0044A2D1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6034012E21931C2600C0BA7D /* AuthenticationDummyApp */;
@@ -428,6 +514,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6019DEDD21A31F180071203A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B6NDM93MJT;
+				INFOPLIST_FILE = AuthenticationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.bartlomiejnowak.AuthenticationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6019DEDE21A31F180071203A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B6NDM93MJT;
+				INFOPLIST_FILE = AuthenticationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.bartlomiejnowak.AuthenticationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		6034013F21931C2800C0BA7D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -600,7 +722,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Authentication/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -626,7 +748,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Authentication/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -681,6 +803,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6019DEDF21A31F180071203A /* Build configuration list for PBXNativeTarget "AuthenticationUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6019DEDD21A31F180071203A /* Debug */,
+				6019DEDE21A31F180071203A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6034013E21931C2800C0BA7D /* Build configuration list for PBXNativeTarget "AuthenticationDummyApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -708,7 +839,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		60D37BEE2194295A0044A2D1 /* Build configuration list for PBXNativeTarget "AuthenticationUITests" */ = {
+		60D37BEE2194295A0044A2D1 /* Build configuration list for PBXNativeTarget "AuthenticationIntegrationTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				60D37BEF2194295A0044A2D1 /* Debug */,

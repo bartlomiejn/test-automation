@@ -8,34 +8,35 @@
 
 import Foundation
 
-public struct HTTPURLResponseGenerationError: Error {}
-
-public enum HTTPMethod: String {
-    case GET
-    case POST
-    case PUT
-}
-
-public protocol HTTPNetworkClientInterface {
+public protocol HTTPNetworkClientInterface
+{
     typealias Path = String
+    
     func request(_ method: HTTPMethod, path: String, callback: @escaping (Data?, HTTPURLResponse?, Error?) -> Void)
     func stub(_ path: Path, _ method: HTTPMethod, statusCode: Int, body: Any?, headers: [String: String]?) throws
 }
 
-public class HTTPNetworkClient: HTTPNetworkClientInterface {
-
+public class HTTPNetworkClient
+{
+    public struct URLResponseGenerationError: Error {}
+    
     public var timeoutInterval = 20.0
     public var headerFields = [String: String]()
     private let generator: URLGenerator
     private var stubbedResponses = [Path: [HTTPMethod: HTTPResponseStub]]()
     
-    public init(timeoutInterval: TimeInterval, generator: URLGenerator = URLGenerator()) {
+    public init(timeoutInterval: TimeInterval, generator: URLGenerator = URLGenerator())
+    {
         self.timeoutInterval = timeoutInterval
         self.generator = generator
     }
-    
+}
+
+extension HTTPNetworkClient: HTTPNetworkClientInterface
+{
     /// Performs a request for provided path and method.
-    public func request(_ method: HTTPMethod, path: Path, callback: @escaping (Data?, HTTPURLResponse?, Error?) -> Void) {
+    public func request(_ method: HTTPMethod, path: Path, callback: @escaping (Data?, HTTPURLResponse?, Error?) -> Void)
+    {
         do {
             let url = try generator.url(path: path)
             let session = generateURLSession(for: path, method: method)
@@ -51,11 +52,12 @@ public class HTTPNetworkClient: HTTPNetworkClientInterface {
     }
     
     /// Stubs the response for a request directed at provided path and method.
-    public func stub(_ path: Path, _ method: HTTPMethod, statusCode: Int, body: Any?, headers: [String: String]?) throws {
+    public func stub(_ path: Path, _ method: HTTPMethod, statusCode: Int, body: Any?, headers: [String: String]?) throws
+    {
         guard let urlResponse = HTTPURLResponse(
             url: try generator.url(path: path), statusCode: statusCode, httpVersion: nil, headerFields: headers
         ) else {
-            throw HTTPURLResponseGenerationError()
+            throw URLResponseGenerationError()
         }
         let bodyData: Data?
         if let body = body {
@@ -72,7 +74,8 @@ public class HTTPNetworkClient: HTTPNetworkClientInterface {
         }
     }
 
-    private func generateURLSession(for path: Path, method: HTTPMethod) -> URLSession {
+    private func generateURLSession(for path: Path, method: HTTPMethod) -> URLSession
+    {
         if let stub = stubbedResponses[path]?[method] {
             return StubbedURLSession(body: stub.body, response: stub.urlResponse)
         } else {
@@ -80,7 +83,8 @@ public class HTTPNetworkClient: HTTPNetworkClientInterface {
         }
     }
     
-    private func generateURLRequestWithHeaderFields(for url: URL, method: HTTPMethod) -> URLRequest {
+    private func generateURLRequestWithHeaderFields(for url: URL, method: HTTPMethod) -> URLRequest
+    {
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: timeoutInterval)
         request.httpMethod = method.rawValue
         headerFields.forEach {

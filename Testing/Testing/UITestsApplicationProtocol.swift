@@ -8,9 +8,10 @@
 
 import XCTest
 
-extension XCUIApplication {
-    
-    func launchForIntegrationTesting(withParameters parameters: [String: String]) {
+extension XCUIApplication
+{
+    func launchForIntegrationTesting(withParameters parameters: [String: String])
+    {
         launchEnvironment["IntegrationTests"] = "true"
         parameters.forEach { key, value in launchEnvironment[key] = value }
         launch()

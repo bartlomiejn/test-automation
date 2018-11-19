@@ -11,14 +11,15 @@ import Networking
 import Authentication
 import UIKit
 
-class DummyRouter: RouterProtocol {
+class DummyRouter: RouterProtocol
+{
     func open(_ module: ModuleProtocol.Type, parameters: StringDictionary?, callback: ((StringDictionary?) -> Void)?) {}
     func open(_ url: URL, callback: ((StringDictionary?) -> Void)?) {}
 }
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate
+{
     var window: UIWindow?
     var module: AuthenticationModule!
     
@@ -35,7 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    private func setupWindow() {
+    private func setupWindow()
+    {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = {
             let controller = UIViewController()
@@ -45,7 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
     }
     
-    private func networkClient(with environmentVariables: [String: String]) -> HTTPNetworkClient {
+    private func networkClient(with environmentVariables: [String: String]) -> HTTPNetworkClient
+    {
         let networkClient = HTTPNetworkClient(timeoutInterval: 60.0)
         if environmentVariables["IntegrationTests"] == "true" {
             AuthenticationStubGenerator(from: environmentVariables).injectStubs(into: networkClient)

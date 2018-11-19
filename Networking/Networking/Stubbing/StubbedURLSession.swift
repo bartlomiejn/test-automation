@@ -8,16 +8,18 @@
 
 import Foundation
 
-class StubbedURLSession: URLSession {
-    
-    class DummyURLSessionDataTask: URLSessionDataTask {
+class StubbedURLSession: URLSession
+{
+    class DummyURLSessionDataTask: URLSessionDataTask
+    {
         override func resume() {}
     }
     
     private let body: Data?
     private let response: HTTPURLResponse
     
-    init(body: Data?, response: HTTPURLResponse) {
+    init(body: Data?, response: HTTPURLResponse)
+    {
         self.body = body
         self.response = response
     }

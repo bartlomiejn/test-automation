@@ -8,39 +8,46 @@
 
 import Core
 
-protocol AuthenticationPresenterInterface {
+protocol AuthenticationPresenterInterface
+{
     func usernameChanged(to username: String)
     func passwordChanged(to password: String)
     func tappedSignIn()
 }
 
-class AuthenticationPresenter: AuthenticationPresenterInterface {
-    
+final class AuthenticationPresenter
+{
     private weak var view: AuthenticationViewInterface?
-    private let router: RouterProtocol
+    private let module: AuthenticationModuleProtocol
     private let interactor: AuthenticationInteractorInterface
     private var currentUsername: String?
     private var currentPassword: String?
     
     init(
-        router: RouterProtocol,
+        module: AuthenticationModuleProtocol,
         view: AuthenticationViewInterface,
         interactor: AuthenticationInteractorInterface
     ) {
-        self.router = router
+        self.module = module
         self.view = view
         self.interactor = interactor
     }
-    
-    func usernameChanged(to username: String) {
+}
+
+extension AuthenticationPresenter: AuthenticationPresenterInterface
+{
+    func usernameChanged(to username: String)
+    {
          currentUsername = username
     }
     
-    func passwordChanged(to password: String) {
+    func passwordChanged(to password: String)
+    {
         currentPassword = password
     }
     
-    func tappedSignIn() {
+    func tappedSignIn()
+    {
         guard let username = currentUsername, let password = currentPassword else {
             return
         }
@@ -54,19 +61,22 @@ class AuthenticationPresenter: AuthenticationPresenterInterface {
         })
     }
     
-    private func signedIn() {
+    private func signedIn()
+    {
         view?.enableSignInButton()
         view?.hideSpinner()
-        router.open(AuthenticationModule.self, parameters: [Parameter.path: AuthenticationModule.Path.success], callback: nil)
+        module.success()
     }
 
-    private func handle(_ error: AuthenticationError) {
+    private func handle(_ error: AuthenticationError)
+    {
         view?.enableSignInButton()
         view?.hideSpinner()
         view?.showError(description: message(for: error))
     }
     
-    private func message(for error: AuthenticationError) -> String {
+    private func message(for error: AuthenticationError) -> String
+    {
         switch error {
         case .unrecoverable:
             return "Unrecoverable error."

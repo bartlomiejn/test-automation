@@ -75,8 +75,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "60D37BE62194295A0044A2D1"
-               BuildableName = "AuthenticationUITests.xctest"
-               BlueprintName = "AuthenticationUITests"
+               BuildableName = "AuthenticationIntegrationTests.xctest"
+               BlueprintName = "AuthenticationIntegrationTests"
                ReferencedContainer = "container:Authentication.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -56,9 +56,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6019DED421A31F170071203A"
+               BuildableName = "AuthenticationUnitTests.xctest"
+               BlueprintName = "AuthenticationUnitTests"
+               ReferencedContainer = "container:Authentication.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "60D37BE62194295A0044A2D1"
-               BuildableName = "AuthenticationUITests.xctest"
-               BlueprintName = "AuthenticationUITests"
+               BuildableName = "AuthenticationIntegrationTests.xctest"
+               BlueprintName = "AuthenticationIntegrationTests"
                ReferencedContainer = "container:Authentication.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -74,9 +88,19 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6019DED421A31F170071203A"
+               BuildableName = "AuthenticationUnitTests.xctest"
+               BlueprintName = "AuthenticationUnitTests"
+               ReferencedContainer = "container:Authentication.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "60D37BE62194295A0044A2D1"
-               BuildableName = "AuthenticationUITests.xctest"
-               BlueprintName = "AuthenticationUITests"
+               BuildableName = "AuthenticationIntegrationTests.xctest"
+               BlueprintName = "AuthenticationIntegrationTests"
                ReferencedContainer = "container:Authentication.xcodeproj">
             </BuildableReference>
          </TestableReference>

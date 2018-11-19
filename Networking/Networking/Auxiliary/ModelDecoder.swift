@@ -8,21 +8,24 @@
 
 import Foundation
 
-public protocol DecoderInterface {
+public protocol DecoderInterface
+{
     func decode<T>(_ type: T.Type, from data: Data) throws -> T where T: Decodable
 }
 
 extension JSONDecoder: DecoderInterface {}
 
-public struct ModelDecoder<T: Decodable> {
-    
+public struct ModelDecoder<T: Decodable>
+{
     private let decoder: DecoderInterface
     
-    public init(decoder: DecoderInterface = JSONDecoder()) {
+    public init(decoder: DecoderInterface = JSONDecoder())
+    {
         self.decoder = decoder
     }
     
-    public func model(from data: Data) -> T? {
+    public func model(from data: Data) -> T?
+    {
         return try? decoder.decode(T.self, from: data)
     }
 }

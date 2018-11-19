@@ -9,28 +9,38 @@
 import Core
 import UIKit
 
-public class AuthenticationModule: ModuleProtocol {
-    
-    public enum Path {
-        public static let success = "/success"
-    }
-    public static let route = "auth"
-    private let router: RouterProtocol
+public protocol AuthenticationModuleDelegate: AnyObject
+{
+    func authenticationSuccess()
+}
+
+public protocol AuthenticationModuleProtocol: AnyObject
+{
+    func show()
+    func success()
+}
+
+public class AuthenticationModule
+{
+    public weak var delegate: AuthenticationModuleDelegate?
     private let navigator: NavigatorProtocol
-    public var viewFactory: AuthenticationViewFactory!
+    private let viewFactory: AuthenticationViewFactoryProtocol
     
-    public required init(router: RouterProtocol, navigator: NavigatorProtocol) {
-        self.router = router
+    public required init(navigator: NavigatorProtocol, viewFactory: AuthenticationViewFactoryProtocol){
         self.navigator = navigator
+        self.viewFactory = viewFactory
+    }
+}
+
+extension AuthenticationModule: AuthenticationModuleProtocol
+{
+    public func show()
+    {
+        navigator.present(as: .root, controller: viewFactory.authentication(module: self))
     }
     
-    public func open(path: String?, parameters: StringDictionary?, callback: ((StringDictionary?) -> Void)?) {
-        switch path {
-        case Path.success:
-            router.open(URL(string: "modules://main/app_view")!, callback: nil)
-        default:
-            navigator.present(as: .root, controller: viewFactory.authentication())
-        }
-        callback?(nil)
+    public func success()
+    {
+        delegate?.authenticationSuccess()
     }
 }

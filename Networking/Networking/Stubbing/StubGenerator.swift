@@ -8,6 +8,7 @@
 
 import Foundation
 
-public protocol StubGenerator {
+public protocol StubGenerator
+{
     func injectStubs(into client: HTTPNetworkClient)
 }

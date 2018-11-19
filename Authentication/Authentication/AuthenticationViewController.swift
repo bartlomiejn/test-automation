@@ -8,7 +8,8 @@
 
 import UIKit
 
-protocol AuthenticationViewInterface: class {
+protocol AuthenticationViewInterface: class
+{
     func enableSignInButton()
     func disableSignInButton()
     func show(username: String)
@@ -19,12 +20,14 @@ protocol AuthenticationViewInterface: class {
     func hideError()
 }
 
-class AuthenticationViewController: UIViewController {
-
-    private enum Constant {
+final class AuthenticationViewController: UIViewController
+{
+    private enum Constant
+    {
         static let expansionDuration: TimeInterval = 0.25
     }
-    private enum Accessibility {
+    private enum Accessibility
+    {
         static let usernameField = "username_field"
         static let passwordField = "pass_field"
         static let errorLabel = "error_label"
@@ -39,22 +42,16 @@ class AuthenticationViewController: UIViewController {
     @IBOutlet private (set) weak var spinner: UIActivityIndicatorView!
     private var isSignInButtonActionEnabled = true
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         navigationItem.title = "Login"
-        errorLabelContainer.isHidden = true
-        spinner.stopAnimating()
+        setupViews()
         setupAccessibility()
     }
     
-    private func setupAccessibility() {
-        usernameField.accessibilityIdentifier = Accessibility.usernameField
-        passwordField.accessibilityIdentifier = Accessibility.passwordField
-        errorLabel.accessibilityIdentifier = Accessibility.errorLabel
-        signInButton.accessibilityIdentifier = Accessibility.signInButton
-    }
-    
-    @IBAction private func textChanged(_ sender: UITextField) {
+    @IBAction private func textChanged(_ sender: UITextField)
+    {
         if sender == usernameField, let text = sender.text {
             presenter.usernameChanged(to: text)
         } else if sender == passwordField, let text = sender.text {
@@ -62,16 +59,32 @@ class AuthenticationViewController: UIViewController {
         }
     }
     
-    @IBAction private func signIn() {
+    @IBAction private func signIn()
+    {
         if isSignInButtonActionEnabled {
             presenter.tappedSignIn()
         }
     }
+    
+    private func setupViews()
+    {
+        errorLabelContainer.isHidden = true
+        spinner.stopAnimating()
+    }
+    
+    private func setupAccessibility()
+    {
+        usernameField.accessibilityIdentifier = Accessibility.usernameField
+        passwordField.accessibilityIdentifier = Accessibility.passwordField
+        errorLabel.accessibilityIdentifier = Accessibility.errorLabel
+        signInButton.accessibilityIdentifier = Accessibility.signInButton
+    }
 }
 
-extension AuthenticationViewController: UITextFieldDelegate {
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+extension AuthenticationViewController: UITextFieldDelegate
+{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
         if textField == usernameField {
             passwordField.becomeFirstResponder()
         } else if textField == passwordField {
@@ -81,40 +94,48 @@ extension AuthenticationViewController: UITextFieldDelegate {
     }
 }
 
-extension AuthenticationViewController: AuthenticationViewInterface {
-    
-    func enableSignInButton() {
+extension AuthenticationViewController: AuthenticationViewInterface
+{
+    func enableSignInButton()
+    {
         isSignInButtonActionEnabled = true
     }
     
-    func disableSignInButton() {
+    func disableSignInButton()
+    {
         isSignInButtonActionEnabled = false
     }
     
-    func show(username: String) {
+    func show(username: String)
+    {
         usernameField.text = username
     }
     
-    func show(password: String) {
+    func show(password: String)
+    {
         passwordField.text = password
     }
     
-    func showSpinner() {
+    func showSpinner()
+    {
         spinner.startAnimating()
     }
     
-    func hideSpinner() {
+    func hideSpinner()
+    {
         spinner.stopAnimating()
     }
     
-    func showError(description: String) {
+    func showError(description: String)
+    {
         errorLabel.text = description
         UIView.animate(withDuration: Constant.expansionDuration) { [weak errorLabelContainer] in
             errorLabelContainer?.isHidden = false
         }
     }
     
-    func hideError() {
+    func hideError()
+    {
         UIView.animate(withDuration: Constant.expansionDuration) { [weak errorLabelContainer] in
             errorLabelContainer?.isHidden = true
         }

@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Testing/Testing.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Networking/Networking.xcodeproj">
    </FileRef>
    <FileRef
@@ -12,6 +9,9 @@
    </FileRef>
    <FileRef
       location = "group:Authentication/Authentication.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Main/Main.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:TestAutomationExample.xcodeproj">

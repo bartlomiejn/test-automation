@@ -10,11 +10,10 @@ import Core
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate
+{
     var window: UIWindow?
-    var mainContainer: AppDependencyContainer!
-    var router: RouterProtocol!
+    var app: App!
     
     func application(
         _ application: UIApplication,
@@ -23,12 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UIViewController()
         window?.makeKeyAndVisible()
-        mainContainer = AppDependencyContainer(
-            application: application,
-            environmentVariables: ProcessInfo.processInfo.environment
-        )
-        router = mainContainer.router
-        router.open(MainModule.self, parameters: [Parameter.path: MainModule.Path.initial], callback: nil)
+        app = App(application: application, environmentVariables: ProcessInfo.processInfo.environment)
+        app.main.show()
         return true
     }
 }

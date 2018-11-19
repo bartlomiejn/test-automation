@@ -8,15 +8,17 @@
 
 import XCTest
 
-protocol UIElementProtocol {
+protocol UIElementProtocol
+{
     func waitForExistence(timeout: TimeInterval) -> Bool
 }
 
-class PageObject {
-    
+class PageObject
+{
     let app: XCUIApplication
     
-    var identyfingElement: XCUIElement {
+    var identyfingElement: XCUIElement
+    {
         fatalError("Implement in a subclass.")
     }
     

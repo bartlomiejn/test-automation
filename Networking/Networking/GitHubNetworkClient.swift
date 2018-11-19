@@ -8,35 +8,29 @@
 
 import Foundation
 
-public struct APIErrorModel {
-    public struct Response: Codable {
-        public let message: String
-    }
-    
-    public let statusCode: Int
-    public let response: Response?
-}
-
-public enum GitHubNetworkClientError {
-    case unauthorized
-    case invalidResponse
-    case apiError(APIErrorModel?)
-    case other
-}
-
-public protocol GitHubNetworkClientInterface {
+public protocol GitHubNetworkClientInterface
+{
     func request(
         _ method: HTTPMethod,
         path: String,
         success: @escaping (Data?) -> Void,
-        failure: @escaping (GitHubNetworkClientError) -> Void
+        failure: @escaping (GitHubNetworkClient.Error) -> Void
     )
     func setBasicAuthToken(username: String, password: String) throws
 }
 
-public final class GitHubNetworkClient: GitHubNetworkClientInterface {
+public final class GitHubNetworkClient: GitHubNetworkClientInterface
+{
+    public enum Error: Swift.Error
+    {
+        case unauthorized
+        case invalidResponse
+        case apiError(APIErrorModel?)
+        case other
+    }
     
-    private struct Constant {
+    private struct Constant
+    {
         static let userAgent = "User-Agent"
         static let authorization = "Authorization"
         static let userAgentValue = "bartlomiejn/test-pyramid"
@@ -45,7 +39,8 @@ public final class GitHubNetworkClient: GitHubNetworkClientInterface {
     private let httpClient: HTTPNetworkClient
     private let tokenGenerator: BasicAuthTokenGenerator
     
-    public init(client: HTTPNetworkClient, tokenGenerator: BasicAuthTokenGenerator = BasicAuthTokenGenerator()) {
+    public init(client: HTTPNetworkClient, tokenGenerator: BasicAuthTokenGenerator = BasicAuthTokenGenerator())
+    {
         self.httpClient = client
         self.tokenGenerator = tokenGenerator
         client.headerFields[Constant.userAgent] = Constant.userAgentValue
@@ -55,7 +50,7 @@ public final class GitHubNetworkClient: GitHubNetworkClientInterface {
         _ method: HTTPMethod,
         path: String,
         success: @escaping (Data?) -> Void,
-        failure: @escaping (GitHubNetworkClientError) -> Void
+        failure: @escaping (Error) -> Void
     ) {
         httpClient.request(method, path: path) { [weak self] data, response, error in
             guard let unwrappedResponse = response else {
@@ -75,7 +70,8 @@ public final class GitHubNetworkClient: GitHubNetworkClientInterface {
         }
     }
     
-    public func setBasicAuthToken(username: String, password: String) throws {
+    public func setBasicAuthToken(username: String, password: String) throws
+    {
         httpClient.headerFields[Constant.authorization]
             = "Basic \(try tokenGenerator.token(from: username, password: password))"
     }
@@ -83,7 +79,7 @@ public final class GitHubNetworkClient: GitHubNetworkClientInterface {
     private func handleErrorStatus(
         data: Data?,
         statusCode: Int,
-        failure: @escaping (GitHubNetworkClientError) -> Void
+        failure: @escaping (Error) -> Void
     ) {
         if let data = data {
             failure(.apiError(APIErrorModel(

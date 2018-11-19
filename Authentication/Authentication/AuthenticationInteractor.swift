@@ -10,17 +10,8 @@ import Foundation
 
 typealias AuthenticationErrorClosure = (AuthenticationError) -> Void
 
-enum RecoverableAuthenticationError {
-    case invalidCredentials
-    case response(message: String?)
-}
-
-enum AuthenticationError {
-    case recoverable(RecoverableAuthenticationError)
-    case unrecoverable
-}
-
-protocol AuthenticationInteractorInterface {
+protocol AuthenticationInteractorInterface
+{
     func signIn(
         username: String,
         password: String,
@@ -29,11 +20,12 @@ protocol AuthenticationInteractorInterface {
     )
 }
 
-class AuthenticationInteractor: AuthenticationInteractorInterface {
-    
+class AuthenticationInteractor: AuthenticationInteractorInterface
+{
     private let service: AuthenticationServiceInterface
     
-    init(service: AuthenticationServiceInterface) {
+    init(service: AuthenticationServiceInterface)
+    {
         self.service = service
     }
     

@@ -8,17 +8,18 @@
 
 import Foundation
 
-public struct BasicTokenGenerationError: Error {}
-
-public struct BasicAuthTokenGenerator {
+public struct BasicAuthTokenGenerator
+{
+    public struct Error: Swift.Error {}
     
     public init() {}
     
-    public func token(from username: String, password: String) throws -> String {
+    public func token(from username: String, password: String) throws -> String
+    {
         if let token = "\(username):\(password)".data(using: .utf8)?.base64EncodedString() {
             return token
         } else {
-            throw BasicTokenGenerationError()
+            throw Error()
         }
     }
 }

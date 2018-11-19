@@ -10,18 +10,9 @@
 		60340017219302A900C0BA7D /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6034000D219302A900C0BA7D /* Core.framework */; };
 		6034001E219302A900C0BA7D /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 60340010219302A900C0BA7D /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		603400692193032000C0BA7D /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034005B2193031E00C0BA7D /* Navigator.swift */; };
-		6034006A2193032000C0BA7D /* ModuleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034005C2193031E00C0BA7D /* ModuleManager.swift */; };
-		6034006B2193032000C0BA7D /* ModuleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034005D2193031F00C0BA7D /* ModuleProtocol.swift */; };
-		6034006C2193032000C0BA7D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603400682193032000C0BA7D /* Router.swift */; };
-		6034006D2193032000C0BA7D /* Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034005A2193031E00C0BA7D /* Parameter.swift */; };
-		6034006F2193034800C0BA7D /* DependencyContainerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034006E2193034800C0BA7D /* DependencyContainerProtocol.swift */; };
-		60340070219305E300C0BA7D /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603400652193031F00C0BA7D /* Route.swift */; };
-		60340071219305E600C0BA7D /* StringDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603400642193031F00C0BA7D /* StringDictionary.swift */; };
 		60340072219305EB00C0BA7D /* UIWindow+WindowProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034005E2193031F00C0BA7D /* UIWindow+WindowProtocol.swift */; };
 		60340073219305EB00C0BA7D /* UIApplication+ApplicationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034005F2193031F00C0BA7D /* UIApplication+ApplicationProtocol.swift */; };
-		60340074219305EB00C0BA7D /* URL+isHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603400602193031F00C0BA7D /* URL+isHttp.swift */; };
-		60340075219305EB00C0BA7D /* URL+ComponentInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603400612193031F00C0BA7D /* URL+ComponentInit.swift */; };
-		60340076219305EB00C0BA7D /* URLComponents+queryItemsDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603400622193031F00C0BA7D /* URLComponents+queryItemsDictionary.swift */; };
+		6041139821A327C500C3307C /* PresentationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041139721A327C500C3307C /* PresentationMode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,19 +31,10 @@
 		60340011219302A900C0BA7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60340016219302A900C0BA7D /* CoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6034001D219302A900C0BA7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6034005A2193031E00C0BA7D /* Parameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameter.swift; sourceTree = "<group>"; };
 		6034005B2193031E00C0BA7D /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
-		6034005C2193031E00C0BA7D /* ModuleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleManager.swift; sourceTree = "<group>"; };
-		6034005D2193031F00C0BA7D /* ModuleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleProtocol.swift; sourceTree = "<group>"; };
 		6034005E2193031F00C0BA7D /* UIWindow+WindowProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+WindowProtocol.swift"; sourceTree = "<group>"; };
 		6034005F2193031F00C0BA7D /* UIApplication+ApplicationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+ApplicationProtocol.swift"; sourceTree = "<group>"; };
-		603400602193031F00C0BA7D /* URL+isHttp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+isHttp.swift"; sourceTree = "<group>"; };
-		603400612193031F00C0BA7D /* URL+ComponentInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+ComponentInit.swift"; sourceTree = "<group>"; };
-		603400622193031F00C0BA7D /* URLComponents+queryItemsDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+queryItemsDictionary.swift"; sourceTree = "<group>"; };
-		603400642193031F00C0BA7D /* StringDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringDictionary.swift; sourceTree = "<group>"; };
-		603400652193031F00C0BA7D /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
-		603400682193032000C0BA7D /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		6034006E2193034800C0BA7D /* DependencyContainerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainerProtocol.swift; sourceTree = "<group>"; };
+		6041139721A327C500C3307C /* PresentationMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationMode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,12 +77,10 @@
 		6034000F219302A900C0BA7D /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				603400672193031F00C0BA7D /* Auxiliary */,
-				6034006E2193034800C0BA7D /* DependencyContainerProtocol.swift */,
-				6034005D2193031F00C0BA7D /* ModuleProtocol.swift */,
-				6034005C2193031E00C0BA7D /* ModuleManager.swift */,
+				6034005E2193031F00C0BA7D /* UIWindow+WindowProtocol.swift */,
+				6034005F2193031F00C0BA7D /* UIApplication+ApplicationProtocol.swift */,
+				6041139721A327C500C3307C /* PresentationMode.swift */,
 				6034005B2193031E00C0BA7D /* Navigator.swift */,
-				603400682193032000C0BA7D /* Router.swift */,
 				60340010219302A900C0BA7D /* Core.h */,
 				60340011219302A900C0BA7D /* Info.plist */,
 			);
@@ -113,37 +93,6 @@
 				6034001D219302A900C0BA7D /* Info.plist */,
 			);
 			path = CoreTests;
-			sourceTree = "<group>";
-		};
-		603400632193031F00C0BA7D /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				6034005E2193031F00C0BA7D /* UIWindow+WindowProtocol.swift */,
-				6034005F2193031F00C0BA7D /* UIApplication+ApplicationProtocol.swift */,
-				603400602193031F00C0BA7D /* URL+isHttp.swift */,
-				603400612193031F00C0BA7D /* URL+ComponentInit.swift */,
-				603400622193031F00C0BA7D /* URLComponents+queryItemsDictionary.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		603400662193031F00C0BA7D /* Typealiases */ = {
-			isa = PBXGroup;
-			children = (
-				603400642193031F00C0BA7D /* StringDictionary.swift */,
-				603400652193031F00C0BA7D /* Route.swift */,
-			);
-			path = Typealiases;
-			sourceTree = "<group>";
-		};
-		603400672193031F00C0BA7D /* Auxiliary */ = {
-			isa = PBXGroup;
-			children = (
-				603400632193031F00C0BA7D /* Extensions */,
-				603400662193031F00C0BA7D /* Typealiases */,
-				6034005A2193031E00C0BA7D /* Parameter.swift */,
-			);
-			path = Auxiliary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,19 +203,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6034006C2193032000C0BA7D /* Router.swift in Sources */,
-				6034006D2193032000C0BA7D /* Parameter.swift in Sources */,
 				603400692193032000C0BA7D /* Navigator.swift in Sources */,
-				6034006B2193032000C0BA7D /* ModuleProtocol.swift in Sources */,
-				6034006F2193034800C0BA7D /* DependencyContainerProtocol.swift in Sources */,
-				60340070219305E300C0BA7D /* Route.swift in Sources */,
-				60340076219305EB00C0BA7D /* URLComponents+queryItemsDictionary.swift in Sources */,
-				60340071219305E600C0BA7D /* StringDictionary.swift in Sources */,
-				60340075219305EB00C0BA7D /* URL+ComponentInit.swift in Sources */,
 				60340073219305EB00C0BA7D /* UIApplication+ApplicationProtocol.swift in Sources */,
-				6034006A2193032000C0BA7D /* ModuleManager.swift in Sources */,
+				6041139821A327C500C3307C /* PresentationMode.swift in Sources */,
 				60340072219305EB00C0BA7D /* UIWindow+WindowProtocol.swift in Sources */,
-				60340074219305EB00C0BA7D /* URL+isHttp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,7 +362,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Core/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -449,7 +389,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Core/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

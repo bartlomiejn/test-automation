@@ -10,7 +10,8 @@ import Networking
 
 typealias SignInErrorClosure = (AuthenticationError) -> Void
 
-protocol AuthenticationServiceInterface {
+protocol AuthenticationServiceInterface
+{
     func signIn(
         username: String,
         password: String,
@@ -19,39 +20,48 @@ protocol AuthenticationServiceInterface {
     )
 }
 
-class AuthenticationService: AuthenticationServiceInterface {
-    
-    enum Path {
+final class AuthenticationService
+{
+    enum Path
+    {
         static let user = "/user"
     }
     
     private let client: GitHubNetworkClient
     
-    init(client: GitHubNetworkClient) {
+    init(client: GitHubNetworkClient)
+    {
         self.client = client
     }
-    
+}
+
+extension AuthenticationService: AuthenticationServiceInterface
+{
     func signIn(
         username: String,
         password: String,
         success: @escaping () -> Void,
         failure: @escaping SignInErrorClosure
     ) {
-        do {
+        do
+        {
             try client.setBasicAuthToken(username: username, password: password)
             client.request(.GET, path: Path.user, success: { _ in
                 success()
             }, failure: { [weak self] error in
                 self?.handle(error, with: failure)
             })
-        } catch {
-            // Can fail only on setBasicAuthToken, which if fails we can't really do anything.
+        }
+        catch
+        {
             failure(.unrecoverable)
         }
     }
     
-    private func handle(_ error: GitHubNetworkClientError, with callback: SignInErrorClosure) {
-        switch error {
+    private func handle(_ error: GitHubNetworkClient.Error, with callback: SignInErrorClosure)
+    {
+        switch error
+        {
         case .unauthorized:
             callback(.recoverable(.invalidCredentials))
         case .apiError(let model):

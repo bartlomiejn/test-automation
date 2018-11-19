@@ -6,19 +6,23 @@
 //  Copyright © 2018 Bartłomiej Nowak. All rights reserved.
 //
 
-import Core
 import Networking
 import Authentication
 
-public class AppStubGenerator: StubGenerator {
-
-    public let stubGenerators = [StubGenerator]()
+public class AppStubGenerator
+{
+    public let authStubGenerator: AuthenticationStubGenerator
     
-    public init(from launchParameters: [String: String]) {
+    public init(from launchParameters: [String: String])
+    {
         self.authStubGenerator = AuthenticationStubGenerator(from: launchParameters)
     }
-    
-    public func injectStubs(into client: HTTPNetworkClient) {
+}
+
+extension AppStubGenerator: StubGenerator
+{
+    public func injectStubs(into client: HTTPNetworkClient)
+    {
         authStubGenerator.injectStubs(into: client)
     }
 }

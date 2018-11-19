@@ -8,9 +8,10 @@
 
 import XCTest
 
-extension XCUIApplication {
-    
-    func launchForIntegrationTesting(withAuthenticationStub stubName: String) {
+extension XCUIApplication
+{
+    func launchForIntegrationTesting(withAuthenticationStub stubName: String)
+    {
         launchForIntegrationTesting(withParameters: ["auth": stubName])
     }
 }
