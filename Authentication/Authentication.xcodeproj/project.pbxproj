@@ -26,6 +26,10 @@
 		6034FFFD2193022100C0BA7D /* AuthenticationViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034FFF62193022000C0BA7D /* AuthenticationViewFactory.swift */; };
 		6041139421A3270500C3307C /* RecoverableAuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041139321A3270500C3307C /* RecoverableAuthenticationError.swift */; };
 		6041139621A3271600C3307C /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041139521A3271600C3307C /* AuthenticationError.swift */; };
+		604113A921A3312900C3307C /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603400A521930A5B00C0BA7D /* Core.framework */; };
+		604113AA21A3312900C3307C /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 603400A521930A5B00C0BA7D /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		604113AB21A3312900C3307C /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603400A721930A5B00C0BA7D /* Networking.framework */; };
+		604113AC21A3312900C3307C /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 603400A721930A5B00C0BA7D /* Networking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		60D37BF3219429D90044A2D1 /* AuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D37BF1219429D90044A2D1 /* AuthenticationTests.swift */; };
 		60D37BF4219429D90044A2D1 /* XCUIApplication+AuthenticationStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D37BF2219429D90044A2D1 /* XCUIApplication+AuthenticationStub.swift */; };
 		60D37C20219445A50044A2D1 /* AuthenticationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D37C1E219445A40044A2D1 /* AuthenticationPage.swift */; };
@@ -67,6 +71,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				60D37C32219447A40044A2D1 /* Authentication.framework in Embed Frameworks */,
+				604113AA21A3312900C3307C /* Core.framework in Embed Frameworks */,
+				604113AC21A3312900C3307C /* Networking.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,6 +127,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6034014121931C5800C0BA7D /* Authentication.framework in Frameworks */,
+				604113A921A3312900C3307C /* Core.framework in Frameworks */,
+				604113AB21A3312900C3307C /* Networking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

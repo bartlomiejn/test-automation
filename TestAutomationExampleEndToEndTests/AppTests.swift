@@ -1,5 +1,5 @@
 //
-//  AuthenticationTests.swift
+//  AppTests.swift
 //  TestAutomationExampleE2ETests
 //
 //  Created by Bartłomiej Nowak on 22.09.2018.
