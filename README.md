@@ -10,7 +10,7 @@ Used as an example for the `Test Automation in iOS` lecture for the `meet.mobile
 - Example class - `AuthenticationPresenter` in `AuthenticationPresenterTests`
 
 ### `AuthenticationIntegrationTests` (XCUITest)
-- Te sts integration of `AuthenticationModule` on a dummy app target
+- Tests integration of `AuthenticationModule` on a dummy app target
 - Uses built-in mocking infrastructure - `HTTPNetworkClient` / `StubbedURLSession`
 - Isolates the module mocking all of its dependencies - API and `MainModule`
 - Example case - Authentication success and failure paths in `AuthenticationTests`
