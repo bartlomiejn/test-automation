@@ -37,13 +37,6 @@ class AuthenticationTests: XCTestCase
         super.tearDown()
     }
     
-    func test_GivenSuccess_WhenSignIn_ThenShowSuccessPage()
-    {
-        app.launchForIntegrationTesting(withAuthenticationStub: "ok")
-        AuthenticationPage(assertingExistenceWithApp: app)?
-            .mainPageAfterSignIn(username: Credentials.username, password: Credentials.password)
-    }
-    
     func test_GivenUnauthorized_WhenSignIn_ThenStayOnAuthenticationPageAndShowError()
     {
         app.launchForIntegrationTesting(withAuthenticationStub: "unauthorized")

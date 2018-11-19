@@ -21,6 +21,8 @@
 		6041138F21A322F800C3307C /* Authentication.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 603400962193084000C0BA7D /* Authentication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6041139021A322FD00C3307C /* Main.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6041138C21A322F400C3307C /* Main.framework */; };
 		6041139121A322FD00C3307C /* Main.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6041138C21A322F400C3307C /* Main.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		604113A321A32D8E00C3307C /* UITestsApplicationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604113A121A32D8E00C3307C /* UITestsApplicationProtocol.swift */; };
+		604113A421A32D8E00C3307C /* PageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604113A221A32D8E00C3307C /* PageObject.swift */; };
 		6068EBAE2156325F004A44DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6068EBAD2156325F004A44DF /* AppDelegate.swift */; };
 		6068EBB521563260004A44DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6068EBB421563260004A44DF /* Assets.xcassets */; };
 		6068EBB821563260004A44DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6068EBB621563260004A44DF /* LaunchScreen.storyboard */; };
@@ -62,6 +64,8 @@
 		6034009A2193084000C0BA7D /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6034FFCA2192F45D00C0BA7D /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		6041138C21A322F400C3307C /* Main.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Main.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		604113A121A32D8E00C3307C /* UITestsApplicationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITestsApplicationProtocol.swift; path = Testing/Testing/UITestsApplicationProtocol.swift; sourceTree = SOURCE_ROOT; };
+		604113A221A32D8E00C3307C /* PageObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageObject.swift; path = Testing/Testing/PageObject.swift; sourceTree = SOURCE_ROOT; };
 		6068EBAA2156325F004A44DF /* TestAutomationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestAutomationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6068EBAD2156325F004A44DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6068EBB421563260004A44DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +114,15 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
+		604113A021A32D7700C3307C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				604113A221A32D8E00C3307C /* PageObject.swift */,
+				604113A121A32D8E00C3307C /* UITestsApplicationProtocol.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		6068EBA12156325F004A44DF = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +158,7 @@
 		6068EBCC21563260004A44DF /* TestAutomationExampleEndToEndTests */ = {
 			isa = PBXGroup;
 			children = (
+				604113A021A32D7700C3307C /* Shared */,
 				60A9FF01216B8E70007966A7 /* MainPage.swift */,
 				6068EBCD21563260004A44DF /* AuthenticationTests.swift */,
 				6068EBCF21563260004A44DF /* Info.plist */,
@@ -263,8 +277,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				604113A321A32D8E00C3307C /* UITestsApplicationProtocol.swift in Sources */,
 				6068EBCE21563260004A44DF /* AuthenticationTests.swift in Sources */,
 				60A9FF10216B8F0C007966A7 /* MainPage.swift in Sources */,
+				604113A421A32D8E00C3307C /* PageObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,7 +468,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B6NDM93MJT;
-				INFOPLIST_FILE = TestAutomationExampleE2ETests/Info.plist;
+				INFOPLIST_FILE = TestAutomationExampleEndToEndTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -472,7 +488,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B6NDM93MJT;
-				INFOPLIST_FILE = TestAutomationExampleE2ETests/Info.plist;
+				INFOPLIST_FILE = TestAutomationExampleEndToEndTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

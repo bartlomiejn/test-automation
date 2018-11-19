@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--App View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="ndF-gu-x7g">
             <objects>
-                <viewController id="gSD-h9-1Rq" customClass="AppViewController" customModule="Main" sceneMemberID="viewController">
+                <viewController id="gSD-h9-1Rq" customClass="MainViewController" customModule="Main" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kT7-4j-L2L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -21,7 +21,7 @@ final class AuthenticationPresenterTests: XCTestCase
         mockView = MockAuthenticationView()
         mockModule = MockAuthenticationModule()
         mockInteractor = MockAuthenticationInteractor()
-        presenter = AuthenticationPresenter(view: mockView, module: mockModule, interactor: mockInteractor)
+        presenter = AuthenticationPresenter(module: mockModule, view: mockView, interactor: mockInteractor)
     }
     
     override func tearDown() {
@@ -34,30 +34,35 @@ final class AuthenticationPresenterTests: XCTestCase
     
     // MARK: - tappedSignIn()
     
-    func test_GivenNoUsernameAndPassword_WhenTappedSignIn_ThenDontSignIn() {
+    func test_GivenNoUsernameAndPassword_WhenTappedSignIn_ThenDontSignIn()
+    {
         presenter.tappedSignIn()
         XCTAssertEqual(mockInteractor.spySignInCount, 0)
     }
     
-    func test_GivenCredentials_WhenTappedSignIn_ThenDisableSignInButton() {
+    func test_GivenCredentials_WhenTappedSignIn_ThenDisableSignInButton()
+    {
         setFakeUsernameAndPassword()
         presenter.tappedSignIn()
         XCTAssertEqual(mockView.spyDisableSignInButtonCount, 1)
     }
     
-    func test_GivenCredentials_WhenTappedSignIn_ThenHideError() {
+    func test_GivenCredentials_WhenTappedSignIn_ThenHideError()
+    {
         setFakeUsernameAndPassword()
         presenter.tappedSignIn()
         XCTAssertEqual(mockView.spyHideErrorCount, 1)
     }
     
-    func test_GivenCredentials_WhenTappedSignIn_ThenShowSpinner() {
+    func test_GivenCredentials_WhenTappedSignIn_ThenShowSpinner()
+    {
         setFakeUsernameAndPassword()
         presenter.tappedSignIn()
         XCTAssertEqual(mockView.spyShowSpinnerCount, 1)
     }
     
-    func test_GivenCredentials_WhenTappedSignIn_ThenSignIn() {
+    func test_GivenCredentials_WhenTappedSignIn_ThenSignIn()
+    {
         setFakeUsernameAndPassword()
         presenter.tappedSignIn()
         XCTAssertEqual(mockInteractor.spySignInCount, 1)
@@ -65,39 +70,45 @@ final class AuthenticationPresenterTests: XCTestCase
     
     // MARK: Auth Success
     
-    func test_GivenCredentialsAndSuccess_WhenTappedSignIn_ThenEnableSignInButton() {
+    func test_GivenCredentialsAndSuccess_WhenTappedSignIn_ThenEnableSignInButton()
+    {
         setFakeUsernameAndPassword()
         presenter.tappedSignIn()
         XCTAssertEqual(mockView.spyEnableSignInButtonCount, 1)
     }
     
-    func test_GivenCredentialsAndSuccess_WhenTappedSignIn_ThenHideSpinner() {
+    func test_GivenCredentialsAndSuccess_WhenTappedSignIn_ThenHideSpinner()
+    {
         setFakeUsernameAndPassword()
         presenter.tappedSignIn()
         XCTAssertEqual(mockView.spyHideSpinnerCount, 1)
     }
     
-    func test_GivenCredentialsAndSuccess_WhenTappedSignIn_ThenAuthSuccessful() {
+    func test_GivenCredentialsAndSuccess_WhenTappedSignIn_ThenAuthSuccessful()
+    {
         setFakeUsernameAndPassword()
         presenter.tappedSignIn()
-        XCTAssertEqual(mockModule.spyAuthenticationSuccessfulCount, 1)
+        XCTAssertEqual(mockModule.spySuccessCount, 1)
     }
     
     // MARK: Auth Failure
     
-    func test_GivenCredentialsAndFailure_WhenTappedSignIn_ThenEnableSignInButton() {
+    func test_GivenCredentialsAndFailure_WhenTappedSignIn_ThenEnableSignInButton()
+    {
         setFakeUsernameAndPassword()
         presenter.tappedSignIn()
         XCTAssertEqual(mockView.spyEnableSignInButtonCount, 1)
     }
     
-    func test_GivenCredentialsAndFailure_WhenTappedSignIn_ThenHideSpinner() {
+    func test_GivenCredentialsAndFailure_WhenTappedSignIn_ThenHideSpinner()
+    {
         setFakeUsernameAndPassword()
         presenter.tappedSignIn()
         XCTAssertEqual(mockView.spyHideSpinnerCount, 1)
     }
     
-    func test_GivenCredentialsAndFailure_WhenTappedSignIn_ThenShowUnrecoverableError() {
+    func test_GivenCredentialsAndFailure_WhenTappedSignIn_ThenShowUnrecoverableError()
+    {
         setFakeUsernameAndPassword(willAuthFail: true)
         presenter.tappedSignIn()
         XCTAssertEqual(mockView.spyShowErrors.first, "Unrecoverable error.")
@@ -105,7 +116,8 @@ final class AuthenticationPresenterTests: XCTestCase
     
     // MARK: - Auxiliary
     
-    private func setFakeUsernameAndPassword(willAuthFail: Bool = false) {
+    private func setFakeUsernameAndPassword(willAuthFail: Bool = false)
+    {
         presenter.usernameChanged(to: "FakeUsername")
         presenter.passwordChanged(to: "FakePassword")
         if willAuthFail {
@@ -115,20 +127,25 @@ final class AuthenticationPresenterTests: XCTestCase
     }
 }
 
-class MockAuthenticationView: AuthenticationViewInterface {
-
+class MockAuthenticationView
+{
     private (set) var spyDisableSignInButtonCount = 0
     private (set) var spyEnableSignInButtonCount = 0
     private (set) var spyHideErrorCount = 0
     private (set) var spyShowSpinnerCount = 0
     private (set) var spyHideSpinnerCount = 0
     private (set) var spyShowErrors = [String]()
-    
-    func enableSignInButton() {
+}
+
+extension MockAuthenticationView: AuthenticationViewInterface
+{
+    func enableSignInButton()
+    {
         spyEnableSignInButtonCount += 1
     }
 
-    func disableSignInButton() {
+    func disableSignInButton()
+    {
         spyDisableSignInButtonCount += 1
     }
     
@@ -136,40 +153,55 @@ class MockAuthenticationView: AuthenticationViewInterface {
     
     func show(password: String) {}
     
-    func showSpinner() {
+    func showSpinner()
+    {
         spyShowSpinnerCount += 1
     }
     
-    func hideSpinner() {
+    func hideSpinner()
+    {
         spyHideSpinnerCount += 1
     }
     
-    func showError(description: String) {
+    func showError(description: String)
+    {
         spyShowErrors.append(description)
     }
     
-    func hideError() {
+    func hideError()
+    {
         spyHideErrorCount += 1
     }
 }
 
-class MockAuthenticationModule: AuthenticationModuleProtocol {
-    
-    private (set) var spyAuthenticationSuccessfulCount = 0
-    
-    func authenticationSuccessful() {
-        spyAuthenticationSuccessfulCount += 1
-    }
-    
-    func presentInitialView() {}
+class MockAuthenticationModule
+{
+    private (set) var spyShowCount = 0
+    private (set) var spySuccessCount = 0
 }
 
-class MockAuthenticationInteractor: AuthenticationInteractorInterface {
+extension MockAuthenticationModule: AuthenticationModuleProtocol
+{
+    func show()
+    {
+        spyShowCount += 1
+    }
     
+    func success()
+    {
+        spySuccessCount += 1
+    }
+}
+
+class MockAuthenticationInteractor
+{
     var mockSignInSuccess = true
     var mockSignInError = AuthenticationError.unrecoverable
     private (set) var spySignInCount = 0
-    
+}
+
+extension MockAuthenticationInteractor: AuthenticationInteractorInterface
+{
     func signIn(
         username: String,
         password: String,

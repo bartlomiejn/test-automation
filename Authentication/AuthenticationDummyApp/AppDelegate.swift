@@ -11,12 +11,6 @@ import Networking
 import Authentication
 import UIKit
 
-class DummyRouter: RouterProtocol
-{
-    func open(_ module: ModuleProtocol.Type, parameters: StringDictionary?, callback: ((StringDictionary?) -> Void)?) {}
-    func open(_ url: URL, callback: ((StringDictionary?) -> Void)?) {}
-}
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate
 {
@@ -32,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
             application: application,
             networkClient: networkClient(with: ProcessInfo.processInfo.environment)
         )
-        module.open(path: nil, parameters: nil, callback: nil)
+        module.show()
         return true
     }
     
@@ -60,11 +54,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         application: UIApplication,
         networkClient: HTTPNetworkClient
     ) -> AuthenticationModule {
-        let router = DummyRouter()
         let gitHubClient = GitHubNetworkClient(client: networkClient)
-        let viewFactory = AuthenticationViewFactory(router: router, networkClient: gitHubClient)
-        let module = AuthenticationModule(router: router, navigator: Navigator(application: application))
-        module.viewFactory = viewFactory
-        return module
+        let navigator = Navigator(application: application)
+        let viewFactory = AuthenticationViewFactory(networkClient: gitHubClient)
+        return AuthenticationModule(navigator: navigator, viewFactory: viewFactory)
     }
 }
