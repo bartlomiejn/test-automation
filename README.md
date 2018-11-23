@@ -1,8 +1,13 @@
 # test-automation
 
-GitHub API authentication app based on a multi-project iOS app architecture with VIPER-based modules with test automation suite examples. Setup takes advantage of the architecture to deliver UI integration tests for isolated application modules alongside end to end UI tests. Used as an example for the `Test Automation in iOS` lecture for the `meet.mobile` meetup in Wroclaw, Poland 10.10.2018.
+GitHub API authentication app based on a multi-project iOS app architecture with VIPER-based modules with test automation suite examples. 
 
-#### Overview
+Setup takes advantage of the architecture to deliver UI integration tests for isolated application modules alongside end to end UI tests. 
+
+Used as an example for the `Test Automation in iOS` lecture for the `meet.mobile` meetup in Wroclaw, Poland 10.10.2018.
+
+### Overview
+
 - Multi-project architecture with 5 separate modules and a shared collection of test-related tools: 
   - `App` - Builds and runs the app, handles app-level events
   - `Core` - Core functionality library, contains a view hierarchy agnostic `Navigator` component
