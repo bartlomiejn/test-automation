@@ -1,6 +1,6 @@
 # test-automation
 
-GitHub API authentication app based on a multi-project iOS app architecture with a test automation strategy. Setup takes advantage of the architecture to deliver UI integration tests for isolated application modules along high-level end to end tests. 
+GitHub API authentication app based on a multi-project iOS app architecture with a three layer test automation strategy. Setup takes advantage of the architecture to deliver UI integration tests for isolated application modules along high-level end to end tests. 
 
 Used as an example for the `Test Automation in iOS` lecture for the `meet.mobile` meetup in Wroclaw, Poland 10.10.2018.
 
