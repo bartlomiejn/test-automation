@@ -9,17 +9,17 @@ Used as an example for the `Test Automation in iOS` lecture for the `meet.mobile
 ### Overview
 
 - Multi-project architecture with 5 separate modules and a shared collection of test-related tools: 
-  - `App` - Builds and runs the app, handles app-level events
-  - `Core` - Core functionality library, contains a view hierarchy agnostic `Navigator` component
-  - `Main` - Main flow of the app (which is non-existent for this application purposes)
-  - `Authentication` - Contains the authentication view and logic
-  - `Networking` - Networking layer with stubbing capabilities
-  - `Shared` - Collection of UI test tools added statically to UI test targets
+  - `App` - Runs the app, handles app-level events
+  - `Core` - Core functionality library
+  - `Main` - Main flow
+  - `Authentication` - API authentication logic
+  - `Networking` - Networking layer
+  - `Shared` - UI test tools added statically to UI test targets
 - Three layers of test automation:
   - Unit tests - `AuthenticationUnitTests`
     - Tests each unit of code
     - Isolates each unit mocking all of its dependencies
-    - Example class - `AuthenticationPresenter` in `AuthenticationPresenterTests`
+    - Covers `AuthenticationPresenter` in `AuthenticationPresenterTests`
   - Integration tests - `AuthenticationIntegrationTests`
     - Tests integration of `AuthenticationModule` on a dummy app target
     - Isolates the module mocking all of its dependencies - API and `MainModule`
