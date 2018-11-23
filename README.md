@@ -11,10 +11,10 @@ Multi-project iOS architecture with VIPER-based modules with test automation exa
 - Tests integration of `AuthenticationModule` on a dummy app target
 - Uses built-in mocking infrastructure - `HTTPNetworkClient` / `StubbedURLSession`
 - Isolates the module mocking all of its dependencies - API and `MainModule`
-- Example case - Authentication success and failure paths in `AuthenticationTests`
+- Covers authentication success and failure paths in `AuthenticationTests` test case
 
 ### `AppEndToEndTests` (XCUITest)
 - Tests the integration of the whole application stack
 - Covers both `MainModule` and `AuthenticationModule` on a real app target
 - Involves both application and the GitHub API
-- Example case - Authentication success and failure paths in `AppTests`
+- Covers authentication success and failure paths in `AppTests` test case
