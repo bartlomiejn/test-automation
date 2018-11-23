@@ -1,6 +1,6 @@
 # test-automation
 
-Multi-project iOS architecture with VIPER-based modules with test automation examples based on a GitHub authentication app. Setup takes advantage of multi-project architecture to deliver UI integration tests for isolated application modules alongside End To End UI tests. Used as an example for the `Test Automation in iOS` lecture for the `meet.mobile` meetup in Wroclaw, Poland 10.10.2018.
+GitHub API authentication app based on a multi-project iOS app architecture with VIPER-based modules with test automation suite examples. Setup takes advantage of the architecture to deliver UI integration tests for isolated application modules alongside end to end UI tests. Used as an example for the `Test Automation in iOS` lecture for the `meet.mobile` meetup in Wroclaw, Poland 10.10.2018.
 
 ### `AuthenticationUnitTests` (XCTest)
 - Tests each unit of code
